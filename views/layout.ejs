@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="stylesheets/style_default.css" media="all" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="js/common.js"></script>
+    <link rel="stylesheet" href="stylesheets/jquery-ui-1.8.20.custom.css" media="all" />
+    <link rel="stylesheet" href="stylesheets/jquery-ui-1.8.16.custom.css" media="all" />
+    <script type="text/javascript" src="js/jquery-ui-1.8.20.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript" src="js/buildingscript.js"></script>
+    <script type="text/javascript" src="js/alertscript.js"></script>
+    <script type="text/javascript" src="js/guardscript.js"></script>
+    <script type="text/javascript" src="js/clientscript.js"></script>
+    <script type="text/javascript" src="js/reportscript.js"></script>
+    <script type="text/javascript" src="js/billingscript.js"></script>
+    
+    <link rel="stylesheet" href="stylesheets/jquery.jqplot.css" media="all" />
+	<script type="text/javascript" src="js/jquery-ui-1.8.20.custom.min.js"></script>
+	<script type="text/javascript" src="js/jquery.jqplot.js"></script>
+	<script type="text/javascript" src="js/jqplot.pieRenderer.min.js"></script>
+	<script type="text/javascript" src="js/excanvas.js"></script>
+    
+    <script src="http://maps.google.com/maps/api/js?sensor=false" 
+          type="text/javascript"></script>
+    
+    <script type="text/javascript">
+    	var curPage=1;
+	    var rp=10;
+	    var totalRows = 0;
+	    var finalpage = 0;
+	    
+        function folderExpand(event) {
+            var $this = $(event).parent().parent();
+            if ($this.hasClass('folderExpand')) {
+                $this.removeClass('folderExpand');
+            } else {
+                $this.addClass('folderExpand');
+            }
+            return false;
+        }
+
+        function layoutmodule($scope, $http) {
+        
+        	$scope.logout = function(){
+        		localStorage.clear();
+        		window.location.href = "/logout";
+        	};
+        	
+            $scope.templates = [{
+                name: 'Alert Module',
+                url: '/alertmodule'
+            },
+		    {
+		        name: 'Report Module',
+		        url: '/reportmodule'
+		    },
+		    {
+		        name: 'Building Module',
+		        url: '/buildingmodule'
+		    },
+		    {
+		        name: 'Client Module',
+		        url: '/clientmodule'
+		    },
+		    {
+		        name: 'Guard Module',
+		        url: '/guardmodule'
+		    },
+		    {
+		        name: 'Billing Module',
+		        url: '/billingmodule'
+		    }];
+            
+            roleid = localStorage.getItem("roleid");
+			if(roleid=="3"){
+				$scope.template = $scope.templates[4];
+				$("#tdbuilding").hide();
+				$("#tdclient").hide();
+				$("#tdreport").show();
+				$("#tdbilling").hide();
+				$("#tdguard").show();
+				$("#tdalert").show();
+			}
+	        else if (roleid=="1"){
+	            $scope.template = $scope.templates[2];
+	            $("#tdbuilding").show();
+        		$("#tdguard").show();
+	        }
+	        else{
+	            $scope.template = $scope.templates[3];
+	            $("#tdbuilding").hide();
+				$("#tdguard").hide();
+	        }
+	        
+	        
+	        function hideandshow(){
+	        	if(roleid=="3"){
+				$scope.template = $scope.templates[4];
+				$("#tdbuilding").hide();
+				$("#tdclient").hide();
+				$("#tdreport").show();
+				$("#tdbilling").hide();
+				$("#tdguard").show();
+				$("#tdalert").show();
+			}
+	        else if (roleid=="1"){
+	            $scope.template = $scope.templates[2];
+	            $("#tdbuilding").show();
+        		$("#tdguard").show();
+	        }
+	        else{
+	            $scope.template = $scope.templates[3];
+	            $("#tdbuilding").hide();
+				$("#tdguard").hide();
+	        }
+	        }
+            
+            $scope.navigateToAlert = function(){
+            	var url = "/checksession";
+	            $http({
+	                method: 'GET',
+	                url: url
+	            }).success(function(response){
+	                if(response){	         
+	                	hideandshow();       
+	                	$("#imgalert").addClass("current");
+	                	$("#imgguard").removeClass("current");
+	                	$("#imgclient").removeClass("current");
+	                	$("#imgbuilding").removeClass("current");
+	                	$("#imgreport").removeClass("current");	
+	                	$("#imgbilling").removeClass("current");
+        				$scope.template = $scope.templates[0];
+	                }
+	                else{
+	                	alert("Session has expired please login again.");
+	                	window.location.href = "/logout";
+	                }
+	            }).error(function(err){
+	                alert(err.value.message);
+	            });
+	        }
+	        
+	        $scope.navigateToBilling = function(){
+            	var url = "/checksession";
+	            $http({
+	                method: 'GET',
+	                url: url
+	            }).success(function(response){
+	                if(response){	                  
+	                	hideandshow();      
+	                	$("#imgalert").removeClass("current");
+	                	$("#imgguard").removeClass("current");
+	                	$("#imgclient").removeClass("current");
+	                	$("#imgbuilding").removeClass("current");
+	                	$("#imgreport").removeClass("current");	
+	                	$("#imgbilling").addClass("current");	
+        				$scope.template = $scope.templates[5];
+	                }
+	                else{
+	                	alert("Session has expired please login again.");
+	                	window.location.href = "/logout";
+	                }
+	            }).error(function(err){
+	                alert(err.value.message);
+	            });
+	        }
+	        
+	         $scope.navigateToReport = function(){
+	        	 var url = "/checksession";
+	            $http({
+	                method: 'GET',
+	                url: url
+	            }).success(function(response){
+	                if(response){	                       
+	                	hideandshow(); 
+	                	$("#imgalert").removeClass("current");
+	                	$("#imgguard").removeClass("current");
+	                	$("#imgclient").removeClass("current");
+	                	$("#imgbuilding").removeClass("current");
+	                	$("#imgreport").addClass("current");	
+	                	$("#imgbilling").removeClass("current");
+        				$scope.template = $scope.templates[1];
+	                }
+	                else{
+	                	alert("Session has expired please login again.");
+	                	window.location.href = "/logout";
+	                }
+	            }).error(function(err){
+	                alert(err.value.message);
+	            });
+	        }
+	        
+	         $scope.navigateToBuilding = function(){
+	        	var url = "/checksession";
+	            $http({
+	                method: 'GET',
+	                url: url
+	            }).success(function(response){
+	                if(response){	                	       
+	                	hideandshow(); 
+	                	$("#imgalert").removeClass("current");
+	                	$("#imgbilling").removeClass("current");
+	                	$("#imgguard").removeClass("current");
+	                	$("#imgclient").removeClass("current");
+	                	$("#imgbuilding").addClass("current");
+	                	$("#imgreport").removeClass("current");
+        				$scope.template = $scope.templates[2];
+	                }
+	                else{
+	                	alert("Session has expired please login again.");
+	                	window.location.href = "/logout";
+	                }
+	            }).error(function(err){
+	                alert(err.value.message);
+	            });
+	        }
+	        
+	         $scope.navigateToClient = function(){
+	        	 var url = "/checksession";
+	            $http({
+	                method: 'GET',
+	                url: url
+	            }).success(function(response){
+	                if(response){	           
+	                	hideandshow();             	
+	                	$("#imgalert").removeClass("current");
+	                	$("#imgguard").removeClass("current");
+	                	$("#imgclient").addClass("current");
+	                	$("#imgbilling").removeClass("current");
+	                	$("#imgbuilding").removeClass("current");
+	                	$("#imgreport").removeClass("current");
+        				$scope.template = $scope.templates[3];
+	                }
+	                else{
+	                	alert("Session has expired please login again.");
+	                	window.location.href = "/logout";
+	                }
+	            }).error(function(err){
+	                alert(err.value.message);
+	            });
+	        }
+	        
+	         $scope.navigateToGuard = function(){
+	        	 var url = "/checksession";
+	            $http({
+	                method: 'GET',
+	                url: url
+	            }).success(function(response){
+	                if(response){	                    
+	                	hideandshow();    	
+	                	$("#imgalert").removeClass("current");
+	                	$("#imgguard").addClass("current");
+	                	$("#imgclient").removeClass("current");
+	                	$("#imgbuilding").removeClass("current");
+	                	$("#imgbilling").removeClass("current");
+	                	$("#imgreport").removeClass("current");
+        				$scope.template = $scope.templates[4];
+	                }
+	                else{
+	                	alert("Session has expired please login again.");
+	                	window.location.href = "/logout";
+	                }
+	            }).error(function(err){
+	                alert(err.value.message);
+	            });
+	        }
+	        
+	        	        
+	        $scope.finishLoading = function(){
+	        	if($scope.template.url == "/clientmodule"){
+		        	loadgooglemaps(null);
+	        	}
+	        	if($scope.template.url == "/buildingmodule" || $scope.template.url == "/guardmodule"||$scope.template.url == "/clientmodule"){
+	        		$(".datepicker").datepicker();
+	        	}
+	        };
+        }    
+        
+    </script>
+</head>
+<body ng-controller="layoutmodule">
+    <div class="layoutwrapper" id="pageHome">
+        <table style="width: 100%; height: 100%">
+            <tr style="height: 85%">
+                <td>
+                    <div id="header">
+                        <div class="boxRight">
+                            <div class="boxCenter">
+                                <table style="width: 100%">
+                                    <tr>
+                                        <td style="width: 15%; vertical-align: top">
+                                            <h1 style="margin-top: 7px">
+                                                <img title="SJ Security" style="height: 185px; width: 185px; margin-bottom: -115px;" src="img/logo.png" alt="SJ Security" />
+                                            </h1>
+                                        </td>
+                                        <td style="width: 70%; vertical-align: middle; text-align: left">
+                                            <div id="masterMenu">
+                                                <!-- main menus -->
+                                                <table width="100%" align="center">
+                                                    <tr>
+                                                        <td>
+                                                            <table align="center" style="margin-left: 12%">
+                                                                 <tr>
+                                                                     <td id="tdguard">
+                                                                        <h2><img id="imgguard" ng-click="navigateToGuard()" title="Guard" style="cursor: pointer; height: 60px; width: 60px;" src="img/nav-guard.png" alt="Guard" /></h2>
+                                                                    </td>
+                                                                    <td id="tdclient">
+                                                                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img id="imgclient" ng-click="navigateToClient()" title="Client" style="cursor: pointer; height: 60px; width: 60px;" src="img/nav-client.png" alt="Client" /></h2>
+                                                                    </td>
+                                                                    <td id="tdbuilding">
+                                                                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img id="imgbuilding" class="current" ng-click="navigateToBuilding()" title="Building" style="cursor: pointer; height: 60px; width: 60px; margin-bottom: 5px" src="img/nav-buildings.png" alt="Building" /></h2>
+                                                                    </td>
+                                                                    <td id="tdreport">
+                                                                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img id="imgreport" ng-click="navigateToReport()" title="Report" style="cursor: pointer; height: 60px; width: 60px;" src="img/nav-reports.png" alt="Report" /></h2>
+                                                                    </td>
+                                                                    <td id="tdalert">
+                                                                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img id="imgalert" ng-click="navigateToAlert()" title="Alert" style="cursor: pointer; height: 67px; width: 67px;" src="img/nav-alert.png" alt="Alert" /></h2>
+                                                                    </td>
+                                                                    <td id="tdbilling">
+                                                                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img id="imgbilling" ng-click="navigateToBilling()" title="Billing" style="cursor: pointer; height: 52px; width: 52px; padding-bottom: 7px;" src="img/nav-billing.png" alt="Alert" /></h2>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </td>
+                                        <td style="width: 15%; vertical-align: top">
+                                            <div class="loginUser">
+                                                <div>
+                                                    <table width="100%">
+                                                        <!-- <tr>
+                                                            <td>
+                                                                <strong>Welecome</strong>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>
+                                                                    <label class="WrapText" title="User" id="LoggedUser">
+                                                                        User
+                                                                    </label>
+                                                                </strong>
+                                                            </td>
+                                                        </tr> -->
+                                                        <tr>
+                                                        	<td align="center">
+                                                        		<br />
+                                                        		<img ng-click="logout()" title="Logout" src="./img/log_off.png" class="logout" alt="Logout" style="height: 36px; width: 44px; cursor: pointer; padding-top: 3px;">
+                                                        	</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="mainpage">
+                    	<div ng-include src="template.url" onload="finishLoading()"></div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="footer">
+        <p style="padding-top: 10px;">
+            <label>Copyright &copy; SJ Security 2015</label>
+        </p>
+    </div>
+    <!-- <div id="pieChartBox1" class="box chartBox">
+	</div>
+	<div id="map" style="height: 253px; width: 902px">
+	</div> -->
+    <script>
+    
+       
+    
+	function loadgooglemaps(value){
+		var locations = [];
+		var latvalue = 0.0000000;
+		var longvalue = 0.0000000;
+		if(value == null){
+			var location1 = [
+		      ['760 N 7th Street1', 37.3533600, -121.8936130, 1],
+		      ['760 N 7th Street2', 37.3530120, -121.8945010, 2],
+		      ['760 N 7th Street3', 37.3524880, -121.8932830, 3],
+		      ['760 N 7th Street4', 37.3538680, -121.8949830, 4],
+		      ['760 N 7th Street5', 37.3544990, -121.8945830, 5]
+		    ];
+		    locations = location1;
+		    longvalue = -121.8942830;
+		    latvalue = 37.3533680;
+		}
+		else{
+			locations = value;
+			longvalue = value[0][2];
+		    latvalue = value[0][1];
+		}
+		 
+		
+	    var map = new google.maps.Map(document.getElementById('map'), {
+	      zoom: 17,
+	      center: new google.maps.LatLng(latvalue, longvalue),
+	      mapTypeId: google.maps.MapTypeId.ROADMAP
+	    });
+	
+	    var infowindow = new google.maps.InfoWindow();
+	
+	    var marker, i;
+	
+	    for (i = 0; i < locations.length; i++) {  
+	      marker = new google.maps.Marker({
+	        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+	        map: map
+	      });
+	
+	      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+	        return function() {
+	          infowindow.setContent(locations[i][0].toString());
+	          infowindow.open(map, marker);
+	        }
+	      })(marker, i));
+	    }
+	}
+		
+</script>
+</body>
+</html>

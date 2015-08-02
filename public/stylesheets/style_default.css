@@ -1,0 +1,6314 @@
+﻿@charset "utf-8";
+
+/**
+ * reset
+ **/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset1, form, label, 
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+ul {
+	list-style:none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+/* remember to define focus styles! */
+a:hover, a:active, a:focus, a:active{
+	outline: none;
+} 
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/**
+ * the display of screen
+ **/
+.clear{
+	clear:both;
+}
+.clearAll{
+	clear:both !important;
+	height:0;
+	width:0;
+	overflow:hidden;
+}
+.hide{
+	display:none;
+}
+
+
+/*******************
+ *  HTML Elements  *
+ *******************/
+html{
+}
+/**
+ * body
+ **/
+body {
+	color: #333333;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 0.75em;
+	line-height: 1.2;
+	background:#ccc url(../images/bg-wrapper.png) left top repeat-x;
+}
+
+/**
+ * -Links
+ **/
+a {
+	color:#0494FF;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+.roomControl{
+	color:#333;
+}
+
+.gray{
+	color:#999 !important;
+}
+
+/* color*/
+.brighter{
+	color:#000 !important;
+	font-weight:bold;
+}
+.green{
+	color:#42bf18 !important;
+}
+.blue{
+	color:#1379f1 !important;
+}
+.orange{
+	color:#ff9900 !important;
+}
+.red{
+	color:#df242b !important;
+}
+.yellow
+{
+    color:#ecc70a !important;
+}
+
+
+/* form elements */
+input[type=text],
+input[type=password]{
+	margin:0px;
+	color:#333;
+	border:1px solid #a8acad;
+	/*background:#fff url(../images/bg-input-text.png) left top repeat-x;*/
+	font-size:12px;
+	line-height:14px;
+	font-family:Arial, Helvetica, sans-serif;
+	padding:7px 10px;
+	height:14px;
+}
+input.text[type=text]{
+	padding:3px 10px;
+	height:22px;
+	font-size:15px;
+	line-height:22px;
+	color:#666;
+}
+input.smallText[type=text]{
+	padding:5px 8px;
+}
+input[type=checkbox],
+input[type=radio]{
+	width:13px;
+	height:13px;
+	margin:0px;
+	padding:0px;
+}
+textarea{
+	margin:0px;
+	padding:6px 10px;
+	border:1px solid #a8acad;
+	background:#fff url(../images/bg-input-text.png) left top repeat-x;
+	font-size:12px;
+	line-height:14px;
+	color:#333;
+	font-family:Arial, Helvetica, sans-serif;
+	-moz-resize: none;
+	resize: none;
+}
+select{
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#333333;
+	margin:0px;
+	padding:0px;
+}
+
+/* button */
+.btnGreen{
+	display:inline-block;
+	background:transparent url(../images/btn-green-1.png) left top no-repeat;
+	padding-left:5px;
+	height:25px;
+	font-size:12px;
+	font-weight:bold;
+	color:#fff !important;
+	text-decoration:none;
+	overflow:hidden;
+	line-height:24px;
+	text-shadow:none;
+}
+	.btnGreen .btnR{
+		display:inline-block;
+		background:transparent url(../images/btn-green-1.png) right -50px no-repeat;
+		padding-right:5px;
+		height:25px;
+		cursor:pointer;
+	}
+		.btnGreen .btnC{
+			display:inline-block;
+			background:transparent url(../images/btn-green-1.png) left -25px repeat-x;
+			height:25px;
+			text-align:center;
+			cursor:pointer;
+		}
+		
+.btnGreen:hover,
+.btnGreen:active,
+.btnGreen:focus
+{
+    background-position:left -75px;
+    color:#000;
+    text-decoration:none;
+}
+
+.btnGreen:hover .btnR,
+.btnGreen:active .btnR,
+.btnGreen:focus .btnR
+{
+    background-position:right -125px;
+    color:#000;
+}
+
+.btnGreen:hover .btnC,
+.btnGreen:active .btnC,
+.btnGreen:focus .btnC
+{background-position:left -100px;
+    text-decoration:none;}
+
+.btnGray{
+	display:inline-block;
+	background:transparent url(../images/btn-gray-1.png) left top no-repeat;
+	padding-left:5px;
+	height:25px;
+	font-size:12px;
+	font-weight:bold;
+	color:#333333;
+	text-decoration:none;
+	overflow:hidden;
+	line-height:24px;
+	cursor:pointer;
+}
+	.btnGray .btnR{
+		display:inline-block;
+		background:transparent url(../images/btn-gray-1.png) right -50px no-repeat;
+		padding-right:5px;
+		height:25px;
+	}
+		.btnGray .btnC{
+			display:inline-block;
+			background:transparent url(../images/btn-gray-1.png) left -25px repeat-x;
+			height:25px;
+			text-align:center;
+		}
+
+.removePointer
+{
+    cursor:text;
+    color: #333333;
+}
+
+/* breadcrumb */
+#breadcrumb{
+	height:29px;
+	background:transparent url(../images/bg-breadcrumb.png) left top no-repeat;
+	padding-left:6px;
+	overflow:hidden;
+}
+	#breadcrumb .breadcrumbBox{
+		height:29px;
+		background:transparent url(../images/bg-breadcrumb.png) right -60px no-repeat;
+		padding-right:6px;
+	}
+		#breadcrumb .breadcrumbInner{
+			height:15px;
+			padding:7px 0px 7px 15px;
+			line-height:15px;
+			background:transparent url(../images/bg-breadcrumb.png) left -30px repeat-x;
+			color:#fff;
+		}
+	#breadcrumb a,
+	.currentName{
+		background:transparent url(../images/icon-breadcrumb.png) left center no-repeat;
+		padding-left:10px;
+		margin-right:6px;
+	}
+	#breadcrumb a.homeLink{
+		padding-left:0px;
+		background:transparent none;
+	}
+	
+
+/* page title under breadcrumb */
+#pageTitle{
+	padding-left:20px;
+	border:1px solid #999999;
+	background:url(../images/bg-title.png) left top repeat-x;
+	height:34px;
+	line-height:34px;
+	font-size:18px;
+	color:#000001;
+	text-shadow:0px 1px 0px #fff;
+	overflow:hidden;
+}
+	#pageTitle h2{
+		float:left;
+	}
+	#pageTitle .btnPageBack{
+		float:right;
+		margin-top:4px;
+		margin-right:20px;
+	}
+		#pageTitle .btnPageBack .btnC{
+			width:100%;
+		}
+
+/* left side or right side title bar */
+.sideTitle{
+	height:38px;
+	background:url(../images/bg-box-title.png) left top no-repeat;
+	padding-left:6px;
+	overflow:hidden;
+}
+
+.topMarginTitle{
+	margin-top:20px;
+}
+	.sideTitle .sideTitleR{
+		height:38px;
+		background:url(../images/bg-box-title.png) right -76px no-repeat;
+		padding-right:6px;
+	}
+		.sideTitle .sideTitleC{
+			height:38px;
+			background:url(../images/bg-box-title.png) left -38px repeat-x;
+			padding-left:13px;
+		}
+			.sideTitle h3{
+				line-height:38px;
+				font-size:14px;
+				float:left;
+				width:70%;
+			}
+			.sideTitle .btnGreen{
+				float:right;
+				margin-top:6px;
+				display:inline;
+			}
+			.sideTitle .btnExecute .btnC{
+				padding:0 20px;
+			}
+			
+.subTitle{
+	height:38px;
+	padding-left:6px;
+	overflow:hidden;
+}
+.subTitle h3{
+				line-height:38px;
+				font-size:14px;
+				float:left;
+				width:100%;
+			}
+
+/* input with control icon */
+.numberControl {
+	/*width:110px;*/
+	width:120px;
+	position:relative;
+	min-height:30px;
+	overflow:hidden;
+}
+
+.numberControl1 {
+	width:92px;
+	position:relative;
+	min-height:30px;
+	overflow:hidden;
+}
+	.numberControl1 input.textNumberControl{
+		padding:3px 31px 3px 29px;
+		text-align:center;
+		width:50%;
+		float:left;
+	}
+	.numberControl1 .ctrlReduce,
+	.numberControl1 .ctrlIncrease{
+		position:absolute;
+		left:0px;
+		top:0px;
+		width:29px;
+		height:29px;
+		line-height:28px;
+		display:block;
+		background:transparent url(../images/bg-number-control.png) left top repeat-x;
+		color:#fff;
+		text-align:center;
+		font-size:20px;
+		text-decoration:none;
+		vertical-align:middle;
+	}
+	.numberControl1  .ctrlIncrease{
+		left:auto;
+		right:1px;
+	}
+	.numberControl1 .ctrlReduce:hover,
+	.numberControl1 .ctrlIncrease:hover{
+		text-decoration:none;
+	}
+
+	.numberControl input.textNumberControl{
+		padding:3px 31px 3px 29px;
+		text-align:center;
+		width:50%;
+		float:left;
+	}
+	.numberControl .ctrlReduce,
+	.numberControl .ctrlIncrease{
+		position:absolute;
+		left:0px;
+		top:0px;
+		width:29px;
+		height:29px;
+		line-height:28px;
+		display:block;
+		background:transparent url(../images/bg-number-control.png) left top repeat-x;
+		color:#fff;
+		text-align:center;
+		font-size:20px;
+		text-decoration:none;
+	}
+	.numberControl  .ctrlIncrease{
+		left:auto;
+		right:1px;
+	}
+	.numberControl .ctrlReduce:hover,
+	.numberControl .ctrlIncrease:hover{
+		text-decoration:none;
+	}
+
+/* box with corner */
+.box{
+	position:relative;
+	min-height:1px;
+	min-width:1px;	
+	
+}
+	.box .boxInner{
+		border:1px solid #ccc;
+		min-height:10px;
+		min-width:100%;						
+	}
+		.box .boxInner .boxTitle{
+			height:34px;
+			line-height:34px;
+			border-bottom:1px solid #ccc;
+			padding-left:15px;
+			overflow:hidden;
+			background-color:#c5d7fd;			
+		}
+		.box .boxInner .boxTitle h3{
+			float:left;
+		}
+		.box .boxInner .boxTitle .rightLink{
+			float:right;
+			margin-right:17px;
+			display:inline;
+		}
+		.box .tooltips{
+			float:left;
+			margin-left:9px;
+			margin-top:8px;
+			display:inline;
+			width:17px;
+			height:17px;
+			background:url(../images/icon-tips.png) left top no-repeat;
+		}
+		.box .corner{
+			/*position:absolute;
+			width:5px;
+			height:5px;
+			background-repeat:no-repeat;
+			background-image:url(../images/corner.png);*/
+		}
+		.box .tl{
+			left:0px;
+			top:0px;
+			background-position:left top;
+		}
+		.box .tr{
+			right:0px;
+			top:0px;
+			background-position:-5px top;
+		}
+		.box .bl{
+			left:0px;
+			bottom:0px;
+			background-position:left -5px;
+		}
+		.box .br{
+			right:0px;
+			bottom:0px;
+			background-position:-5px -5px;
+		}
+		.box .boxContent{
+			min-height:25px;
+			padding-left:10px;
+			padding-right:10px;
+		}
+		.contentBox .boxContent{
+			padding-left:0px;
+			padding-right:0px;
+		}
+.yellowBox{
+	background-color:#fffed3;
+}
+	.yellowBox .boxInner{
+		border-color:#e5e395;
+	}
+	.yellowBox .corner{
+		background-image:url(../images/corner-yellow.png);
+	}
+
+.multipleSelect{
+	position:relative;
+	min-height:1px;
+	min-width:1px;
+	overflow:visible;
+	border:1px solid #ccc;
+}
+	.multipleSelect .mulInner{
+		height:100%;
+		background-color:#fff;
+		overflow:auto;
+	}
+		.multipleSelect .mulInner dl dd{
+			padding:7px 0 7px 8px !important;
+		}
+			.multipleSelect .mulInner dl dd input[type=checkbox]{
+				float:left !important;
+				margin-top:1px !important;
+			}
+			.multipleSelect .mulInner dl dd label{
+				float:left !important;
+				line-height:16px !important;
+				color:#666666 !important;
+			}
+		.multipleSelect .mulCorner{
+			position:absolute;
+			width:5px;
+			height:5px;
+			background-repeat:no-repeat;
+			background-image:url(../images/corner-gray.png);
+		}
+		.multipleSelect .tl{
+			left:-1px;
+			top:-1px;
+			background-position:left top;
+		}
+		.multipleSelect .tr{
+			right:-1px;
+			top:-1px;
+			background-position:-5px top;
+		}
+		.multipleSelect .bl{
+			left:-1px;
+			bottom:-1px;
+			background-position:left -5px;
+		}
+		.multipleSelect .br{
+			right:-1px;
+			bottom:-1px;
+			background-position:-5px -5px;
+		}
+
+
+.cellBox{
+	position:relative;
+	min-height:1px;
+	min-width:1px;
+}
+	.cellBox .cellBoxInner{
+		min-width:10px;
+		background-color:#efefef;
+		border:1px solid #ccc;
+	}
+		.cellBox .cellCorner{
+			position:absolute;
+			width:5px;
+			height:5px;
+			background-repeat:no-repeat;
+			background-image:url(../images/corner.png);
+		}
+		.cellBox .tl{
+			left:0px;
+			top:0px;
+			background-position:left top;
+		}
+		.cellBox .tr{
+			right:0px;
+			top:0px;
+			background-position:-5px top;
+		}
+		.cellBox .bl{
+			left:0px;
+			bottom:0px;
+			background-position:left -5px;
+		}
+		.cellBox .br{
+			right:0px;
+			bottom:0px;
+			background-position:-5px -5px;
+		}
+
+
+.filterPanel .boxInner .boxTitle{
+	padding-left:0px;	
+}
+	.filterPanel .boxInner .boxTitle .folderCtrl{
+		float:left;
+		margin:8px 9px 0px;
+		width:18px;
+		height:18px;
+		background:url(../images/btn-folder.png) left 0px no-repeat;
+		display:inline;
+	}
+		.filterPanel .boxInner .boxContent{
+			padding-left:0px;
+			padding-right:0px;
+		}
+	.filterPanel .boxInner .boxTitle input[type=text]{
+		float:right;
+		margin-top:4px;
+		margin-right:4px;
+		display:inline;
+		width:192px;
+	}
+.filterPanel .folderExpand .boxTitle{
+	border-bottom:0px;
+}
+	.filterPanel .folderExpand .boxTitle .folderCtrl{
+		background-position:left -20px;
+	}
+		.filterPanel .folderExpand .boxContent{
+			display:none;
+		}
+			.filterPanel .boxInner .boxCommand{
+				padding-top:5px;
+				padding-bottom:6px;
+			}
+				.filterPanel .boxInner .boxCommand .notice{
+					line-height:25px;
+					font-size:11px;
+					float:left;
+					color:#666666;
+					padding-left:16px;
+				}
+				.filterPanel .boxInner .boxCommand .btnGreen{
+					float:right;
+					margin-right:4px;
+				}
+					.filterPanel .boxInner .boxCommand .btnGreen .btnC{
+						width:100%;
+					}
+		.filterPanel .boxInner .boxContent .boxFilterBody{
+			border-bottom:1px solid #ccc;
+			/* background-color:#efefef; */
+		}
+			.filterPanel .boxInner .boxContent .boxFilterBody .cell{
+				padding-top:1px;
+				padding-bottom:1px;
+			}
+				.filterPanel .boxInner .boxContent .boxFilterBody .cell h3{
+					line-height:28px;
+				}
+				.filterPanel .boxInner .boxContent .boxFilterBody .cell ul li{
+					float:left;
+				}
+
+.tooltipsBox{
+	position:absolute;
+	z-index:9999;
+	display:none;
+}
+	.tooltipsBox .tooltipsInner{
+		width:300px;
+		min-height:10px;
+		position:relative;
+	}
+		.tooltipsBox .tooltipsInner .arrow{
+			display:block;
+			width:7px;
+			height:13px;
+			background:url(../images/bg-tooltips-arrow.png) left top no-repeat;
+			position:absolute;
+			left:-6px;
+			top:8px;
+		}
+		.tooltipsBox .tooltipsInner .tooltipsTop{
+			background:url(../images/bg-tooltips.png) left top no-repeat;
+			padding-left:5px;
+			height:5px;
+			overflow:hidden;
+		}
+			.tooltipsBox .tooltipsInner .tooltipsTopR{
+				background:url(../images/bg-tooltips.png) right -10px no-repeat;
+				padding-right:5px;
+				height:5px
+			}
+				.tooltipsBox .tooltipsInner .tooltipsTopC{
+					background:url(../images/bg-tooltips.png) left -5px repeat-x;
+					padding-right:5px;
+					height:5px
+				}
+		.tooltipsBox .tooltipsInner .tooltipsBottom{
+			background:url(../images/bg-tooltips.png) left -15px no-repeat;
+			padding-left:5px;
+			height:5px;
+			overflow:hidden;
+		}
+			.tooltipsBox .tooltipsInner .tooltipsBottomR{
+				background:url(../images/bg-tooltips.png) right -25px no-repeat;
+				padding-right:5px;
+				height:5px
+			}
+				.tooltipsBox .tooltipsInner .tooltipsBottomC{
+					background:url(../images/bg-tooltips.png) left -20px repeat-x;
+					padding-right:5px;
+					height:5px
+				}
+		.tooltipsBox .tooltipsInner .tooltipsMiddle{
+			border-left:1px solid #ccc;
+			border-right:1px solid #ccc;
+			background-color:#fff;
+			padding:5px 10px 7px;
+			line-height:16px;
+		}
+
+/* page control */
+.pageControl{
+	height:32px;
+	overflow:hidden;
+	width:100%;
+	/*border-bottom:1px solid #ccc;*/
+}
+.topGayBar{
+	background-color:#f0f0f0;
+}
+	.pageControl .pageDisplay{
+		float:left;
+	    width:38%;
+	}
+		.pageControl .pageDisplay .pageDispalyLabel{
+			float:left;
+			line-height:32px;
+			padding-left:13px;
+			display:inline;
+		}
+		.pageControl .pageDisplay .pageDispalySelectLabel{
+			float:left;
+			line-height:32px;
+			margin-left:23px;
+			display:inline;
+		}
+		.pageControl .pageDisplay .selectBox{
+			float:left;
+			height:28px;
+			margin-left:8px;
+			display:inline;
+			padding-top:6px;
+		}
+			.pageControl .pageDisplay .selectBox select{
+				width:67px;
+			}
+	.pageControl .pagination{
+		float:right;
+		padding-top:4px;
+		padding-right:6px;
+		display:inline;
+		width:30%;
+
+	}
+		.pageControl .pagination ul li{
+			float:left;
+			padding-right:2px;
+		}
+			.pageControl .pagination ul li a,
+			.pageControl .pagination ul li .pageCurrent{
+				float:left;
+				height:25px;
+				width:25px;
+				line-height:24px;
+				font-size:11px;
+				background:transparent url(../images/btn-page-pagination.png) left top no-repeat;
+				text-align:center;
+				display:inline;
+				padding-right:2px;
+			}
+			.pageControl .pagination ul li .pageCurrent{
+				background-position:left -50px;
+				color:#fffffe;
+				font-weight:bold;
+			}
+			
+			.pageControl .pagination ul li a.paging
+			{
+			   width:25px;
+			   text-align:left;			   
+			   color:#333333;
+			   margin-right:2px; 
+			   margin-left:2px;			   
+			}
+			
+			.pageControl .pagination ul li a.pagePrev
+			{
+			   background:url(../images/pageControl/prev.png) left top no-repeat;
+			}
+			
+			.pageControl .pagination ul li a.secondGridPagePrev
+			{
+			   background:url(../images/pageControl/prev.png) left top no-repeat;
+			}
+			
+			.pageControl .pagination ul li a.Prevdisable
+			{	
+			    background:url(../images/pageControl/prev-dis.png) left top no-repeat;
+			}
+			.pageControl .pagination ul li a.firstdisable
+			{	
+			    background:url(../images/pageControl/first-dis.png) left top no-repeat;
+			}
+			.pageControl .pagination ul li a.first
+			{	
+			    background:url(../images/pageControl/first.png) left top no-repeat;
+			}		
+			.pageControl .pagination ul li a.secondGridFirst
+			{	
+			    background:url(../images/pageControl/first.png) left top no-repeat;
+			}		
+			.pageControl .pagination ul li a.pageNext
+			{
+			    background:url(../images/pageControl/next.png) left top no-repeat;   
+			}
+			.pageControl .pagination ul li a.secondGridPageNext
+			{
+			    background:url(../images/pageControl/next.png) left top no-repeat;   
+			}
+			.pageControl .pagination ul li a.Nextdisable{			
+				background:url(../images/pageControl/next-dis.png) left top no-repeat;
+			}		
+			.pageControl .pagination ul li a.lastdisable{			
+				background:url(../images/pageControl/last-dis.png) left top no-repeat;
+			}
+			.pageControl .pagination ul li a.last{			
+				background:url(../images/pageControl/last.png) left top no-repeat;
+			}
+			.pageControl .pagination ul li a.secondGridLast{			
+				background:url(../images/pageControl/last.png) left top no-repeat;
+			}
+			
+            
+            .pageControl .pagination ul li a.pagePrev:hover,
+            .pageControl .pagination ul li a.pageNext:hover,
+            .pageControl .pagination ul li a.first:hover,
+            .pageControl .pagination ul li a.last:hover
+            {
+                background-position:left -25px;
+                text-decoration:none;
+            }
+            .pageControl .pagination ul li a.Prevdisable:hover,
+            .pageControl .pagination ul li a.firstdisable:hover,
+            .pageControl .pagination ul li a.Nextdisable:hover,
+            .pageControl .pagination ul li a.lastdisable:hover
+            {                
+                text-decoration:none;
+                cursor: text;
+            }
+			
+			
+	.pageControl .btnConfirmSelectedRoos{
+		float:right;
+		display:inline;
+		margin-right:4px;
+		margin-top:4px;
+	}
+
+.boxTopCommand{
+	border-bottom:1px solid #ccc;
+	height:35px;
+	overflow:hidden;
+}
+	.boxTopCommand .leftPart{
+		float:left;
+		padding-left:11px;
+		display:inline;
+	}
+		.boxTopCommand .leftPart input[type=checkbox]{
+			float:left;
+			margin-top:11px;
+		}
+		.boxTopCommand .leftPart label{
+			float:left;
+			line-height:35px;
+			margin-left:6px;
+		}
+	.boxTopCommand .rightPart{
+		float:right;
+		padding-top:5px;
+		padding-right:8px;
+		display:inline;
+	}
+		.boxTopCommand .rightPart .btnPrintArea .btnC{
+			min-width:100%;
+		}
+
+#progress{
+	background:url(../images/bg-progress.png) left top no-repeat;
+	width:223px;
+	height:11px;
+	padding:3px;
+	text-align:left;
+}
+	#progress .progressBar{
+		height:11px;
+		float:left;
+		width:0%;
+		overflow:hidden;
+		background:url(../images/bg-progress-bar.png) left top repeat-x;
+	}
+		#progress .progressBar .progressBarCornerLeft{
+			display:block;
+			background:url(../images/bg-progress-bar-corner.png) left top no-repeat;
+			height:11px;
+			padding-left:4px;
+		}
+		#progress .progressBar .progressBarCornerRight{
+			display:block;
+			background:url(../images/bg-progress-bar-corner.png) right -11px no-repeat;
+			height:11px;
+			padding-right:4px;
+		}
+
+.popUp{
+	text-align:center;
+	height:140px;
+}
+	.popUp .popUpInner{
+		padding-top:20px;
+		padding-bottom:20px;
+		min-height:10px;
+	}
+	.popUp p{
+		line-height:16px;
+		padding-bottom:28px;
+		padding-top:8px;
+	}
+
+#caseCheck{
+	display:none;
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:180px;
+	min-height:10px;
+	padding:6px;
+	background-color:#fff;
+	border:1px solid #ccc;
+	z-index:9999;
+	line-height:18px;
+}
+	
+/* modal */
+#modalBackground{
+	width:100%;
+	height:100%;
+	position:fixed;
+	left:0;
+	top:0;
+	z-index:10000;
+	background:black;
+	display:none;
+	}
+	
+#modal{
+	width:100%;
+	top:0;
+	left:0;
+	position:fixed;
+	z-index:10001; 
+	}
+	.outLay{
+		margin:0 auto;
+		width:450px;
+		display:none;
+		}
+		.outLay .closeModal{
+			display:block;
+			width:14px;
+			height:13px;
+			background:url(../images/modal-close.png) left top no-repeat;
+			position:absolute;
+			right:22px;
+			top:10px;
+		}
+		.outLay .modalHeader{
+			height:32px;
+			background:url(../images/modal-header.png) left top no-repeat;
+			padding-left:10px;
+			overflow:hidden;
+			text-transform:uppercase;
+			font-size:12px;
+			font-weight:bold;
+			color:#333333;
+			position:relative;
+			}
+			.outLay .modalHeader .modalHeaderR{
+				height:32px;
+				background:url(../images/modal-header.png) right -64px no-repeat;
+				padding-right:10px;
+				}
+				.outLay .modalHeader .modalHeaderC{
+					height:32px;
+					line-height:32px;
+					padding-left:5px;
+					background:url(../images/modal-header.png) left -32px repeat-x;
+					}
+		.outLay .modalFooter{
+			height:49px;
+			background:url(../images/modal-footer.png) left top no-repeat;
+			padding-left:10px;
+			overflow:hidden;
+			}
+			.outLay .modalFooter .modalFooterR{
+				height:49px;
+				background:url(../images/modal-footer.png) right -101px no-repeat;
+				padding-right:10px;
+				}
+				.outLay .modalFooter .modalFooterC{
+					height:41px;
+					padding-top:8px;
+					background:url(../images/modal-footer.png) left -50px repeat-x;
+					}
+		.outLay .modalBody{
+			padding-left:5px;
+			background:url(../images/modal-body-left.png) left top repeat-y;
+			}
+			.outLay .modalBody .modalBodyR{
+				padding-right:5px;
+				background:url(../images/modal-body-right.png) right top repeat-y;
+				}
+				.outLay .modalBody .modalBodyR .modalBodyInner{
+					background:#bcbcbc url(../images/modal-bg-body.png) left top repeat-x;
+					text-align:center;
+					min-height:10px;
+					padding-left:12px;
+					}
+					.outLay .modalBody .modalBodyInner .modalBodyContent{
+						background:url(../images/modal-body-content.png) left top no-repeat;
+						min-height:1px;
+						padding-top:5px;
+						width:416px;
+						overflow:hidden;
+					}
+						.outLay .modalBody .modalBodyInner .modalBodyContentBottom{
+							background:url(../images/modal-body-content.png) -416px bottom no-repeat;
+							min-height:1px;
+							padding-bottom:5px;
+						}
+							.outLay .modalBody .modalBodyInner .modalBodyContent .modalBodyContentMiddle{
+								background-color:#fff;
+								min-height:120px;
+								padding-top:3px;
+							}
+
+			.outLay  .modalFooter .btnGreen{
+				float:right;
+				margin-left:6px;
+				margin-right:7px;
+				display:inline;
+			}
+			.outLay  .modalFooter .btnGray{
+				float:right;
+			}
+				.outLay  .modalFooter .btnGreen .btnC,
+				.outLay  .modalFooter .btnGray .btnC{
+					min-width:84px;
+				}
+				
+	#addNewAuthorizationModal .modalLeftPart{
+		float:left;
+		width:80px;
+		display:inline;
+		margin-left:7px;
+	}
+		#addNewAuthorizationModal .modalLeftPart .thumbnailWrapper{
+			height:88px;
+		}
+		#addNewAuthorizationModal .modalLeftPart .btnGray .btnC{
+			min-width:70px;
+		}
+	#addNewAuthorizationModal .modalRightPart{
+		float:left;
+		width:310px;
+		margin-left:8px;
+		display:inline;
+		text-align:left;
+	}
+		#addNewAuthorizationModal .modalRightPart textarea{
+			width:286px;
+			height:40px;
+		}
+		#addNewAuthorizationModal .modalRightPart dl dt{
+			padding-top:6px;
+			line-height:24px;
+			font-weight:bold;
+		}
+		#addNewAuthorizationModal .modalRightPart dl dd input{
+			width:187px;
+		}
+	
+	#checkinFailedModal p{
+		padding:10px;
+		padding-bottom:0px;
+	}
+
+.gridedit
+{    
+	display:inline-block;
+	width:23px;
+	height:22px;
+	overflow:hidden;
+	background:url(../images/icon-authorization-edit.png) left top no-repeat;
+}
+/* icon button */
+.editAuthor{
+	display:inline-block;
+	width:23px;
+	height:22px;
+	overflow:hidden;
+	background:url(../images/icon-authorization-edit.png) left top no-repeat;
+}
+	.editAuthor:hover{
+		background-position:left -22px;
+	}
+.btnLinkButton{
+	display:inline-block;
+	width:23px;
+	height:22px;
+	overflow:hidden;
+	background:url(../images/icon-authorization-read.png) left top no-repeat;
+}
+	.btnLinkButton:hover
+	{
+		cursor:pointer;
+		background-position:left -22px;
+	}
+.deleteAuthor{
+	display:inline-block;
+	width:23px;
+	height:22px;
+	overflow:hidden;
+	background:url(../images/icon-authorization-delete.png) left top no-repeat;
+}
+	.deleteAuthor:hover{
+		background-position:left -22px;
+	}
+	
+.folderCtrl{
+	width:18px;
+	height:18px;
+	background:url(../images/btn-folder.png) left -20px no-repeat;
+}
+.folderCtrl.expand{
+	background-position:left top;
+}
+.btnSearch{
+	background:url(../images/icon-search.png) left top no-repeat;
+	display:inline-block;
+	width:15px;
+	height:15px;
+}
+.tableList .status{
+	display:inline-block;
+	width:10px;
+	height:11px;		
+}
+.tableList .status.correct{
+	background:url(../images/icon-status-correct.png) center top no-repeat;
+}
+.tableList .status.incorrect{
+	background:url(../images/icon-status-incorrect.png) center top no-repeat;
+}
+
+
+/* header popup Reception */
+#popupReception{
+	background:url(../images/bg-header-popup.png) left top no-repeat;
+	width:426px;
+	overflow:hidden;
+	padding-top:23px;
+	position:absolute;
+	left:182px;
+	top:99px;
+	display:none;
+}
+	#popupReception .popupReceptionBox{
+		background:url(../images/bg-header-popup.png) -852px bottom no-repeat;
+		width:426px;
+		padding-bottom:19px;
+	}
+		#popupReception .popupReceptionCenter{
+			background:url(../images/bg-header-popup.png) -426px top repeat-y;
+			width:416px;
+			padding-left:3px;
+			padding-right:7px;
+		}
+			#popupReception .popupReceptionInner{
+				background:url(../images/bg-header-popup-inner.png) left top repeat-x;
+				min-height:10px;
+				padding-left:7px;
+				padding-right:7px;
+				width:402px;
+			}
+				#popupReception .popupReceptionContent{
+					background:#fff url(../images/bg-header-popup-center.png) center top repeat-y;
+					padding:0px 1px;
+					min-height:240px;
+					position:relative;
+					width:400px;
+				}
+				
+				#popupReception .popupReceptionContent dl{
+					top:-4px;
+					bottom:-4px;
+					width:100%;
+					position:absolute;
+				}
+					#popupReception .popupReceptionContent dl dd{
+						min-height:82px;
+						border-bottom:1px solid #ccc;
+					}
+					#popupReception .popupReceptionContent dl dd.lastRow{
+						border-bottom:0px;
+					}
+						#popupReception .popupReceptionContent dl dd .leftPart{
+							float:left;
+							width:200px;
+							display:inline;
+						}
+						#popupReception .popupReceptionContent dl dd .rightPart{
+							float:left;
+							width:199px;
+							margin-left:1px;
+							display:inline;
+						}
+						#popupReception .popupReceptionContent dl dd .controlCell{
+							min-height:1px;
+							padding-left:10px;
+						}
+							#popupReception .popupReceptionContent dl dd .controlCell .symbol{
+								float:left;
+								width:55px;
+								height:56px;
+								margin-top:16px;
+								display:inline;
+							}							
+								#popupReception .popupReceptionContent dl dd .controlCell .symbol a{
+									display:block;
+									width:55px;
+									height:56px;
+									position:relative;
+								}
+								#popupReception .popupReceptionContent dl dd .controlCell .symbol a.symbolGuestCheckIn{
+									background:url(../images/icon-control-guest-checkin.png) center center no-repeat;
+								}
+								#popupReception .popupReceptionContent dl dd .controlCell .symbol a.symbolGuestCopy{
+									background:url(../images/icon-control-guest-copy.png) center center no-repeat;
+								}
+								#popupReception .popupReceptionContent dl dd .controlCell .symbol a.symbolCheckout{
+									background:url(../images/icon-control-checkout.png) center center no-repeat;
+								}
+								#popupReception .popupReceptionContent dl dd .controlCell .symbol a.symbolSingleOpeningCard{
+									background:url(../images/icon-control-single-opening-card.png) center center no-repeat;
+								}
+								#popupReception .popupReceptionContent dl dd .controlCell .symbol a.symboleadEraseCard{
+									background:url(../images/icon-control-read-erase-card.png) center center no-repeat;
+								}
+								#popupReception .popupReceptionContent dl dd .controlCell .symbol a.symbolHotelInformation{
+									background:url(../images/icon-control-hotel-information.png) center center no-repeat;
+								}								
+									#popupReception .popupReceptionContent dl dd .controlCell .symbol a .keyboardControl{
+										position:absolute;
+										right:0px;
+										top:1px;
+										width:18px;
+										height:18px;
+										background:transparent url(../images/icon-control-bg.png) left top no-repeat;
+										text-align:center;
+										line-height:18px;
+										color:#fff;
+									}
+							#popupReception .popupReceptionContent dl dd .controlCell .symbolContent{
+								float:left;
+								width:110px;
+								display:inline;
+								margin-left:14px;
+								margin-top:10px;
+							}
+								#popupReception .popupReceptionContent dl dd .controlCell .symbolContent a{
+									font-weight:bold;									
+								}
+								#popupReception .popupReceptionContent dl dd .controlCell .symbolContent p{
+									padding-top:2px;
+									font-size:10px;
+									line-height:12px;
+								}
+						
+						
+
+/* login and forgot password page style */
+.loginWrapper{
+	width:460px;
+	margin:106px auto 0px;
+	min-height:10px;
+}
+	#loginContainer{
+		padding-left:29px;
+		padding-right:29px;
+		min-height:10px;
+	}
+		
+		/* #loginHeader */
+		#loginHeader{
+			height:98px;
+			background:url(../images/bg-header-left.png) left top no-repeat;
+			padding-left:5px;
+			padding-right:3.5px;
+		}
+			#loginHeader .boxRight{
+				background:url(../images/bg-header-right.png) right top no-repeat;			
+				height:98px;
+			}
+				#loginHeader .boxCenter{
+					height:98px;
+					background:url(../images/bg-header-center.png) left top repeat-x;
+				}
+					#loginHeader h1{
+						padding-top:22px;
+						text-align:center;
+					}
+		
+		/* #loginContainerBody */
+		#loginContainerBody{
+			background:url(../images/bg-body-left.png) left top repeat-y;
+			padding-left:4px;
+			min-height:10px;
+		}
+			#loginContainerBody .loginContainerBodyRight{
+				background:url(../images/bg-body-right.png) right top repeat-y;
+				padding-right:4px;
+				min-height:10px;
+			}
+				#loginContainerBody .boxInner{
+					min-height:10px;
+					background-color:#fff;
+					position:relative;
+				}
+				#loginContainerBody .notice{
+					margin-bottom:12px;
+					display:none;
+				}
+					#loginContainerBody .notice .boxInner{
+						background-color:#fffed3;
+						padding:10px;
+					}
+						#loginContainerBody .notice h3{
+							line-height:20px;
+							color:#6C0;
+						}
+			
+		/* #loginFooter */
+		#loginFooter{
+			width:422px;
+			background:url(../images/bg-login-footer.png) left top no-repeat;
+			padding-left:38px;
+			height:27px;
+			overflow:hidden;
+		}
+			#loginFooter .boxRight{
+				background:url(../images/bg-login-footer.png) right -54px no-repeat;
+				height:27px;
+				padding-right:38px;
+				overflow:hidden;
+			}
+				#loginFooter .boxCenter{
+					background:url(../images/bg-login-footer.png) left -27px repeat-x;
+					height:27px;
+					overflow:hidden;
+				}
+		
+		#copyRight{
+			font-size:10px;
+			line-height:12px;
+			text-align:center;
+			padding-top:52px;
+			padding-bottom:50px;
+			font-weight:bold;
+		}
+	
+	/* login page */
+	#loginContainer .form{
+		height:260px;
+		padding:30px 30px 0px;
+	}
+		#loginContainer .form dd{
+			min-height:10px;
+			padding-bottom:12px;
+		}
+
+			#loginContainer .loginForm dd input[type=text],
+			#loginContainer .loginForm dd input[type=password]{
+				width:312px;
+			}
+			#loginContainer .loginForm dd .leftPart{
+				float:left;
+			}
+				#loginContainer .loginForm dd .leftPart input,
+				#loginContainer .loginForm dd .leftPart label{
+					float:left;
+					margin-right:7px;
+				}
+			#loginContainer .loginForm dd .rightPart{
+				float:right;
+			}
+			#loginContainer .form .command{
+				text-align:center;
+			}
+				#loginContainer .loginForm .btnLogin .btnC{
+					padding:0px 24px;
+				}
+	
+	/* forgot Password page */
+	#loginContainer .forgotPasswordForm{
+		padding-top:20px;
+		height:270px;
+	}
+		#loginContainer .forgotPasswordForm dd{
+			padding-bottom:16px;
+		}
+			#loginContainer .forgotPasswordForm p{
+				line-height:15px;
+				padding-bottom:8px;
+			}
+			#loginContainer .forgotPasswordForm dd input[type=text]{
+				width:312px;
+			}
+				#loginContainer .forgotPasswordForm .btnLogin .btnC{
+					padding:0px 1px;
+				}
+				
+	#loginContainer .btnBackToLogin{
+		position:absolute;
+		bottom:-10px;
+		right:12px;
+	}
+		#loginContainer .btnBackToLogin .btnC{
+			padding:0px 4px;
+		}
+	
+	/* registration page */
+	#loginContainer .registrationForm{
+		padding-top:20px;
+		height:270px;
+	}
+		#loginContainer .registrationForm dd.odd{
+			padding-bottom:5px;
+		}
+		#loginContainer .registrationForm dd.even{
+			padding-bottom:16px;
+		}
+		#loginContainer .registrationForm dd.last{
+			padding-bottom:13px;
+		}
+			#loginContainer .registrationForm p{
+				line-height:15px;
+				padding-bottom:8px;
+			}
+			#loginContainer .registrationForm dd input[type=text],
+			#loginContainer .registrationForm dd input[type=password]{
+				width:60%
+				float:left;
+			}
+			#loginContainer .registrationForm dd label{
+				float:left;
+				width:138px;
+			}
+				#loginContainer .registrationForm .btnLogin .btnC{
+					padding:0px 1px;
+				}
+				
+			#loginContainer .registrationForm .command{
+				text-align:left;
+				padding-left:30px;
+			}
+				#loginContainer .registrationForm .command .btnC{
+					width:85px;
+				}
+				#loginContainer .registrationForm .command .btnRegister{
+					float:left;
+				}
+				#loginContainer .registrationForm .command .btnCancel{
+					float:right;
+					width:90px;
+				}
+
+
+/**
+ * .wrapper
+ **/
+ 
+ .layoutwrapper {
+	width:82%;	
+	height:auto;
+	margin:0px auto;
+	min-height:10px;	
+	min-width: 950px;
+}
+.wrapper {
+	width:auto;	
+	height:auto;	
+	min-height:10px;		
+}
+
+
+/**
+ * #header
+ **/
+#header{
+	height:98px;
+	background:url(../images/bg-header-left.png) left top no-repeat;
+	padding-left:9px;
+	position:relative;
+	z-index:99;	
+}
+	#header .boxRight{
+		background:url(../images/bg-header-right.png) right top no-repeat;
+		padding-right:9px;
+		height:98px;
+	}
+		#header .boxCenter{
+			height:98px;
+			background:url(../images/bg-header-center.png) left top repeat-x;
+		}
+	
+	#header h1{
+		float:left;
+		margin-left:20px;
+		margin-top:15px;
+		display:inline;
+	}
+	#header h2{
+		float:left;
+		margin-left:10px;
+		margin-top:5px;
+		display:inline;
+	}
+	#header ul.nav{
+		float:left;
+		display:inline;
+		margin-top:2px;
+		margin-left:20px;	
+		width:100%;			
+	}
+		#header ul.nav li.current{
+			background:url(../images/bg-nav.png) repeat;
+		}
+		#header ul.nav li{
+			float:left;
+			display:inline;
+			padding:9px 23px 0px 10px;
+			height:100%;			
+			width:8.5%;						
+		}
+			#header ul.nav li a{
+				color:#fffffe;
+				display:block;
+				text-align:center;
+				width:100%;
+				padding-top:50px;
+				line-height:15px;
+				font-weight:bold;				
+			}
+			#header ul.nav li a{
+				text-decoration:none;
+				width:auto;								
+			}
+			#header ul.nav li a.navPrev{
+				background:url(../images/btn-prev.png) center center no-repeat;	
+				width:auto;			
+			}
+			#header ul.nav li a.navHome
+			{			
+				background:url(../images/nav-home.png) center center no-repeat;
+				width:auto;	
+			}
+			#header ul.nav li a.navReceptionmenu{
+				background:url(../images/nav-reception-menu.png) center center no-repeat;
+				width:auto;	
+			}
+			#header ul.nav li a.navGroups{
+				background:url(../images/nav-groups.png) center center no-repeat;
+				width:auto;
+			}
+			#header ul.nav li a.navPeripheralOpening{
+				background:url(../images/nav-peripheral-opening.png) center center no-repeat;
+				width:auto;
+			}
+			#header ul.nav li a.navMasterList{
+				background:url(../images/nav-master-list.png) center center no-repeat;
+				width:auto;
+			}
+			#header ul.nav li a.navCards{
+				background:url(../images/nav-cards.png) center center no-repeat;
+				width:auto;
+			}
+			#header ul.nav li a.navMaintenance{
+				background:url(../images/nav-maintenance.png) center center no-repeat;
+				width:115%;
+			}
+			#header ul.nav li a.navMasters{
+				background:url(../images/nav-master.png) center center no-repeat;
+				width:115%;
+			}
+			#header ul.nav li a.navReports{
+				background:url(../images/nav-reports.png) center center no-repeat;
+				width:135%;
+			}
+			#header ul.nav li a.navTechSupport{
+				background:url(../images/nav-techsupport.png) center center no-repeat;
+				width:auto;
+				white-space:nowrap;
+			}
+			#header ul.nav li a.navConfig{
+				background:url(../images/nav-config.png) center center no-repeat;
+				width:auto;
+			}
+			#header ul.nav li a.navHelp{
+				background:url(../images/nav-help.png) center center no-repeat;				
+				width:auto;				
+			}
+			#header ul.nav li a.navSecurity{
+				background:url(../images/nav-security.png) center center no-repeat;
+				width:auto;
+			}
+			#header ul.nav li a.navNext{
+				background:url(../images/btn-next.png) center center no-repeat;
+				width:auto;
+			}
+			
+			/*Diabled Imaged*/
+			
+			#header ul.nav li a.navHomeDisabled
+			{			
+				background:url(../images/nav-homeDisabled.png) center center no-repeat;
+				width:auto;	
+				cursor:text;
+			}
+			#header ul.nav li a.navReceptionmenuDisabled{
+				background:url(../images/nav-reception-menuDisabled.png) center center no-repeat;
+				width:auto;	
+				cursor:text;
+			}
+			#header ul.nav li a.navGroupsDisabled{
+				background:url(../images/nav-groupsDisabled.png) center center no-repeat;
+				width:auto;
+				cursor:text;
+			}
+			#header ul.nav li a.navPeripheralOpeningDisabled{
+				background:url(../images/nav-peripheral-openingDisabled.png) center center no-repeat;
+				width:auto;
+				cursor:text;
+			}
+			#header ul.nav li a.navMasterListDisabled{
+				background:url(../images/nav-masterDisabled.png) center center no-repeat;
+				width:auto;
+				cursor:text;
+			}
+			#header ul.nav li a.navCardsDisabled{
+				background:url(../images/nav-cardsDisabled.png) center center no-repeat;
+				width:auto;
+				cursor:text;
+			}
+			#header ul.nav li a.navMaintenanceDisabled{
+				background:url(../images/nav-maintenanceDisabled.png) center center no-repeat;
+				width:115%;
+				cursor:text;
+			}
+			#header ul.nav li a.navMastersDisabled{
+				background:url(../images/nav-masterDisabled.png) center center no-repeat;
+				width:115%;
+				cursor:text;
+			}
+			#header ul.nav li a.navReportsDisabled{
+				background:url(../images/nav-reportsDisabled.png) center center no-repeat;
+				width:135%;
+				cursor:text;
+			}
+			#header ul.nav li a.navTechSupportDisabled{
+				background:url(../images/nav-techsupportDisabled.png) center center no-repeat;
+				width:auto;
+				white-space:nowrap;
+				cursor:text;
+			}
+			#header ul.nav li a.navConfig{
+				background:url(../images/nav-config.png) center center no-repeat;
+				width:auto;
+				cursor:text;
+			}
+			#header ul.nav li a.navHelpDisabled{
+				background:url(../images/nav-helpDisabled.png) center center no-repeat;				
+				width:auto;						
+				cursor:text;		
+			}
+			#header ul.nav li a.navSecurityDisabled{
+				background:url(../images/nav-securityDisabled.png) center center no-repeat;
+				width:auto;
+				cursor:text;
+			}
+			
+	#header .loginUser{
+		float:right;
+		color:#f2f2f2;
+		line-height:15px;
+		margin-top:2px;
+		width:110px;
+		padding-left:12px;
+		padding-top:12px;
+		height:84px;
+		background:url(../images/bg-login-user-light.png) left top no-repeat;
+		display:inline;
+	}
+	
+
+/**
+ * #container
+ **/
+ 
+#container {
+	min-height:10px;	
+	display:inline;
+}
+	#container .containerBox{
+		background:url(../images/bg-body-left.png) left top repeat-y;
+		padding-left:4px;
+		min-height:10px;
+	}
+	
+		#container .containerBoxR{
+			background:url(../images/bg-body-right.png) right top repeat-y;
+			padding-right:4px;
+			min-height:10px;
+		}
+			#container .containerBox .containerInner{
+				background-color:#fff;
+				min-height:10px;
+			}
+			
+	#container .containerFooter{
+		background:url(../images/bg-footer.png) left top no-repeat;
+		padding-left:10px;
+		height:9px;
+		overflow:hidden;
+	}
+		#container .containerFooterR{
+			background:url(../images/bg-footer.png) right -18px no-repeat;
+			padding-right:10px;
+			height:9px;
+		}
+			#container .containerFooterInner{
+				background:url(../images/bg-footer.png) left -9px repeat-x;
+				height:9px;
+			}
+	
+
+/**
+ * #footer
+ **/
+#footer {
+	color:#666;
+	line-height:15px;
+	font-size:11px;
+	text-align:center;
+	padding-top:0px;
+}
+	#footer a{
+		color:#666;
+	}
+	#footer strong{
+		color:#333;
+	}
+
+
+/**
+ * page content
+ **/
+#content{
+	/* padding:20px; */
+	min-height:100px;
+}
+
+/* special single column */
+#content.specialSingleColumn{
+	padding-left:40px;
+	padding-right:82px;
+	padding-top:40px;
+	position:relative;
+	min-height:360px;
+}
+	#content.specialSingleColumn .chart
+	{
+		position:absolute;
+		top:80px;
+		left:340px;
+		right:100px;
+		height:238px;
+		width:264px;
+		vertical-align:bottom;
+	}
+	#content.specialSingleColumn .chart_new
+	{
+		top:30px;
+		height:238px;
+		width:264px;
+		vertical-align:bottom;
+	}
+	#content.specialSingleColumn .authorizationList{
+		width:245px;
+		float:left;
+	}
+		#content.specialSingleColumn .authorizationList .boxInner{
+			overflow:auto;
+		}
+		#content.specialSingleColumn .authorizationList .boxTitle{
+			text-align:center;
+			padding-left:0px;
+			border-bottom:0px;
+		}
+			#content.specialSingleColumn .authorizationList .boxTitle h3{
+				float:none;
+			}
+			#content.specialSingleColumn .authorizationList .authorizationListBody ul li{
+				float:left;
+				width:70px;
+				height:87px;
+			}
+			#content.specialSingleColumn .authorizationList .authorizationListBody ul li.first{
+				border-left:0px;
+			}
+			
+				#content.specialSingleColumn .authorizationList .authorizationListBody ul li .authorizationCell{
+					width:68px;
+					height:87px;
+					text-align:center;
+					font-size:12px;
+					line-height:12px;
+					font-weight:bold;
+					font-family:Calibri;
+				}
+					#content.specialSingleColumn .authorizationList .authorizationListBody ul li .authorizationCell .icon{
+						height:20px;
+						overflow:hidden;
+						padding-top:8px;
+					}
+					#content.specialSingleColumn .authorizationList .authorizationListBody ul li .authorizationCell .buttonBox{
+						text-align:center;
+						padding-top:6px;
+					}
+					#content.specialSingleColumn .authorizationList .authorizationListBody ul li .authorizationCell .addNewCell{
+						padding-top:12px;
+						height:75px;
+					}
+						#content.specialSingleColumn .authorizationList .authorizationListBody ul li .authorizationCell .addNew{
+							background:url(../images/icon-authorization-add.png) center top no-repeat;
+							padding-top:44px;
+							display:block;
+							text-decoration:none;
+							font-weight:bold;
+							color:#333;
+						}
+	
+	#content.specialSingleColumn .roomsList{
+		width:242px;
+		float:right;
+		margin-top:72px;
+	}
+		#content.specialSingleColumn .roomsList .boxInner{
+			height:69px;
+			width:220px;
+			overflow:hidden;
+		}
+		#content.specialSingleColumn .roomsList ul li{
+			float:left;
+			height:69px;
+			width:79px;
+			border-left:1px solid #ccc;
+			text-align:center;
+			font-size:11px;
+			line-height:12px;
+			color:#666666;
+		}
+		#content.specialSingleColumn .roomsList ul li.first{
+			border:0px;
+		}
+			#content.specialSingleColumn .roomsList ul li .strong{
+				font-size:30px;
+				padding-top:5px;
+				line-height:36px;
+				font-weight:bold;
+			}
+
+/* two column */
+#content.twoColumn{
+	min-height:200px;
+	padding-bottom:6px;
+}
+	#content.twoColumn .leftSide{
+		width:73%;
+		float:left;
+		display:inline;
+	}
+		#content.twoColumn .leftSide .box{
+			margin-bottom:11px;
+		}
+		#content.twoColumn .leftSide .command a{
+			float:right;
+			margin-left:4px;
+		}
+			#content.twoColumn .leftSide .command a .btnC{
+				min-width:82px;
+			}
+		
+	#content.twoColumn .rightSide{
+		width:23%;
+		float:right;
+		display:inline;					
+	}
+		#content.twoColumn .rightSide .sideBoxContent{
+			padding:5px 5px 0px 5px;
+			line-height:15px;
+		}
+	
+	
+	#content.twoColumn .leftSide .roomsBox .boxContent{
+		padding-bottom:15px;
+		min-height:84px;
+	}
+		#content.twoColumn .leftSide .roomsBox .leftPart{
+			float:left;
+			/*width:320px;*/
+		}
+			#content.twoColumn .leftSide .roomsBox .leftPart input[type=text]{
+				float:left;
+				margin-top:12px;
+				margin-right:9px;
+				display:inline;
+			}
+		#content.twoColumn .leftSide .roomsBoxForSingleOpeningCard .leftPart{
+			width:auto;
+		}
+			#content.twoColumn .leftSide .roomsBoxForSingleOpeningCard .leftPart input[type=text]{
+				margin-top:29px;
+				margin-right:0px;
+			}
+		
+
+		#content.twoColumn .leftSide .roomsBox .rightPart{
+			float:left;
+			/*width:300px;*/
+			padding-top:8px;
+		}
+			#content.twoColumn .leftSide .roomsBox .rightPart .controlCell{
+				min-height:1px;
+				padding-left:0px;
+			}
+			#content.twoColumn .leftSide .roomsBox .rightPart .controlCell:hover 
+			{
+			    border:1px dotted #000;
+			}
+				#content.twoColumn .leftSide .roomsBox .rightPart .controlCell .symbol{
+					float:left;
+					width:50px;
+					height:50px;
+					margin-top:16px;
+					display:inline;
+				}
+					#content.twoColumn .leftSide .roomsBox .rightPart .controlCell .symbol a{
+						display:block;
+						width:50px;
+						height:50px;
+						position:relative;
+					}
+					#content.twoColumn .leftSide .roomsBox .rightPart .controlCell .symbol a.symbolGuestCheckIn{
+						background:url(../images/icon-control-guest-checkin.png) center center no-repeat;
+					}
+						#content.twoColumn .leftSide .roomsBox .rightPart .controlCell .symbol a .keyboardControl{
+							position:absolute;
+							right:0px;
+							top:1px;
+							width:18px;
+							height:18px;
+							background:transparent url(../images/icon-control-bg.png) left top no-repeat;
+							text-align:center;
+							line-height:18px;
+							color:#fff;
+						}
+				#content.twoColumn .leftSide .roomsBox .rightPart .controlCell .symbolContent{
+					float:left;
+					width:110px;
+					display:inline;
+					margin-left:14px;
+					padding-top:30px;
+				}
+					#content.twoColumn .leftSide .roomsBox .rightPart .controlCell .symbolContent a{
+						font-weight:bold;
+					}
+					#content.twoColumn .leftSide .roomsBox .rightPart .controlCell .symbolContent p{
+						padding-top:2px;
+						font-size:10px;
+						line-height:12px;
+					}
+
+	#content.twoColumn .leftSide .authorizationSelectBox .boxContent{
+		min-height:40px;
+		padding-top:8px;
+		padding-bottom:14px;
+	}
+		#content.twoColumn .leftSide .authorizationSelectBox ul li{
+			float:left;
+			width:25%;
+			display:inline;
+			height:20%;
+		}
+			#content.twoColumn .leftSide .authorizationSelectBox ul li input[type=checkbox]{
+				float:left;
+				margin-top:6px;
+			}
+			#content.twoColumn .leftSide .authorizationSelectBox ul li .iconAuthorization{
+				float:left;
+				margin:4px 4px 0px;
+			}
+			#content.twoColumn .leftSide .authorizationSelectBox ul li label{
+				float:left;
+				line-height:27px;
+			}
+	#content.twoColumn .leftSide .encodeCardsNumberBox .boxContent{
+		padding-top:18px;
+		padding-bottom:24px;
+	}
+	
+	#content.twoColumn .leftSide .lengthOfStayBox .boxContent{
+		padding-top:0px;
+		padding-bottom:14px;
+	}
+		#content.twoColumn .leftSide .lengthOfStayBox .boxContent .cell{
+			float:left;
+			display:inline;
+		}
+		#content.twoColumn .leftSide .lengthOfStayBox .boxContent .cell1{
+			float:left;
+			display:inline;
+		}
+		#content.twoColumn .leftSide .lengthOfStayBox .boxContent .datePickerCell{
+			width:auto;
+		}
+			#content.twoColumn .leftSide .lengthOfStayBox .boxContent .datePickerCell input{
+				float:left;
+				width:100px;
+			}
+			#content.twoColumn .leftSide .lengthOfStayBox .boxContent .datePickerCell1 input{
+				width:90px;
+				float:left;
+			}
+			#content.twoColumn .leftSide .lengthOfStayBox .boxContent .datePickerCell img.ui-datepicker-trigger{
+				float:left;
+				margin-top:2px;
+				margin-left:2px;
+				cursor:pointer;
+				display:inline;
+			}
+		#content.twoColumn .leftSide .lengthOfStayBox .boxContent .checkinTimeCell{
+			margin-right:25px;
+			/*margin-left:25px;*/
+		}
+		#content.twoColumn .leftSide .lengthOfStayBox .boxContent .checkinTimeCell1{
+			margin-right:0px;
+		}
+			#content.twoColumn .leftSide .lengthOfStayBox .boxContent .cell h3{
+				font-size:14px;
+				line-height:30px;
+			}
+			#content.twoColumn .leftSide .lengthOfStayBox .boxContent .cell1 h3{
+				font-size:14px;
+				line-height:30px;
+			}
+			#content.twoColumn .leftSide .lengthOfStayBox .boxContent .checkinTimeCell h3{
+				padding-left:5px;
+			}
+	
+	#content.twoColumn .leftSide .groupInformationBox .boxContent{
+		padding-top:18px;
+		padding-bottom:24px;
+	}
+		#content.twoColumn .leftSide .groupInformationBox .boxContent .groupNumberField{
+			float:left;
+			width:34px;
+		}
+		#content.twoColumn .leftSide .groupInformationBox .boxContent .groupNameField{
+			float:left;
+			width:302px;
+			margin-left:11px;
+		}
+		#content.twoColumn .leftSide .groupInformationBox .boxContent .disabled{
+			color:#999999;
+			background-image:url(../images/bg-input-text-disabled.png);
+			background-color:#d7d7d7;
+		}
+	
+	
+	#content.twoColumn .leftSide .roomsListBox .boxContent{
+		padding-bottom:15px;
+		min-height:84px;
+	}
+		#content.twoColumn .leftSide .roomsListBox .leftPart{
+			float:left;
+			width:430px;
+		}
+			#content.twoColumn .leftSide .roomsListBox .leftPart .placeholder{
+				color:#999999;
+				padding-left:14px;
+				padding-top:40px;
+			}
+			#content.twoColumn .leftSide .roomsListBox .leftPart .listRooms{
+				padding-top:4px;
+				min-height:10px;
+			}
+				#content.twoColumn .leftSide .roomsListBox .leftPart ul li{
+					width:100px;
+					float:left;
+					display:inline;
+					margin-top:7px;
+					margin-right:17px;
+				}
+					#content.twoColumn .leftSide .roomsListBox .leftPart ul li .room{
+						height:32px;
+						width:auto;
+						background:url(../images/bg-room-corner.png) left top no-repeat;
+						padding-left:5px;
+						position:relative;
+					}
+						#content.twoColumn .leftSide .roomsListBox .leftPart ul li .room .roomR{
+							height:32px;
+							background:url(../images/bg-room-corner.png) right -32px no-repeat;
+							padding-right:5px;
+						}
+							#content.twoColumn .leftSide .roomsListBox .leftPart ul li .room .roomDetails{
+								height:32px;
+								background-color:#ccc;
+								line-height:32px;
+								font-size:18px;
+								font-weight:bold;
+								padding-left:2px;
+							}													
+							#content.twoColumn .leftSide .roomsListBox .leftPart ul li .room .btnDeleteRoom{
+								background:url(../images/btn-room-delete.png) left top no-repeat;
+								width:17px;
+								height:17px;
+								display:block;
+								position:absolute;
+								right:7px;
+								top:7px;
+							}
+							#content.twoColumn .leftSide .roomsListBox .leftPart ul li .room .btnFinishRoom{
+								background:url(../images/btn-room-finish.png) left top no-repeat;
+								width:17px;
+								height:17px;
+								display:block;
+								position:absolute;
+								right:7px;
+								top:7px;
+							}
+			
+		#content.twoColumn .leftSide .roomsListBox .rightPart{
+			float:right;
+			width:182px;
+			padding-top:8px;
+		}
+			#content.twoColumn .leftSide .roomsListBox .rightPart .notice{
+				line-height:15px;
+				color:#999999;
+				padding-left:15px;
+				padding-top:8px;
+				height:70px;
+			}
+			#content.twoColumn .leftSide .roomsListBox .rightPart .controlCell{
+				min-height:1px;
+				padding-left:10px;
+			}
+				#content.twoColumn .leftSide .roomsListBox .rightPart .controlCell .symbol{
+					float:left;
+					width:55px;
+					height:56px;
+					margin-top:16px;
+					display:inline;
+				}
+					#content.twoColumn .leftSide .roomsListBox .rightPart .controlCell .symbol a{
+						display:block;
+						width:55px;
+						height:56px;
+						position:relative;
+					}
+					#content.twoColumn .leftSide .roomsListBox .rightPart .controlCell .symbol a.symbolGuestCheckIn{
+						background:url(../images/icon-control-guest-checkin.png) center center no-repeat;
+					}
+						#content.twoColumn .leftSide .roomsListBox .rightPart .controlCell .symbol a .keyboardControl{
+							position:absolute;
+							right:0px;
+							top:1px;
+							width:18px;
+							height:18px;
+							background:transparent url(../images/icon-control-bg.png) left top no-repeat;
+							text-align:center;
+							line-height:18px;
+							color:#fff;
+						}
+				#content.twoColumn .leftSide .roomsListBox .rightPart .controlCell .symbolContent{
+					float:left;
+					width:110px;
+					display:inline;
+					margin-left:4px;
+					padding-top:30px;
+				}
+					#content.twoColumn .leftSide .roomsListBox .rightPart .controlCell .symbolContent a{
+						font-weight:bold;
+					}
+					#content.twoColumn .leftSide .roomsListBox .rightPart .controlCell .symbolContent p{
+						padding-top:2px;
+						font-size:10px;
+						line-height:12px;
+					}
+	
+	#content.twoColumn .leftSide .specialLengthOfStayBox .boxContent{
+		padding:0px;
+		background:url(../images/line-gray.png) 218px top repeat-y;
+	}
+		#content.twoColumn .leftSide .specialLengthOfStayBox .boxContent .rightPart .cell{
+			float:left;
+			display:inline;
+		}
+			#content.twoColumn .leftSide .specialLengthOfStayBox .boxContent .cell .cellBody{
+				min-height:10px;
+			}
+		#content.twoColumn .leftSide .specialLengthOfStayBox .boxContent .leftPart{
+			float:left;
+			width:208px;
+			display:inline;
+			padding-left:10px;
+			padding-bottom:15px;
+		}
+			#content.twoColumn .leftSide .specialLengthOfStayBox .boxContent .leftPart .datePickerCell{
+				padding-bottom:12px;
+			}
+		#content.twoColumn .leftSide .specialLengthOfStayBox .boxContent .rightPart{
+			float:left;
+			padding-bottom:10px;
+			width:441px;
+			display:inline;
+		}
+			#content.twoColumn .leftSide .specialLengthOfStayBox .boxContent .rightPart .cellRow{
+				padding-bottom:14px;				
+				padding-left:12px;
+				min-height:1px;
+			}
+			#content.twoColumn .leftSide .specialLengthOfStayBox .boxContent .rightPart .firstCellRow{
+				/*border-bottom:1px solid #ccc;*/
+			}
+			#content.twoColumn .leftSide .specialLengthOfStayBox .boxContent .datePickerCell input{
+				float:left;
+				width:120px;
+			}
+			#content.twoColumn .leftSide .specialLengthOfStayBox .boxContent .datePickerCell img.ui-datepicker-trigger{
+				float:left;
+				margin-top:2px;
+				margin-left:7px;
+				cursor:pointer;
+				display:inline;
+			}
+		#content.twoColumn .leftSide .specialLengthOfStayBox .boxContent .datePickerCell{
+			width:195px;
+		}
+		#content.twoColumn .leftSide .specialLengthOfStayBox .boxContent .checkinTimeCell{
+			margin-right:11px;
+		}
+			#content.twoColumn .leftSide .specialLengthOfStayBox .boxContent .cell h3{
+				font-size:14px;
+				line-height:30px;
+			}
+			#content.twoColumn .leftSide .specialLengthOfStayBox .boxContent .checkinTimeCell h3{
+				padding-left:4px;
+			}
+		#content.twoColumn .leftSide .specialLengthOfStayBox .boxContent .checkboxCell{
+			padding-top:24px;
+		}
+			#content.twoColumn .leftSide .specialLengthOfStayBox .boxContent .checkboxCell input[type=checkbox]{
+				float:left;
+				margin-top:10px;
+				display:inline;
+			}
+			#content.twoColumn .leftSide .specialLengthOfStayBox .boxContent .checkboxCell label{
+				float:left;
+				line-height:16px;
+				font-size:14px;
+				font-weight:bold;
+				width:70px;
+				margin-left:6px;
+				margin-right:6px;
+				display:inline;
+			}
+
+
+/* single column */
+#content.singleColumn .filterPanel{
+	margin-bottom:18px;
+	min-height:1px;	
+}
+
+#content.singleColumn .tableList{
+	min-height:10px;
+}
+	#content.singleColumn .tableList table{
+		text-align:left;
+		width:100%;
+	}
+	#content.singleColumn .tableList table th{
+		vertical-align:middle;
+		height:33px;
+		background-color:#cccccc;
+	}
+	#content.singleColumn .tableList .requireZebraCrossing thead th{
+		vertical-align:middle;
+		text-align:left;
+		padding-left:2px;
+		padding-right:2px;
+		height:33px;
+		background-color:#C5D7FD;
+	}
+	#content.singleColumn .tableList .requireZebraCrossing .sorted
+	{	    
+		text-align:left;
+		padding-bottom: 0px;
+	}	
+		#content.singleColumn .tableList table td{
+			vertical-align:middle;
+			height:32px;
+			/*padding:0px !important;*/
+			margin:0px;
+			padding-left:2px;
+			padding-right:2px;
+			border-bottom:1px solid #ccc;
+		}
+		#content.singleColumn .tableList table .odd td{
+			background-color:#f0f0f0;
+		}
+			#content.singleColumn .tableList table .firstColumn span{
+				padding-left:16px;												
+			}
+
+
+#pageHotelInformation .filterPanel .boxContent .cell{
+	float:left;
+	padding-left:12px;
+	display:inline;
+}
+#pageHotelInformation .filterPanel .boxContent .firstCell{
+	width:90%;
+}
+	#pageHotelInformation .filterPanel .boxContent .firstCell ul li{
+		width:150px;
+	}
+	#pageHotelInformation .filterPanel .boxContent .firstCell ul li.long{
+		width:275px;
+	}
+		#pageHotelInformation .filterPanel .boxContent .firstCell ul li input[type=radio]{
+			float:left;
+			margin-top:6px;
+		}
+		#pageHotelInformation .filterPanel .boxContent .firstCell ul li label{
+			float:left;
+			margin-left:6px;
+			display:inline;
+			color:#666;
+			font-weight:bold;
+			padding-top:6px;
+			padding-bottom:6px;
+		}
+		#pageHotelInformation .filterPanel .boxContent .firstCell ul li select{
+			float:left;
+			display:inline;
+			margin-left:10px;
+			margin-top:4px;
+			width:128px;
+		}
+	
+#pageHotelInformation .filterPanel .boxContent .secondCell{
+	border-left:1px solid #ccc;
+	width:264px;
+}
+	#pageHotelInformation .filterPanel .boxContent .secondCell ul li{
+		width:132px;
+	}
+	#pageHotelInformation .filterPanel .boxContent .secondCell ul li.last{
+		margin-top:-13px;
+	}
+		#pageHotelInformation .filterPanel .boxContent .secondCell ul li input[type=radio]{
+			float:left;
+			margin-top:6px;
+		}
+		#pageHotelInformation .filterPanel .boxContent .secondCell ul li label{
+			float:left;
+			width:98px;
+			margin-left:6px;
+			display:inline;
+			color:#666;
+			font-weight:bold;
+			padding-top:6px;
+			padding-bottom:6px;
+		}
+#pageHotelInformation .filterPanel .boxContent .thirdCell{
+	border-left:1px solid #ccc;
+	width:170px;
+}
+	#pageHotelInformation .filterPanel .boxContent .thirdCell ul li{
+		width:150px;
+	}
+		#pageHotelInformation .filterPanel .boxContent .thirdCell ul li input[type=radio]{
+			float:left;
+			margin-top:6px;
+		}
+		#pageHotelInformation .filterPanel .boxContent .thirdCell ul li label{
+			float:left;
+			width:120px;
+			margin-left:6px;
+			display:inline;
+			color:#666;
+			font-weight:bold;
+			padding-top:6px;
+			padding-bottom:6px;
+		}
+
+
+#pagePheripheral .filterPanel .boxContent .cell{
+	float:left;
+	padding-left:12px;
+	display:inline;
+}
+	#pagePheripheral .filterPanel .boxContent .firstCellRow{
+		border-bottom:1px solid #ccc;
+	}
+		#pagePheripheral .filterPanel .boxContent .firstCellRow .cell{
+			width:218px;
+		}
+		#pagePheripheral .filterPanel .boxContent .firstCellRow .firstCell{
+			width:444px;
+			border-right:1px solid #ccc;
+		}
+			#pagePheripheral .filterPanel .boxContent .firstCellRow .firstCell .cellBody{
+				padding-top:6px;
+			}
+			#pagePheripheral .filterPanel .boxContent .firstCellRow .firstCell select{
+				width:434px;
+			}
+			#pagePheripheral .filterPanel .boxContent .firstCellRow .cell input[type=text]{
+				width:132px;
+				float:left;
+			}
+			#pagePheripheral .filterPanel .boxContent .firstCellRow .cell .ui-datepicker-trigger{
+				margin-left:8px;
+				margin-top:1px;
+			}
+	
+	#pagePheripheral .filterPanel .boxContent .secondCellRow .cell{
+		padding-bottom:8px;
+	}
+	#pagePheripheral .filterPanel .boxContent .secondCellRow .firstCell{
+		width:245px;
+	}
+	#pagePheripheral .filterPanel .boxContent .secondCellRow .secondCell{
+		width:196px;
+	}
+	#pagePheripheral .filterPanel .boxContent .secondCellRow .thirdCell{
+		width:212px;
+	}
+	#pagePheripheral .filterPanel .boxContent .secondCellRow .forthCell{
+		width:188px;
+	}
+	#pagePheripheral .filterPanel .boxContent .secondCellRow .cellBody{
+		height:28px;
+		overflow:hidden;
+	}
+		#pagePheripheral .filterPanel .boxContent .secondCellRow .cell input[type=radio]{
+			float:left;
+		}
+		#pagePheripheral .filterPanel .boxContent .secondCellRow .cell label{
+			float:left;
+			margin-left:6px;
+		}
+		#pagePheripheral .filterPanel .boxContent .secondCellRow .cell select{
+			width:172px;
+		}
+
+#pageGroup .filterPanel .boxContent .cell{
+	float:left;
+	padding-left:12px;
+	display:inline;
+}
+	#pageGroup .filterPanel .boxContent .firstCell{
+		width:444px;
+	}
+		#pageGroup .filterPanel .boxContent .firstCell input[type=text]{
+			width:410px;
+		}
+	#pageGroup .filterPanel .boxContent .secondCell{
+		width:212px;
+		border-left:1px solid #ccc;
+	}
+		#pageGroup .filterPanel .boxContent .secondCell dl dd{
+			min-height:10px;
+			padding:4px 0px 8px;
+		}
+			#pageGroup .filterPanel .boxContent .secondCell dl dd input[type=radio]{
+				float:left;
+			}
+			#pageGroup .filterPanel .boxContent .secondCell dl dd label{
+				float:left;
+				margin-left:6px;
+				display:inline;
+				color:#666666;
+				font-weight:bold;
+			}
+	#pageGroup .filterPanel .boxContent .thirdCell{
+		width:222px;
+		border-left:1px solid #ccc;
+	}
+		#pageGroup .filterPanel .boxContent .thirdCell input[type=text]{
+			width:132px;
+			float:left;
+		}
+		#pageGroup .filterPanel .boxContent .thirdCell .ui-datepicker-trigger{
+			margin-left:8px;
+			margin-top:1px;
+		}
+#pageGroup .boxTopCommand .leftPart{
+	padding-top:5px;
+}
+	#pageGroup .boxTopCommand .leftPart .btnGreen .btnC{
+		padding:0 8px;
+	}
+	#pageGroup .boxTopCommand .rightPart .btnGreen .btnC{
+		min-width: 90px;
+	}
+	#pageGroup .boxTopCommand .rightPart .btnGreen{
+		margin-left:3px;
+	}
+
+
+#pageGroup  #content .contentBox .tableList table .firstColumn{
+	text-align:center;
+}
+#pageGroup  #content .contentBox .tableList table th.lastColumn
+{
+    width:86px;
+	text-align:center;
+}
+#pageGroup  #content .contentBox .tableList table .lastColumn .status
+{	    
+	margin-left:30px;
+}
+
+
+#content.singleColumn .groupsEncodeCardBox .boxContent{
+	padding-left:0px;
+	padding-right:0px;
+}
+	#content.singleColumn .groupsEncodeCardBox .boxContent .firstEncodeCardRow{
+		border-bottom:1px solid #ccc;
+		padding-top:4px;
+	}
+		#content.singleColumn .groupsEncodeCardBox .boxContent .firstEncodeCardRow .cell{
+			float:left;
+			display:inline;
+			padding-left:16px;
+		}		
+		#content.singleColumn .groupsEncodeCardBox .boxContent .firstEncodeCardRow .secondCell{
+			
+		}
+		#content.singleColumn .groupsEncodeCardBox .boxContent .firstEncodeCardRow .thirdCell{
+			/*float:right;*/			
+			/*padding-right:14px;*/
+			padding-top:17px;
+		}
+			#content.singleColumn .groupsEncodeCardBox .boxContent .firstEncodeCardRow .cell h3{
+				line-height:22px;
+			}
+			#content.singleColumn .groupsEncodeCardBox .boxContent .firstEncodeCardRow .cell p{
+				font-size:11px;
+				line-height:12px;
+			}
+			#content.singleColumn .groupsEncodeCardBox .boxContent .firstEncodeCardRow .secondCell p{
+				font-size:11px;
+				padding:4px 0px 8px;
+			}			
+	#content.singleColumn .groupsEncodeCardBox .boxContent .secondEncodeCardRow{
+		border-bottom:1px solid #ccc;
+		background-color:#efefef;
+		padding-left:16px;
+		padding-bottom:14px;
+	}
+		#content.singleColumn .groupsEncodeCardBox .boxContent .secondEncodeCardRow .rowTitle{
+			padding-top:10px;
+			padding-bottom:4px;
+			min-height:17px;
+			line-height:17px;
+		}
+			#content.singleColumn .groupsEncodeCardBox .boxContent .secondEncodeCardRow .rowTitle h3{
+				background:url(../images/btn-room-finish.png) left top no-repeat;
+				padding-left:27px;
+			}
+		#content.singleColumn .groupsEncodeCardBox .boxContent .secondEncodeCardRow ul li{
+			width:90px;
+			float:left;
+			display:inline;
+			margin-top:12px;
+			margin-right:17px;
+		}
+			#content.singleColumn .groupsEncodeCardBox .boxContent .secondEncodeCardRow ul li .room{
+				height:32px;
+				width:90px;
+				background:url(../images/bg-room-corner.png) left top no-repeat;
+				padding-left:5px;
+				position:relative;
+			}
+				#content.singleColumn .groupsEncodeCardBox .boxContent .secondEncodeCardRow ul li .room .roomR{
+					height:32px;
+					background:url(../images/bg-room-corner.png) right -32px no-repeat;
+					padding-right:5px;
+				}
+					#content.singleColumn .groupsEncodeCardBox .boxContent .secondEncodeCardRow ul li .room .roomDetails{
+						height:32px;
+						background-color:#ccc;
+						line-height:32px;
+						font-size:18px;
+						font-weight:bold;
+						padding-left:2px;
+					}
+					#content.singleColumn .groupsEncodeCardBox .boxContent .secondEncodeCardRow ul li .room .btnFinishRoom{
+						background:url(../images/btn-room-finish.png) left top no-repeat;
+						width:17px;
+						height:17px;
+						display:block;
+						position:absolute;
+						right:7px;
+						top:7px;
+					}
+
+	#content.singleColumn .groupsEncodeCardBox .boxContent .thirdEncodeCardRow{
+		padding-left:16px;
+		padding-bottom:20px;	
+	}
+		#content.singleColumn .groupsEncodeCardBox .boxContent .thirdEncodeCardRow .rowTitle{
+			padding-top:12px;
+			padding-bottom:4px;
+			min-height:17px;
+			line-height:25px;
+		}
+			#content.singleColumn .groupsEncodeCardBox .boxContent .thirdEncodeCardRow .rowTitle h3{
+				background:url(../images/btn-room-next.png) left top no-repeat;				
+				padding-left:27px;
+				float:left;
+			}
+			#content.singleColumn .groupsEncodeCardBox .boxContent .thirdEncodeCardRow .rowTitle span{
+				float:left;
+				font-size:11px;
+				margin-left:18px;
+				display:inline;
+			}
+			
+		#content.singleColumn .groupsEncodeCardBox .boxContent .thirdEncodeCardRow ul li
+		{   
+			width:140px;
+			float:left;
+			display:inline;
+			margin-top:12px;
+			margin-right:17px;
+		}
+			#content.singleColumn .groupsEncodeCardBox .boxContent .thirdEncodeCardRow ul li .room{
+				height:70px;
+				width:140px;				
+                background:#ccc;	                		                                 
+                position:relative;
+                -webkit-border-radius: 3px;
+                -moz-border-radius: 3px;
+                border-radius: 3px;              
+				/*background:url(../images/bg-room-corner.png) left top no-repeat;
+				padding-left:5px;*/
+				
+			}
+				#content.singleColumn .groupsEncodeCardBox .boxContent .thirdEncodeCardRow ul li .room .roomR{
+					height:70px;			
+					/*background:url(../images/bg-room-corner.png) right -32px no-repeat;*/
+					padding-right:5px;
+				}
+					#content.singleColumn .groupsEncodeCardBox .boxContent .thirdEncodeCardRow ul li .room .roomDetails{
+						height:70px;
+						background-color:#ccc;
+						line-height:32px;						
+						padding-left:2px;
+					}
+					#content.singleColumn .groupsEncodeCardBox .boxContent .thirdEncodeCardRow ul li .room .roomDetails .roomName 
+					{
+					    font-size:18px;
+						font-weight:bold;
+					}
+					#content.singleColumn .groupsEncodeCardBox .boxContent .thirdEncodeCardRow ul li .room .btnNextRoom{
+						background:url(../images/btn-room-next.png) left top no-repeat;
+						width:30px;
+						height:25px;
+						display:block;
+						position:absolute;
+						right:7px;
+						top:7px;
+					}
+
+
+#content.singleColumn .hotelInformationRoomDetailBox .boxContent{
+	padding-left:0px;
+	padding-right:0px;
+	background:url(../images/line-gray-1.png) 665px top repeat-y;
+}
+	#content.singleColumn .hotelInformationRoomDetailBox .boxContent .leftPart{
+		float:left;
+		display:inline;
+	}
+	#content.singleColumn .hotelInformationRoomDetailBox .boxContent .rightPart{
+		float:left;
+		margin-left:2px;
+		padding-left:40px;
+		padding-top:10px;
+		display:inline;
+	}
+		#content.singleColumn .hotelInformationRoomDetailBox .boxContent .rightPart dl{
+			padding-bottom:8px;
+		}
+			#content.singleColumn .hotelInformationRoomDetailBox .boxContent .rightPart dl dt{
+				line-height:20px;
+				font-weight:bold;
+			}
+			#content.singleColumn .hotelInformationRoomDetailBox .boxContent .rightPart dl dd{
+				line-height:18px;
+			}
+		#content.singleColumn .hotelInformationRoomDetailBox .boxContent .leftPart .secondRow ul li{
+			float:left;
+			width:156px;
+			display:inline;
+			height:27px;
+		}
+			#content.singleColumn .hotelInformationRoomDetailBox .boxContent .leftPart .secondRow ul li input[type=checkbox]{
+				float:left;
+				margin-top:6px;
+			}
+			#content.singleColumn .hotelInformationRoomDetailBox .boxContent .leftPart .secondRow ul li .iconAuthorization{
+				float:left;
+				margin:4px 4px 0px;
+			}
+			#content.singleColumn .hotelInformationRoomDetailBox .boxContent .leftPart .secondRow ul li label{
+				float:left;
+				line-height:27px;
+			}
+			
+		#content.singleColumn .hotelInformationRoomDetailBox .boxContent .leftPart .firstRow{
+			padding-left:20px;
+			border-bottom:1px solid #ccc;
+			padding-bottom:2px;
+			padding-top:8px;
+			min-height:1px;
+		}
+			#content.singleColumn .hotelInformationRoomDetailBox .boxContent .leftPart .firstRow .cell{
+				float:left;
+				width:81px;
+			}
+				#content.singleColumn .hotelInformationRoomDetailBox .boxContent .leftPart .firstRow .cell h3{
+					line-height:16px;
+				}
+				#content.singleColumn .hotelInformationRoomDetailBox .boxContent .leftPart .firstRow .cell span{
+					line-height:40px;
+					font-size:24px;
+					color:#999;
+					font-weight:bold;
+					padding-left:2px;
+				}
+				
+		#content.singleColumn .hotelInformationRoomDetailBox .boxContent .leftPart .secondRow{
+			padding-left:20px;
+			border-bottom:1px solid #ccc;
+			padding-top:8px;
+			padding-bottom:4px;
+		}
+			#content.singleColumn .hotelInformationRoomDetailBox .boxContent .leftPart .secondRow h3{
+				padding-bottom:2px;
+			}
+		#content.singleColumn .hotelInformationRoomDetailBox .boxContent .leftPart .thirdRow{
+			padding-left:20px;
+			border-bottom:1px solid #ccc;
+			padding-bottom:10px;
+			background:url(../images/line-gray.png) 420px top repeat-y;
+		}
+			#content.singleColumn .hotelInformationRoomDetailBox .boxContent .leftPart .thirdRow h3{
+				font-size:14px;
+				color:#999999;
+				line-height:34px;
+			}
+			#content.singleColumn .hotelInformationRoomDetailBox .boxContent .leftPart .thirdRow .leftBox{
+				width:400px;
+				float:left;
+				display:inline;
+			}
+				#content.singleColumn .hotelInformationRoomDetailBox .boxContent .leftPart .thirdRow .leftBox .boxRowCell{
+					float:left;
+				}
+				#content.singleColumn .hotelInformationRoomDetailBox .boxContent .leftPart .thirdRow .leftBox .firstBoxRowCell{
+					width:107px;
+				}
+				#content.singleColumn .hotelInformationRoomDetailBox .boxContent .leftPart .thirdRow .leftBox .secondBoxRowCell{
+					width:70px;
+				}
+				#content.singleColumn .hotelInformationRoomDetailBox .boxContent .leftPart .thirdRow .leftBox .thirdBoxRowCell{
+					width:107px;
+				}
+					#content.singleColumn .hotelInformationRoomDetailBox .boxContent .leftPart .thirdRow .leftBox .boxRowCell h4{
+						line-height:16px;
+					}
+					#content.singleColumn .hotelInformationRoomDetailBox .boxContent .leftPart .thirdRow .leftBox .boxRowCell span{
+						line-height:30px;
+						font-size:15px;
+						color:#999;
+						font-weight:bold;
+					}
+			#content.singleColumn .hotelInformationRoomDetailBox .boxContent .leftPart .thirdRow .rightBox{
+				width:230px;
+				padding-left:15px;
+				float:left;
+				display:inline;
+			}
+				#content.singleColumn .hotelInformationRoomDetailBox .boxContent .leftPart .thirdRow .rightBox .boxRowCell{
+					float:left;
+				}
+				#content.singleColumn .hotelInformationRoomDetailBox .boxContent .leftPart .thirdRow .rightBox .firstBoxRowCell{
+					width:130px;
+				}
+				#content.singleColumn .hotelInformationRoomDetailBox .boxContent .leftPart .thirdRow .rightBox .secondBoxRowCell{
+					width:77px;
+				}
+					#content.singleColumn .hotelInformationRoomDetailBox .boxContent .leftPart .thirdRow .rightBox .boxRowCell h4{
+						line-height:16px;
+					}
+					#content.singleColumn .hotelInformationRoomDetailBox .boxContent .leftPart .thirdRow .rightBox .boxRowCell span{
+						line-height:30px;
+						font-size:15px;
+						color:#999;
+						font-weight:bold;
+					}
+		#content.singleColumn .hotelInformationRoomDetailBox .boxContent .leftPart .forthRow{
+			padding-left:20px;
+			line-height:18px;
+			padding-top:12px;
+			padding-bottom:16px;
+			min-height:1px;
+		}
+			#content.singleColumn .hotelInformationRoomDetailBox .boxContent .leftPart .forthRow dl dt{
+				font-weight:bold;
+			}
+
+
+
+#content.singleColumn .readAndEraseCardsBox .boxContent{
+	padding-left:0px;
+	padding-right:0px;
+}
+	#content.singleColumn .readAndEraseCardsBox .boxContent .firstCardRow{
+		border-bottom:1px solid #ccc;
+		padding-top:6px;
+		padding-bottom:14px;
+	}
+		#content.singleColumn .readAndEraseCardsBox .boxContent .firstCardRow .cell{
+			float:left;
+			display:inline;
+			padding-left:16px;
+		}
+		#content.singleColumn .readAndEraseCardsBox .boxContent .firstCardRow .firstCell{
+			width:584px;
+		}
+		#content.singleColumn .readAndEraseCardsBox .boxContent .firstCardRow .secondCell{
+			float:right;
+			padding-right:14px;
+			padding-top:17px;
+		}
+			#content.singleColumn .readAndEraseCardsBox .boxContent .firstCardRow .secondCell .btnReadAnotherCard .btnC{
+				width:134px;
+			}
+			#content.singleColumn .readAndEraseCardsBox .boxContent .firstCardRow .cell h3{
+				line-height:22px;
+			}
+			#content.singleColumn .readAndEraseCardsBox .boxContent .firstCardRow .cell p{
+				font-size:11px;
+				line-height:12px;
+			}
+			#content.singleColumn .readAndEraseCardsBox .boxContent .firstCardRow .secondCell p{
+				font-size:11px;
+				padding:4px 0px 8px;
+			}
+			#content.singleColumn .readAndEraseCardsBox .boxContent .firstCardRow .thirdCell .btnGreen .btnC{
+				min-width:52px;
+			}
+
+	#content.singleColumn .readAndEraseCardsBox .boxContent .secondCardRow{
+		padding-left:20px;
+		padding-bottom:14px;
+		padding-top:14px;
+		border-bottom:1px solid #ccc;
+		background-color:#efefef;
+		font-weight:bolder;
+		font-size:15px;
+	}
+		#content.singleColumn .readAndEraseCardsBox .boxContent .secondCardRow h3{
+			float:left;
+			height:17px;
+			line-height:17px;
+		}
+		#content.singleColumn .readAndEraseCardsBox .boxContent .secondCardRow .statusFinish{
+			float:left;
+			height:17px;
+			line-height:17px;
+			margin-left:34px;
+			display:inline;
+			background:url(../images/btn-room-finish.png) left center no-repeat;
+			padding-left:26px;
+		}
+
+		#content.singleColumn .readAndEraseCardsBox .boxContent .thirdCardRow .firstStep{
+			text-align:center;
+			padding-top:146px;
+			line-height:22px;
+			font-size:11px;
+			height:175px;
+		}
+		#content.singleColumn .readAndEraseCardsBox .boxContent .thirdCardRow .secondStep{
+			text-align:center;
+			padding-top:124px;
+			line-height:24px;
+			height:197px;
+		}
+			#content.singleColumn .readAndEraseCardsBox .boxContent .thirdCardRow .secondStep #progress{
+				margin: 0 auto;
+			}
+
+#content.singleColumn .readAndEraseCardsBox .boxContent .thirdCardRow .thirdStep{
+	padding-left:0px;
+	padding-right:0px;
+	background:url(../images/line-gray-1.png) 60% top repeat-y;
+	min-height:1px;
+	width:100%;
+}
+	#content.singleColumn .readAndEraseCardsBox  .boxContent .thirdCardRow .thirdStep .leftPart{
+		float:left;
+		width:100%;
+		display:inline;
+	}
+	#content.singleColumn .readAndEraseCardsBox  .boxContent .thirdCardRow .thirdStep .rightPart{
+		float:left;
+		margin-left:2px;
+		padding-left:10px;
+		padding-top:10px;
+		display:inline;
+		vertical-align:top;
+	}
+		#content.singleColumn .readAndEraseCardsBox  .boxContent .thirdCardRow .thirdStep .rightPart dl{
+			padding-bottom:8px;
+		}
+			#content.singleColumn .readAndEraseCardsBox  .boxContent .thirdCardRow .thirdStep .rightPart dl dt{
+				line-height:20px;
+				font-weight:bold;
+			}
+			#content.singleColumn .readAndEraseCardsBox  .boxContent .thirdCardRow .thirdStep .rightPart dl dd{
+				line-height:18px;
+			}
+		
+		#content.singleColumn .readAndEraseCardsBox  .boxContent .thirdCardRow .thirdStep .rightPart .confirmBox{
+			margin-top:20px;
+			text-align:center;
+		}
+			#content.singleColumn .readAndEraseCardsBox  .boxContent .thirdCardRow .thirdStep .rightPart .confirmBox .cellEraseCard .btnGreen .btnC{
+				width:134px;
+			}
+			#content.singleColumn .readAndEraseCardsBox  .boxContent .thirdCardRow .thirdStep .rightPart .confirmBox .cellEraseCardConfirm .cellEraseCardConfirmCommand{
+				padding-top:10px;
+			}
+				#content.singleColumn .readAndEraseCardsBox  .boxContent .thirdCardRow .thirdStep .rightPart .confirmBox .cellEraseCardConfirm .cellEraseCardConfirmCommand .btnC{
+					width:100%;
+				}
+				#content.singleColumn .readAndEraseCardsBox  .boxContent .thirdCardRow .thirdStep .rightPart .confirmBox .cellEraseCardConfirm .cellEraseCardConfirmCommand .btnGreen{
+					margin-right:4px;
+				}
+		
+	
+		#content.singleColumn .readAndEraseCardsBox  .boxContent .thirdCardRow .thirdStep .leftPart .firstRow{
+			padding-left:20px;
+			border-bottom:1px solid #ccc;
+			padding-bottom:2px;
+			padding-top:8px;
+			min-height:1px;
+		}
+			#content.singleColumn .readAndEraseCardsBox  .boxContent .thirdCardRow .thirdStep .leftPart .firstRow .cell{
+				float:left;
+				width:250px;
+			}
+				#content.singleColumn .readAndEraseCardsBox  .boxContent .thirdCardRow .thirdStep .leftPart .firstRow .cell h3{
+					line-height:16px;
+				}
+				#content.singleColumn .readAndEraseCardsBox  .boxContent .thirdCardRow .thirdStep .leftPart .firstRow .cell span{
+					line-height:40px;
+					font-size:12px;
+					color:#999;
+					font-weight:bold;
+					padding-left:2px;
+				}
+		#content.singleColumn .readAndEraseCardsBox  .boxContent .thirdCardRow .thirdStep .leftPart .secondRow{
+			padding-left:20px;
+			border-bottom:1px solid #ccc;
+			padding-top:8px;
+			padding-bottom:4px;
+		}
+			#content.singleColumn .readAndEraseCardsBox  .boxContent .thirdCardRow .thirdStep .leftPart .secondRow h3{
+				padding-bottom:2px;
+			}
+			#content.singleColumn .readAndEraseCardsBox  .boxContent .thirdCardRow .thirdStep .leftPart .secondRow ul li{
+				float:left;
+				width:156px;
+				display:inline;
+				height:27px;
+			}
+				#content.singleColumn .readAndEraseCardsBox  .boxContent .thirdCardRow .thirdStep .leftPart .secondRow ul li input[type=checkbox]{
+					float:left;
+					margin-top:6px;
+				}
+				#content.singleColumn .readAndEraseCardsBox  .boxContent .thirdCardRow .thirdStep .leftPart .secondRow ul li .iconAuthorization{
+					float:left;
+					margin:4px 4px 0px;
+				}
+				#content.singleColumn .readAndEraseCardsBox  .boxContent .thirdCardRow .thirdStep .leftPart .secondRow ul li label{
+					float:left;
+					line-height:27px;
+				}
+		
+		#content.singleColumn .readAndEraseCardsBox  .boxContent .thirdCardRow .thirdStep .leftPart .thirdRow{
+			padding-left:20px;
+			padding-top:8px;
+			padding-bottom:4px;
+			min-height:1px;
+		}
+			#content.singleColumn .readAndEraseCardsBox  .boxContent .thirdCardRow .thirdStep .leftPart .thirdRow ul li{
+				float:left;
+				width:70px;
+				display:inline;
+				height:27px;
+			}
+				#content.singleColumn .readAndEraseCardsBox  .boxContent .thirdCardRow .thirdStep .leftPart .thirdRow ul li input[type=checkbox]{
+					float:left;
+					margin-top:6px;
+					display:inline;
+				}
+				#content.singleColumn .readAndEraseCardsBox  .boxContent .thirdCardRow .thirdStep .leftPart .thirdRow ul li label{
+					float:left;
+					line-height:27px;
+					font-size:14px;
+					font-weight:bold;
+					margin-left:6px;
+					display:inline;
+				}
+		
+		#content.singleColumn .readAndEraseCardsTipsBox{
+			margin-bottom:7px;
+			display:none;
+		}
+		#content.readAndEraseCardsTipsShow .readAndEraseCardsTipsBox{
+			display:block;
+		}
+			#content.singleColumn .readAndEraseCardsTipsBox .boxContent{
+				padding-left:15px;
+				padding-top:9px;
+				padding-bottom:12px;
+			}
+				#content.singleColumn .readAndEraseCardsTipsBox .boxContent .notice{
+					min-height:17px;
+					line-height:17px;
+					background:url(../images/btn-room-finish.png) left center no-repeat;
+					padding-left:24px;
+				}
+		
+		#content.readAndEraseCardsTipsShow .readAndEraseCardsBox .boxContent .thirdCardRow .firstStep{
+			padding-top:87px;
+			height:124px;
+		}
+	
+	
+	
+		#content.singleColumn .readAndEraseCardsBox .boxContent .forthCardRow .forthCardRowTitle{
+			padding-left:20px;
+			padding-bottom:14px;
+			padding-top:14px;
+			border-bottom:1px solid #ccc;
+			background-color:#efefef;
+		}
+		#content.singleColumn .readAndEraseCardsBox .boxContent .forthCardRow .forthCardRowContent{
+			padding:10px 20px;
+			min-height:172px;
+		}
+			#content.singleColumn .readAndEraseCardsBox .boxContent .forthCardRow .forthCardRowContent ul li{
+				padding-top:10px;
+				padding-bottom:10px;
+				float:left;
+				width:18%;
+			}
+				#content.singleColumn .readAndEraseCardsBox .boxContent .forthCardRow .forthCardRowContent ul li input[type=checkbox]{
+					float:left;
+					display:inline;
+				}
+				#content.singleColumn .readAndEraseCardsBox .boxContent .forthCardRow .forthCardRowContent ul li label{
+					float:left;
+					margin-left:6px;
+					display:inline;
+				}
+				#content.singleColumn .readAndEraseCardsBox .boxContent .forthCardRow .forthCardRowContent .forthCardRowCheckoutRoomsCommand{
+					padding-top:10px;
+				}
+					#content.singleColumn .readAndEraseCardsBox .boxContent .forthCardRow .forthCardRowCheckoutRoomsCommand .btnGreen{
+						margin-right:4px;
+					}
+						#content.singleColumn .readAndEraseCardsBox .boxContent .forthCardRow .forthCardRowCheckoutRoomsCommand .btnC{
+							min-width:100%;
+						}
+
+
+#pageReadAndEraseCard #content.singleColumn{
+	min-height:450px;
+}
+
+#pageRoomAcailability .filterPanel .cell{
+	width:100%;
+	padding-left:20px;
+	display:inline;
+}
+#pageRoomAcailability .filterPanel .firstCell{
+	border-left:0px;
+}
+	#pageRoomAcailability .filterPanel .boxInner .boxContent .boxFilterBody .cell tr td{
+		min-height:13px;
+		padding-bottom:7px;
+		overflow:hidden;
+	}
+		#pageRoomAcailability .filterPanel .cell tr td input[type=checkbox]{
+			float:left;
+			margin-top:5px;
+			display:inline;
+		}
+		#pageRoomAcailability .filterPanel .cell tr td label{
+			float:left;
+			line-height:24px;
+			margin-left:9px;
+			display:inline;
+			color:#666666;
+			font-weight:bold;
+		}
+		#pageRoomAcailability .filterPanel .cell tr td .icon{
+			width:24px;
+			height:24px;
+			float:left;
+			margin-left:10px;
+			display:inline;
+		}				
+		#pageRoomAcailability .filterPanel .cell tr td .iconStatusYellow{
+			background:url(../images/icon-status-color-yellow.png) left top no-repeat;
+		}
+		#pageRoomAcailability .filterPanel .cell tr td .iconStatusRed{
+			background:url(../images/icon-status-color-red.png) left top no-repeat;
+		}
+
+		#pageRoomAcailability .filterPanel .cell tr td .iconStatusOrange{
+			background:url(../images/icon-status-color-orange.png) left top no-repeat;
+		}
+		#pageRoomAcailability .filterPanel .cell tr td .iconStatusBlue{
+			background:url(../images/icon-status-color-blue.png) left top no-repeat;
+		}
+		#pageRoomAcailability .filterPanel .cell tr td .iconStatusGreen{
+			background:url(../images/icon-status-color-green.png) left top no-repeat;
+		}
+	
+	#pageRoomAcailability .filterPanel .thirdCell input[type=text]{
+		margin-top:4px;
+	}
+	
+	#pageRoomAcailability .filterPanel .forthCell input[type=checkbox]{
+		float:left;
+		margin-top:7px;
+		margin-right:6px;
+		display:inline;
+	}
+	#pageRoomAcailability .filterPanel .forthCell label{
+		float:left;
+		line-height:28px;
+	}
+	
+	.filterPanel .thirdCell input[type=text]{
+		width:171px;
+	}
+	.filterPanel .thirdCell .multipleSelect{
+		width:187px;
+		height:92px;
+		margin-top:10px;
+	}
+	
+	#pageRoomAcailability .viewDetailsList {
+		border-top:1px solid #ccc;
+		border-bottom:1px solid #ccc;
+		min-height:70px;
+		padding:4px 0px 15px 20px;
+	}
+	#pageRoomAcailability .viewDetailsList ul li{
+		float:left;
+		width:182px;
+		display:inline;
+		margin-right:56px;
+		margin-top:11px;
+	}
+	#pageRoomAcailability .viewDetailsList ul li.last{
+		margin-right:0px;
+	}	
+			#pageRoomAcailability .viewDetailsList ul li .cellBox{
+			    
+		    }
+			#pageRoomAcailability .viewDetailsList ul li .cellBox .cellBoxInner{
+                height:170px; /*Don't change the height, it has dependency*/
+                overflow:auto;
+			}
+				#pageRoomAcailability .viewDetailsList ul li .cellBox .cellBoxInner .inputWrapper{
+					float:left;
+					width:24px;
+					height:24px;
+					display:inline;
+					margin-left:6px;
+					margin-top:6px;
+					background-position:left top;
+					background-repeat:no-repeat;
+				}
+				#pageRoomAcailability .viewDetailsList ul li .cellBox .cellBoxInner h3{
+					line-height:24px;
+					float:left;
+					display:inline;
+					font-size:18px;
+					margin-top:6px;
+					margin-left:10px;
+				}
+				#pageRoomAcailability .viewDetailsList .norecordsfound
+				{
+				    text-align:center;
+				    color:#ff0000;
+				}
+				#pageRoomAcailability .viewDetailsList ul li .cellBox .cellBoxInner .inputWrapperColorYellow{
+					background-image:url(../images/icon-status-color-yellow.png);
+				}
+				#pageRoomAcailability .viewDetailsList ul li .cellBox .cellBoxInner .inputWrapperColorRed{
+					background-image:url(../images/icon-status-color-red.png);
+			    }
+
+				#pageRoomAcailability .viewDetailsList ul li .cellBox .cellBoxInner .inputWrapperColorBlue{
+					background-image:url(../images/icon-status-color-blue.png);
+				}
+				
+				.inputOfficeWrapper
+                {
+                    height:30px; /*Don't change the height, it has dependency*/
+	                background-image:url(../images/icon-status-color-blue.png);
+	                background-repeat:no-repeat;
+                }
+
+				#pageRoomAcailability .viewDetailsList ul li .cellBox .cellBoxInner .inputWrapperColorOrange{
+					background-image:url(../images/icon-status-color-orange.png);
+				}
+				#pageRoomAcailability .viewDetailsList ul li .cellBox .cellBoxInner .inputWrapperColorPink{
+					background-image:url(../images/icon-status-color-pink.png);
+				}
+				
+				#pageRoomAcailability .viewDetailsList ul li .cellBox .cellBoxInner .inputWrapperColorGreen,
+				.checkGreen
+				{
+					background-image:url(../images/icon-status-color-green.png);
+				}
+					#pageRoomAcailability .viewDetailsList ul li .cellBox .cellBoxInner .inputWrapper input[type=checkbox]{
+						margin:5px 0 0 5px;												
+					}
+					
+					#pageRoomAcailability .viewDetailsList ul li .cellBox .cellBoxInner .previewImageList{
+						padding-left:14px;
+						padding-right:14px;
+						min-height:1px;
+					}
+						#pageRoomAcailability .viewDetailsList ul li .cellBox .cellBoxInner .previewImageList .leftPreview{
+							float:left;
+							width:73px;
+							height:61px;
+							display:inline;
+							background-color:#ccc;
+						}
+						#pageRoomAcailability .viewDetailsList ul li .cellBox .cellBoxInner .previewImageList .rightPreview{
+							float:right;
+							width:73px;
+							height:61px;
+							display:inline;
+							background-color:#ccc;
+						}
+					
+					#pageRoomAcailability .viewDetailsList ul li .cellBox .cellBoxInner p{
+						font-size:12px;
+						font-weight:bold;
+						text-align:center;
+						line-height:26px;
+					}
+					#pageRoomAcailability .viewDetailsList ul li .cellBox .cellBoxInner .authorizationList{
+						padding-left:14px;
+					}
+						#pageRoomAcailability .viewDetailsList ul li .cellBox .cellBoxInner .authorizationList .iconAuthorization{
+							float:left;
+						}
+		
+
+/* three column */
+#content.threeColumn{
+	min-height:200px;
+	padding-bottom:6px;
+}
+	#content.threeColumn .leftSide{
+		width:244px;
+		float:left;
+		display:inline;		
+		padding-left:10px;
+	}
+		#content.threeColumn .leftSide .box{
+			margin-top:20px;
+		}
+		#content.threeColumn .leftSide .chartBox{
+			margin-bottom:0px;
+			height:178px;
+		}
+		#content.threeColumn .leftSide .roomsList{
+			margin-top:0px;
+		}
+			#content.threeColumn .leftSide .roomsList .boxInner{
+				height:69px;
+				width:242px;
+				overflow:hidden;
+			}
+			#content.threeColumn .leftSide .roomsList ul li{
+				float:left;
+				height:69px;
+				width:79px;
+				border-left:1px solid #ccc;
+				text-align:center;
+				font-size:11px;
+				line-height:12px;
+				color:#666666;
+			}
+			#content.threeColumn .leftSide .roomsList ul li.first{
+				border:0px;
+			}
+				#content.threeColumn .leftSide .roomsList ul li .strong{
+					font-size:30px;
+					padding-top:5px;
+					line-height:36px;
+					font-weight:bold;
+				}
+	#content.threeColumn .leftSide .authorizationList{
+		width:245px;
+		float:left;
+	}
+		#content.threeColumn .leftSide .authorizationList .boxInner{
+			overflow:hidden;
+		}
+		#content.threeColumn .leftSide .authorizationList .boxTitle{
+			text-align:center;
+			padding-left:0px;
+			border-bottom:0px;
+			
+		}
+			#content.threeColumn .leftSide .authorizationList .boxTitle h3{
+				float:none;
+			}
+			#content.threeColumn .leftSide .authorizationList .authorizationListBody ul li{
+				float:left;
+				width:60px;
+				height:87px;
+				border-left:1px solid #ccc;
+				border-top:1px solid #ccc;
+			}
+			#content.threeColumn .leftSide .authorizationList .authorizationListBody ul li.first{
+				border-left:0px;
+			}
+			
+				#content.threeColumn .leftSide .authorizationList .authorizationListBody ul li .authorizationCell{
+					width:60px;
+					height:87px;
+					text-align:center;
+					font-size:12px;
+					line-height:12px;
+					font-weight:bold;
+					font-family:Calibri;
+				}
+					#content.threeColumn .leftSide .authorizationList .authorizationListBody ul li .authorizationCell .icon{
+						height:20px;
+						overflow:hidden;
+						padding-top:6px;
+					}
+					#content.threeColumn .leftSide .authorizationList .authorizationListBody ul li .authorizationCell .roomData{
+						text-align:center;
+						width:60px;
+						height:31px;
+						background-color:#c4c4c4;
+						overflow:hidden;
+						margin:2px auto 0px;
+					}
+						#content.threeColumn .leftSide .authorizationList .authorizationListBody ul li .authorizationCell .roomData strong{
+							font-size:18px;
+							line-height:18px;
+						}
+						#content.threeColumn .leftSide .authorizationList .authorizationListBody ul li .authorizationCell .roomData p{
+							font-size:10px;
+							line-height:12px;
+							color:#666666;
+						}
+
+
+	#content.threeColumn .middleSide{
+		width:403px;
+		float:left;		
+		padding-left:10px;
+		display:inline;
+	}
+		#content.threeColumn .middleSide .box{
+			margin-top:20px;
+		}
+			#content.threeColumn .middleSide .receptionListBox dl{
+				width:100%;
+			}
+				#content.threeColumn .middleSide .receptionListBox dl dd{
+					min-height:82px;
+					border-bottom:1px solid #ccc;
+				}
+				#content.threeColumn .middleSide .receptionListBox dl dd.lastRow{
+					border-bottom:0px;
+				}
+					#content.threeColumn .middleSide .receptionListBox dl dd .leftPart{
+						float:left;
+						width:200px;
+						display:inline;
+					}
+					#content.threeColumn .middleSide .receptionListBox dl dd .rightPart{
+						float:left;
+						width:199px;
+						margin-left:1px;
+						display:inline;
+					}
+					#content.threeColumn .middleSide .receptionListBox dl dd .controlCell{
+						min-height:1px;
+						padding-left:10px;
+					}
+						#content.threeColumn .middleSide .receptionListBox dl dd .controlCell .symbol{
+							float:left;
+							width:55px;
+							height:56px;
+							margin-top:16px;
+							display:inline;
+						}
+							#content.threeColumn .middleSide .receptionListBox dl dd .controlCell .symbol a{
+								display:block;								
+								width:55px;
+								height:56px;
+								position:relative;								
+							}							
+							#content.threeColumn .middleSide .receptionListBox dl dd .controlCell .symbol a.symbolGuestCheckIn{
+								background:url(../images/icon-control-guest-checkin.png) center center no-repeat;
+							}
+							#content.threeColumn .middleSide .receptionListBox dl dd .controlCell .symbol a.symbolGuestCopy{
+								background:url(../images/icon-control-guest-copy.png) center center no-repeat;
+							}
+							#content.threeColumn .middleSide .receptionListBox dl dd .controlCell .symbol a.symbolCheckout{
+								background:url(../images/icon-control-checkout.png) center center no-repeat;
+							}
+							#content.threeColumn .middleSide .receptionListBox dl dd .controlCell .symbol a.symbolSingleOpeningCard{
+								background:url(../images/icon-control-single-opening-card.png) center center no-repeat;
+							}
+							#content.threeColumn .middleSide .receptionListBox dl dd .controlCell .symbol a.symboleadEraseCard{
+								background:url(../images/icon-control-read-erase-card.png) center center no-repeat;
+							}
+							#content.threeColumn .middleSide .receptionListBox dl dd .controlCell .symbol a.symbolHotelInformation{
+								background:url(../images/icon-control-hotel-information.png) center center no-repeat;
+							}
+								#content.threeColumn .middleSide .receptionListBox dl dd .controlCell .symbol a .keyboardControl{
+									position:absolute;
+									right:0px;
+									top:1px;
+									width:18px;
+									height:18px;
+									background:transparent url(../images/icon-control-bg.png) left top no-repeat;
+									text-align:center;
+									line-height:18px;
+									color:#fff;
+								}
+						#content.threeColumn .middleSide .receptionListBox dl dd .controlCell .symbolContent{
+							float:left;
+							width:110px;
+							display:inline;
+							margin-left:14px;
+							margin-top:10px;
+						}
+							#content.threeColumn .middleSide .receptionListBox dl dd .controlCell .symbolContent a{
+								font-weight:bold;
+							}
+							#content.threeColumn .middleSide .receptionListBox dl dd .controlCell .symbolContent p{
+								padding-top:2px;
+								font-size:10px;
+								line-height:12px;
+							}
+
+		#content.threeColumn .middleSide .groupFunctionRemindersBox{
+			margin-top:11px;
+		}
+			#content.threeColumn .middleSide .groupFunctionRemindersBox .boxInner{
+				height:161px;
+				overflow:auto;
+			}
+			#content.threeColumn .middleSide .groupFunctionRemindersBox table{
+				table-layout:fixed;
+				width:100%;
+			}
+				#content.threeColumn .middleSide .groupFunctionRemindersBox table td{
+					vertical-align:middle;
+					line-height:16px;
+					padding:7px 0px 6px;
+					background-color:#f0f0f0;
+					border-bottom:1px solid #ccc;
+				}
+				#content.threeColumn .middleSide .groupFunctionRemindersBox table td.firstColumn{
+					text-align:center;
+				}
+				#content.threeColumn .middleSide .groupFunctionRemindersBox table tr.odd td{
+					background-color:#fff;
+				}
+		
+	#content.threeColumn .rightSide{
+		width:244px;
+		float:left;
+		display:inline;
+		padding-left:10px;
+	}
+		#content.threeColumn .rightSide .box{
+			margin-top:20px;
+		}
+		#content.threeColumn .rightSide .todayScheduledCheckoutBox{
+		
+		}
+			#content.threeColumn .rightSide .todayScheduledCheckoutBox .tableListWrapper{
+				height:419px;
+				overflow:auto;
+			}
+			#content.threeColumn .rightSide .todayScheduledCheckoutBox .todayScheduledCheckoutCommand{
+				height:44px;
+				border-top:1px solid #ccc;
+				padding-top:16px;
+				text-align:center;
+			}
+				#content.threeColumn .rightSide .todayScheduledCheckoutBox .todayScheduledCheckoutCommand .btnGreen .btnC{
+					padding:0 16px;
+				}
+			#content.threeColumn .rightSide .todayScheduledCheckoutBox table{
+				table-layout:fixed;
+				width:100%;
+			}
+				#content.threeColumn .rightSide .todayScheduledCheckoutBox table td{
+					vertical-align:top;
+					line-height:16px;
+					padding:7px 0px;
+					border-bottom:1px solid #ccc;
+				}
+				#content.threeColumn .rightSide .todayScheduledCheckoutBox table td.firstColumn{
+					text-align:center;
+				}
+					#content.threeColumn .rightSide .todayScheduledCheckoutBox table td.firstColumn input[type=checkbox]{
+						margin-top:2px;
+					}
+				#content.threeColumn .rightSide .todayScheduledCheckoutBox table tr.odd td{
+					background-color:#f0f0f0;
+				}
+					#content.threeColumn .rightSide .todayScheduledCheckoutBox table td dl{
+						padding-bottom:3px;
+					}
+						#content.threeColumn .rightSide .todayScheduledCheckoutBox table td dl dt{
+							font-size:12px;
+							font-weight:bold;
+							line-height:14px;
+						}
+						#content.threeColumn .rightSide .todayScheduledCheckoutBox table td dl dd{
+							font-size:11px;
+							line-height:14px;
+						}
+
+
+.icon-authorization
+{
+	src:url('../Images/HeaderFooter/oscar_header_right_1.gif')
+}
+
+.Dropdownlist
+{
+	width:225px;
+	height:27px;
+	padding:3px;
+}
+
+.LockStatusDropdownlist
+{
+	width:178px;
+	height:27px;
+	padding:3px;
+}
+
+.CardInfoDropdownlist
+{
+	width:153px;
+	height:29px;
+	padding:3px;
+}
+
+.rowStyle
+{
+	padding-left:12px;
+	width:170px;
+	vertical-align:middle;
+}
+.currentName{
+		background:transparent url(../images/icon-breadcrumb.png) left center no-repeat;
+		padding-left:10px;
+		margin-right:6px;
+	}
+.box .boxContent .textbox
+{
+	width:200px;
+	height:10px;
+}
+
+.textbox
+{
+	width:200px;
+}
+
+.Emailtextbox
+{
+	width:200px;
+}
+
+.input
+{
+    width:220px;
+    height:30px;
+}
+
+.MasteruserTable
+{
+	width:100%;
+	padding-left:20px;
+	vertical-align:middle;
+	height:20px;
+}
+
+.ctrlIncrease{
+		left:0px;
+		top:0px;
+		width:20px;
+		height:24px;
+		line-height:19px;
+		display:block;
+		background:transparent url(../images/bg-number-control.png) left top repeat-x;
+		color:#fff;
+		text-align:center;
+		font-size:10px;
+		font-weight:bold;
+		text-decoration:none;
+	}
+	
+	.ctrlReduce{
+		left:0px;
+		top:0px;
+		width:20px;
+		height:24px;
+		line-height:19px;
+		display:block;
+		background:transparent url(../images/bg-number-control.png) left top repeat-x;
+		color:#fff;
+		text-align:center;
+		font-size:10px;
+		font-weight:bold;
+		text-decoration:none;
+	}
+	
+	.AnchorTag
+	{
+		font-style:normal;
+		font-size:small;
+		font-weight:bold;
+	}
+
+
+.column
+{
+	width: 24%;
+	padding-top:5px;
+	margin-right:1%;
+	min-height:200px;
+	background:#fff;
+	float:left;
+}
+
+.column .dragbox{
+	margin:5px 2px  20px;
+	background:#fff;
+	position:relative;
+	border:1px solid #67a0e5;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	height: 296px;
+	overflow-y: auto;
+	overflow-x:hidden;
+}
+.column .dragbox h2{
+	margin:0;
+	font-size:12px;
+	padding:5px;
+	height:20px;
+	background:#c5d7fd;
+	color:#000;
+	border-bottom:1px solid #eee;
+	/*cursor:move;*/
+}
+.dragbox-content{
+	background:#fff;
+	min-height:100px; margin:5px;
+}
+.column .placeholder{
+	background: #f0f0f0;
+	border:1px dashed #ddd;
+}
+.dragbox h2.collapse{
+	background:#c5d7fd url('collapse.png') no-repeat top right;
+}
+.dragbox h2 .configure{
+	font-size:11px; font-weight:normal;
+	margin-right:30px; float:right;
+}
+
+.receptioncolumn
+{
+    padding-left: 5px;
+	padding-top:5px;	
+	margin-right:1%;
+	min-height:200px;
+	background:#fff;
+	min-height: 100px;
+}
+
+.receptioncolumn .receptioncolumnHeader{
+	margin:5px 2px  20px;
+	background:#fff;
+	position:relative;	
+	border:1px solid #67a0e5;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	 max-height: 439px;
+	min-height: 437px;
+	overflow-y: auto;
+}
+.receptioncolumn .receptioncolumnHeader h2{
+	margin:0;
+	font-size:12px;
+	padding:5px;
+	height:20px;
+	background:#333333;
+	color:#fff;
+	border-bottom:1px solid #eee;
+}
+.receptioncolumnContent{
+	background:#fff;
+	min-height:100px; margin:5px;
+}
+
+.guestCheckinColumn
+{
+	padding-top:5px;
+	margin-right:1%;
+	min-height:200px;
+	background:#fff;
+	float:left;
+}
+
+.guestCheckinColumn .guestCheckinColumnHeader{
+	margin:5px 2px  20px;
+	background:#fff;
+	position:relative;	
+	border:1px solid #67a0e5;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+
+.chartBox
+{
+			margin-bottom:0px;
+			height:178px;
+}
+
+.roomsList .boxInner{
+				height:69px;
+				width:202px;
+				overflow:hidden;
+			}
+			.roomsList ul li{
+				float:left;
+				height:69px;
+				width:68px;
+				border-left:1px solid #ccc;
+				text-align:center;
+				font-size:9px;
+				line-height:12px;
+				color:#000;
+				font-weight:bold;
+			}
+			.roomsList ul li.first{
+				border:0px;
+			}
+				.roomsList ul li .strong{
+					font-size:20px;
+					padding-top:5px;
+					line-height:36px;
+					font-weight:bold;
+				}
+				
+
+.authorizationList
+{
+		padding-left:2px;
+		width:98%;
+		height:245px;
+		float:left;
+	}
+		.authorizationList .boxInner{
+			overflow:auto;
+			width:98%;
+			height:245px;			
+		}
+		.authorizationList .boxTitle{
+			text-align:center;
+			padding-left:0px;
+			border-bottom:0px;
+		}
+			.authorizationList .boxTitle h3{
+				float:none;
+			}
+			.authorizationList .authorizationListBody ul li{
+				float:left;
+				width:65px;
+				height:78px;
+			}
+			.authorizationList .authorizationListBody ul li.first{
+				border-left:0px;
+			}
+			
+				.authorizationList .authorizationListBody ul li .authorizationCell{
+					width:78px;
+					height:78px;
+					text-align:center;
+					font-size:12px;
+					line-height:12px;
+					font-weight:bold;
+					font-family:Calibri;
+				}
+					.authorizationList .authorizationListBody ul li .authorizationCell .icon{
+						height:27px;
+						overflow:hidden;
+						padding-top:6px;
+					}
+					.authorizationList .authorizationListBody ul li .authorizationCell .roomData{
+						text-align:center;
+						width:58px;
+						height:31px;
+						background-color:#c4c4c4;
+						overflow:hidden;
+						margin:2px auto 0px;
+					}
+						.authorizationList .authorizationListBody ul li .authorizationCell .roomData strong{
+							font-size:12px;
+							line-height:18px;
+						}
+						.authorizationList .authorizationListBody ul li .authorizationCell .roomData p{
+							font-size:10px;
+							line-height:12px;
+							color:#666666;
+						}
+
+.receptionListBox dl{
+				width:100%;
+			}
+				.receptionListBox dl dd{
+					min-height:81px;
+					border-bottom:1px solid #ccc;
+				}
+				.receptionListBox dl dd.lastRow{
+					border-bottom:0px;
+				}
+					.receptionListBox dl dd .leftPart{
+						float:left;
+						width:100%;
+						display:inline;
+					}
+					.receptionListBox dl dd .rightPart{
+						float:left;
+						width:100%;
+						margin-left:1px;
+						display:inline;
+					}
+					.receptionListBox dl dd .controlCell{
+						min-height:1px;
+						padding-left:10px;
+						width:100%;
+					}
+					.receptionListBox dl dd .controlCell table tr td
+					{
+					    text-align:center;
+					}
+						.receptionListBox dl dd .controlCell .symbol{
+							margin-top:5px;
+							width:100%;							
+						}
+							.receptionListBox dl dd .controlCell .symbol a{
+								display:block;
+								width:75px;
+								height:50px;
+								position:relative;								
+							}
+							.receptionListBox dl dd .controlCell .symbol a.symbolGuestCheckIn{
+								background:url(../images/home/icon_GuestCheckin.png) center center no-repeat;
+								width:95%;
+							}
+							.receptionListBox dl dd .controlCell .symbol a.symbolGuestCheckInDisabled{
+								background:url(../images/home/icon_GuestCheckinDisabled.png) center center no-repeat;
+								width:95%;
+								cursor:text;
+							}
+							.receptionListBox dl dd .controlCell .symbol a.symbolGuestCopy{
+								background:url(../images/home/icon_GuestCopy.png) center center no-repeat;
+								width:95%;
+							}
+							.receptionListBox dl dd .controlCell .symbol a.symbolGuestCopyDisabled{
+								background:url(../images/home/icon_GuestCopyDisabled.png) center center no-repeat;
+								width:95%;
+								cursor:text;
+							}
+							.receptionListBox dl dd .controlCell .symbol a.symbolCheckout{
+								background:url(../images/home/icon_GuestCheckout.png) center center no-repeat;
+								width:95%;
+							}
+							.receptionListBox dl dd .controlCell .symbol a.symbolCheckoutDisabled{
+								background:url(../images/home/icon_GuestCheckoutDisabled.png) center center no-repeat;
+								width:95%;
+								cursor:text;
+							}
+							.receptionListBox dl dd .controlCell .symbol a.symbolSingleOpeningCard{
+								background:url(../images/home/icon_SingleOpeningCard.png) center center no-repeat;
+								width:95%;
+							}
+							.receptionListBox dl dd .controlCell .symbol a.symbolSingleOpeningCardDisabled{
+								background:url(../images/home/icon_SingleOpeningCardDisabled.png) center center no-repeat;
+								width:95%;
+								cursor:text;
+							}
+							.receptionListBox dl dd .controlCell .symbol a.symboleadEraseCard{
+								background:url(../images/home/icon_ReadEraseCard.png) center center no-repeat;
+								width:95%;
+							}
+							.receptionListBox dl dd .controlCell .symbol a.symboleadEraseCardDisabled{
+								background:url(../images/home/icon_ReadEraseCardDisabled.png) center center no-repeat;
+								width:95%;
+								cursor:text;
+							}
+							.receptionListBox dl dd .controlCell .symbol a.symbolHotelInformation{
+								background:url(../images/home/icon_HotelInformation.png) center center no-repeat;
+								width:95%;
+							}
+							.receptionListBox dl dd .controlCell .symbol a.symbolHotelInformationDisabled{
+								background:url(../images/home/icon_HotelInformationDisabled.png) center center no-repeat;
+								width:95%;
+								cursor:text;
+							}
+							.receptionListBox dl dd .controlCell .symbol a.symbolGroups{
+								background:url(../images/home/Groups.png) center center no-repeat;
+								width:95%;
+							}							
+							.receptionListBox dl dd .controlCell .symbol a.symbolGroupsDisabled{
+								background:url(../images/home/GroupsDisabled.png) center center no-repeat;
+								width:95%;
+								cursor:text;
+							}
+								.receptionListBox dl dd .controlCell .symbol a .keyboardControl{
+									position:absolute;
+									right:0px;
+									top:1px;
+									width:18px;
+									height:18px;
+									background:transparent url(../images/icon-control-bg.png) left top no-repeat;
+									text-align:center;
+									line-height:18px;
+									color:#fff;
+								}
+						.receptionListBox dl dd .controlCell .symbolContent{
+							float:left;
+							width:100%;
+							display:inline;	
+							white-space: nowrap;
+						}
+							.receptionListBox dl dd .controlCell .symbolContent a{
+								font-weight:bold;								
+							}
+							.receptionListBox dl dd .controlCell .symbolContent p{
+								padding-top:2px;
+								font-size:10px;
+								line-height:12px;
+							}
+
+
+.groupFunctionRemindersBox{
+			margin-top:11px;
+		}
+			.groupFunctionRemindersBox .boxInner{				
+				/*overflow:auto;*/
+			}
+			.groupFunctionRemindersBox .boxInner table{
+				/*table-layout:fixed;*/
+				width:100%;
+			}
+				.groupFunctionRemindersBox .boxInner table td{
+					vertical-align:middle;
+					line-height:16px;
+					padding:7px 0px 6px;
+					background-color:#f0f0f0;
+					border-bottom:1px solid #ccc;
+				}
+				.groupFunctionRemindersBox .boxInner table td.firstColumn{
+					text-align:center;
+				}
+				.groupFunctionRemindersBox .boxInner table tr.odd td{
+					background-color:#fff;
+				}
+
+.todayScheduledCheckoutBox{
+		
+		}
+			.todayScheduledCheckoutBox .tableListWrapper{
+				height:419px;
+				overflow:auto;
+			}
+			.todayScheduledCheckoutBox .todayScheduledCheckoutCommand{
+				height:44px;
+				border-top:1px solid #ccc;
+				padding-top:16px;
+				text-align:center;
+			}
+				.todayScheduledCheckoutBox .todayScheduledCheckoutCommand .btnGreen .btnC{
+					padding:0 16px;
+				}
+			.todayScheduledCheckoutBox table{
+				table-layout:fixed;
+				width:100%;
+			}
+				.todayScheduledCheckoutBox table td{
+					vertical-align:top;
+					line-height:16px;
+					padding:7px 0px;
+					border-bottom:1px solid #ccc;
+				}
+				.todayScheduledCheckoutBox table td.firstColumn{
+					text-align:center;
+				}
+					.todayScheduledCheckoutBox table td.firstColumn input[type=checkbox]{
+						margin-top:2px;
+					}
+				.todayScheduledCheckoutBox table tr.odd td{
+					background-color:#f0f0f0;
+				}
+					.todayScheduledCheckoutBox table td dl{
+						padding-bottom:3px;
+					}
+						.todayScheduledCheckoutBox table td dl dt{
+							font-size:12px;
+							font-weight:bold;
+							line-height:14px;
+						}
+						.todayScheduledCheckoutBox table td dl dd{
+							font-size:11px;
+							line-height:14px;
+						}
+
+.ShortMenuTitle
+{
+	width:55px;
+}
+
+.LongMenuTitle
+{
+	width:75px;
+}
+
+.BreadCrumAndMenu
+{
+	background-color: #1D1D1D;
+	height: 33px;
+	width: 100%;
+}
+
+.BreadCrumColumn
+{
+	width: 31%;
+	vertical-align: middle;
+	color: #FFFFFF;
+	padding-left:10px;
+	white-space: nowrap;
+}
+
+.lockStyle
+{
+    width:12em;
+}
+
+.SubMenuColumn
+{
+	width: 67%;
+	vertical-align: middle;
+}
+						
+						
+.ReadCardDiv
+{
+	min-height:262px;   
+}
+
+.SearchLock
+{
+	float: left; 
+	vertical-align: bottom; 
+	padding-top: 5px;
+	padding-left:8px;
+}
+.lockdescription
+{
+    font-weight:bold;
+    margin-left:5px
+}
+.WrapText
+{
+    color:#53A4EC;
+    width:80px;
+    white-space:normal;
+}
+.dropdown 
+{
+color:#000000;
+margin: 3px -22px 0 0;
+width: 120px;
+position: relative;
+height: 17px;
+text-align:left;
+}
+.submenu
+{    
+border:2px solid #dedede;
+background: #fff;
+position: absolute;
+top: -8px;
+left: -20px;
+z-index: 100;
+min-width: 120px;
+display: none;
+margin-left: 05px;
+padding: 20px 0 0px;
+border-radius: 6px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+.dropdown li a 
+{
+color: #000000;
+display:inline-block;
+font-family: arial;
+font-weight: bold;
+padding: 6px 15px;
+cursor: pointer;
+text-decoration:none;
+}
+
+
+a.account 
+{
+border:1px solid #dedede;
+font-size: 11px;
+line-height: 16px;
+color: #000000;
+position: absolute;
+z-index: 1100;
+display: block;
+padding-bottom:10px;
+padding-left:3px;
+float:left;
+width: 120px;
+height:10px;
+text-decoration: none;
+background: url(../images/arrowdown1.png) 105px 3px no-repeat;
+cursor:pointer;
+margin: -9px 0 0 -15px;
+}
+
+a.account:hover
+{
+background:#155FB0 url(../images/arrowdown1.png) 105px 3px no-repeat;
+color: #FFFFFF;
+text-decoration: none;
+}
+.root
+{
+list-style:none;
+margin:0px;
+padding:0px;
+font-size: 11px;
+padding: 11px 0 0 0px;
+}
+
+.submenu li:hover
+{
+background:#155FB0;
+color: #FFFFFF;
+text-decoration: none;
+}
+
+a.ckbHover:hover
+{
+    background:#155FB0;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.ErrorIconDisplay
+{
+    float:left;
+    padding-top:17px;
+    padding-right:10px;
+    display:none;
+}
+
+.ErrorIcon
+{
+    float:left;
+    padding-top:10px;
+    padding-right:5px;
+    display:none;
+}
+
+.ValidationSummary
+{
+    color:Red;
+    height:16px;
+    width:10;
+    text-align:left;
+    display:none;
+}
+
+.ImagePagerControl,
+.gridIcon
+{
+    padding-right:10px;
+    vertical-align:middle;
+}
+
+#btn-Reset:hover
+{
+    height:19px;
+    width:19px;
+    padding-right:11px;    
+}
+
+#btnTestNetwork:hover
+{
+    height:19px;
+    width:19px;
+    padding-right:11px;    
+}
+
+#btnResetKeying:hover
+{
+    height:18px;
+    width:18px;
+    padding-right:11px;    
+}
+
+#btn-Delete:hover
+{
+    height:22px;
+    width:21px;
+    padding-right:11px;    
+}
+
+#btnKeyingInformation:hover
+{
+    height:21px;
+    width:21px;
+    padding-right:11px;
+}
+
+#btn-Add:hover
+{
+    height:19px;
+    width:19px; 
+    padding-right:11px;     
+}
+#btn-UpdateSequence:hover
+{
+    height:19px;
+    width:19px; 
+    padding-right:11px;  
+    cursor:pointer;
+}
+#btnCancelMUser:hover
+{
+    height:19px;
+    width:19px; 
+    padding-right:11px;  
+    cursor:pointer;
+}
+#btn-GenUpdate:hover
+{
+    height:19px;
+    width:19px; 
+    padding-right:11px;  
+    cursor:pointer;
+}
+#btn-EncodeCard:hover
+{
+    height:19px;
+    width:19px; 
+    padding-right:11px;
+    cursor:pointer;     
+}
+
+#btn-Copy:hover
+{
+    height:19px;
+    width:19px; 
+    padding-right:11px;     
+}
+
+#btn-BatchEdit:hover
+{
+    height:20px;
+    width:20px; 
+    padding-right:11px;     
+}
+
+
+#btn-Print:hover
+{
+    height:20px;
+    width:20px; 
+    padding-right:11px; 
+    cursor:pointer;
+}    
+
+#btn-Export:hover
+{
+    height:19px;
+    width:19px; 
+    padding-right:11px; 
+    cursor:pointer;
+} 
+
+#btnUnlockUser:hover
+{
+    height:21px;
+    width:21px; 
+    padding-right:11px; 
+    cursor:pointer;
+} 
+
+#btnEnableTemplate:hover
+{
+    height:21px;
+    width:21px; 
+    padding-right:11px; 
+    cursor:pointer;
+}
+
+#btnStartUpdating:hover
+{
+    height:21px;
+    width:21px; 
+    padding-right:11px; 
+    cursor:pointer;
+}
+
+#btnEnableProperty:hover
+{
+    height:21px;
+    width:21px; 
+    padding-right:11px; 
+    cursor:pointer;
+}
+
+.UnlockUser
+{
+    height:22px;
+    width:22px;
+}
+
+.EnableTemplate,
+.StartUpdating,
+.EnableProperty
+{
+    height:22px;
+    width:22px;
+}    
+
+ 
+.imageHover:hover
+{
+    height:24px;
+    width:24px; 
+    padding-right:11px;
+    cursor:pointer;
+}
+
+#btnAutoSuite:hover 
+{
+    height:22px;
+    width:22px; 
+    padding-right:9px;
+    cursor:pointer;    
+}
+.pageControl .displayIcon
+{
+    width:30%;
+    float:left;
+    padding-top:4px;
+    display:none;
+}
+
+.rowWidth
+{
+    width:380px;
+}
+
+.imageStyle
+{
+    padding-left:16px;
+}
+
+.roomavailabilityImage
+{
+     float:left;
+     padding-left:5px;
+     padding-right:5px;
+}
+
+.backgroundWhite
+{
+     background-color: White;
+}
+
+.selectedRole
+{
+     padding-left:23px;
+     display:none;
+}
+
+.systemroleDiv
+{
+    display: none;
+     min-height: 300px;
+      overflow: auto
+}
+
+.note
+{
+    padding-left: 20px;
+}
+
+.sysprivilegebutton
+{
+     padding-left: 190px;
+}
+
+.gridIcon
+{
+    padding-right:10px;
+    display:none;
+}
+
+.BatchEditControl
+{
+    padding-right:10px;
+    display:none;
+    vertical-align:middle;
+}
+
+.copyControl
+{
+    padding-right:10px;
+    display:none;
+    cursor:pointer;
+    vertical-align:middle;
+}
+
+.EncodeCardControl
+{
+    padding-right:10px;
+    height:20px;
+    width:20px;
+    display:none;
+    vertical-align:middle;
+}
+
+.Update
+{
+    padding-right:10px;
+    display:none;
+    cursor:pointer;
+    vertical-align:middle;
+}
+
+.CancelMasterUser
+{
+    padding-right:10px;
+    height:20px;
+    width:20px;
+    display:none;
+    cursor:pointer;
+    vertical-align:middle;
+}
+
+.Export
+{
+    padding-right:10px;
+    display:none;
+    cursor:pointer;
+}
+
+.AddressControl
+{
+    padding-right:10px;
+    display:none;
+    cursor:pointer;
+    vertical-align:middle;
+}
+
+
+.PrintControl
+{
+    height:21px;
+    width:21px;
+    padding-right:10px;
+    display:none;  
+    vertical-align:middle;  
+}
+
+.UpdateControl
+{
+    padding-right:10px;
+    display:none;
+    vertical-align:middle;
+}
+
+.UpdateGenControl
+{
+    padding-right:10px;
+    display:none;
+    vertical-align:middle;
+}
+
+.AutoSuiteControl {
+	padding-right:10px;
+    display:none;
+    vertical-align:middle;
+}
+/*.CheckInControl
+{
+    padding-right:10px;
+    display:none;
+}
+
+.CheckOutControl
+{
+    padding-right:10px;
+    display:none;
+}*/
+
+.newGuestcheckinLeftPart
+{
+    float:left;
+    padding-top:20px;
+}
+
+.NGCtextbox
+{
+    width:100px;
+}
+
+.newGuestcheckintd
+{
+    padding-right:10px;
+    padding-bottom :10px;
+}
+
+.calendarMasterTable tr td
+{
+    padding:2px;
+}
+
+.calendarTable
+{
+    border:1px solid #424242;
+    background-color:#f2f2f2;
+}
+
+.calendarTable tr
+{
+    border-bottom:1px solid #424242;
+}
+
+.calendarTable tr td
+{
+    border-right:1px solid #424242;
+    padding-right: 10px;
+    font-weight:bold;
+}
+
+.Title
+{
+     background-color: #bbcff5;
+}
+
+.auth
+{
+    width:90px;
+}
+
+/*symbolGuestCheckIn{
+	background:green url(../images/icon_GuestCheckin.png) 18px 0px no-repeat;
+}
+symbolGuestCopy{
+	background:green url(../images/icon_GuestCopy.png) 14px 0px no-repeat;
+}
+symbolCheckout{
+	background:green url(../images/icon_GuestCheckout.png) 14px 0px no-repeat;
+}
+symbolSingleOpeningCard{
+	background:green url(../images/icon-control-single-opening-card.png) 25px 0px no-repeat;
+}
+symboleadEraseCard{
+	background:green url(../images/icon_ReadEraseCard.png) 14px 0px no-repeat;
+}
+symbolHotelInformation{
+	background:green url(../images/icon_HotelInformation.png) 14px 0px no-repeat;
+}*/
+input.errorInput
+{
+     background-color:#f89EA3;
+}
+.blue
+{
+    color:#1379f1;
+}
+		
+label.error 
+{
+width: 24px;
+height: 24px;
+float:left;
+background: url(../images/error.png) left center no-repeat;
+display: inline-block;
+text-indent: -9999px;		
+text-align:left;
+vertical-align:middle;  
+}
+.blue
+{
+    color:Blue;
+    text-decoration:none;
+}
+.red
+{
+    color:#F20337;
+    text-decoration:none;
+}
+.span
+{
+     color:#F20337;
+}
+.normal
+{
+    color:#000000;
+    text-decoration:none;
+}
+.subtitle
+{
+    padding-bottom:10px;
+}
+
+.calendarYear
+{
+    font-size:medium;
+}
+
+.cursorHand
+{
+	cursor:pointer;
+}
+	
+
+.noRecordFound
+{
+	color:#df242b;
+}
+
+.divPopUp
+{
+	width: 100%;
+	display: none;
+}
+
+.displayNone
+{
+    display: none;
+}
+.hidden
+{
+	visibility:hidden;
+}
+.verticalTop
+{
+    vertical-align: top;
+}
+.mandatoryStar
+{
+    color: #df242b;
+    font-weight: 900;
+}
+
+.authImage
+{
+	padding-right: 15px; 
+    padding-top: 10px
+}
+
+.nameHeader
+{
+    padding-left:6px;
+}
+.btnPreviousYear
+{
+    cursor:pointer;
+    height:32px;
+    width:42px;
+}
+.btnPreviousYear:hover
+{
+    height:30px;
+    width:40px;
+}
+.btnNextYear
+{
+    cursor:pointer;
+    height:32px;
+    width:42px;
+}
+.btnNextYear:hover
+{
+    height:30px;
+    width:40px;
+}
+
+.tdcalendarYear
+{
+    vertical-align:middle;
+}
+
+.alignMiddle
+{
+    vertical-align:middle;
+}
+
+
+/**used in Authorizations and BatchEditAuthorization of locks**/
+	.boxDivision{
+		border:1px solid #ccc;
+		min-height:10px;
+	    max-width:1%
+	}
+
+#txtincrementDate
+{
+    float: left;
+    width:110px;
+}
+
+#txtdecrementDate
+{
+    float: left;
+    width:110px;
+}
+
+.fieldset
+{
+    border:1px solid #a8acad;
+}
+
+.fieldsettable1
+{
+    height:45px;
+}
+
+.fieldsettable2
+{
+    height:27px;
+}
+
+
+.tdfieldset1
+{
+     width: 15%;
+}
+.tdfieldset2
+{
+     width: 85%;
+}
+.logout
+{
+    height:21px;
+    width:70px;
+}
+.logout:hover
+{
+    cursor:pointer;
+    height:20px;
+    width:69px;
+}
+
+.textboxsmall
+{
+    padding: 3px 0px !important;
+    height:15px !important;
+}
+
+.filterTextBox
+{
+    padding: 3px 0px !important;
+    height:15px !important;
+    width:103px;
+}
+
+#content.singleColumn .tableList .requireZebraCrossingGrid thead th{
+		vertical-align:middle;
+		text-align:left;
+		padding-left:2px;
+		padding-right:2px;
+		height:33px;
+		background-color:#C5D7FD;
+	}
+
+#content.singleColumn .tableList .requireZebraCrossingGrid .sorted
+	{	    
+		text-align:left;
+		padding-bottom: 0px;
+	}	
+.gridCancel
+{    
+	display:inline-block;
+	width:23px;
+	height:22px;
+	overflow:hidden;
+	background:url(../images/cancel_update.png) left top no-repeat;
+}
+.gridUpdate
+{    
+	display:inline-block;
+	width:23px;
+	height:22px;
+	overflow:hidden;
+	background:url(../images/update.png) left top no-repeat;
+}
+
+.SplCardTitle
+{
+    height: 40px;
+    padding-left: 20px;
+    font-family: Arial;
+    font-size: 10pt;
+    font-weight: bold;
+    vertical-align: middle;
+    text-align: left;
+    padding-top: 20px;
+}
+
+.midRow
+{
+    height: 15px;
+    width: 100%;
+    background-color: #c5d7fd;
+}
+    
+.SplCardContent
+{
+    height: 30px;
+    overflow: auto;
+    display: none;
+    padding-left: 30px;
+    vertical-align: top;
+    font-family: Arial;
+    font-size: 10pt;
+    font-weight: normal;
+    vertical-align: middle;
+}
+    
+.SplCardContainer
+{
+    width: 100%;
+    border-top: solid 1px #C1C1C1;
+    border-bottom: solid 1px #C1C1C1;
+    border-left: solid 1px #C1C1C1;
+    border-right: solid 1px #C1C1C1;
+    border-color: #c5d7fd;
+    background-color: White;
+}
+
+.boxFilterBody
+{
+    vertical-align:middle;
+    padding-left:10px;
+}
+    
+.spareText
+{
+    padding: 3px 0px !important;
+    height: 15px !important;
+    width: 20% !important;
+}
+
+.Event
+{
+    width:100%;    
+	margin-right:1%;
+	min-height:200px;
+	background:#fff;
+	float:left;
+}
+.Event table
+{
+     width:100%;
+     height:100%     
+}
+.Event table tr td
+{
+     vertical-align:top;     
+}
+.Event table .EventDetails
+{    
+    width:75%;   
+    height:100%;   
+    min-height:600px;
+    padding-left:5px;
+}
+.Event table .EventLeft
+{       
+    width:25%;   
+    height:100%;       
+    border-right:1px solid #67a0e5;
+}
+.Event table .EventLeft .EventLeftButton
+{       
+    text-align:right;
+    padding-bottom:10px;
+    padding-top:10px;
+    padding-right:20px
+}
+
+.Event table .EventList 
+{         
+    min-height:500px;    
+    margin-left:5px;
+    margin-top:5px;
+    margin-right:15px;
+    overflow:hidden;    
+    background:#fff;
+    border:1px solid #ccc;    
+    
+}
+.Event table .EventList dl dd 
+{
+   min-height:13px;
+   padding:4px 10px 2px 20px;  
+   overflow:hidden;    
+   width:100%;  
+   border-bottom: 1px solid #ccc;   
+}
+.Event table .EventList dl dd label
+{
+	float:left;
+	line-height:24px;
+	margin-left:9px;
+	display:inline;
+	color:#666666;
+	font-weight:bold;
+}
+
+.Event table .EventList dl dd .icon
+{      
+	width:24px;
+	height:24px;
+	float:left;	
+	display:inline;	
+}
+.Event table .EventList dl dd .iconEncoder
+{   
+    background:url(../images/Encoder.png) left top no-repeat;
+}
+.Event table .EventList dl dd .iconPortableProgrammer
+{   
+    background:url(../images/PP.png) left top no-repeat;
+}
+.Event table .EventList dl dd .iconWallReader
+{   
+    background:url(../images/WallReader.png) left top no-repeat;
+}
+.Event table .EventList dl dd .iconRevalidator
+{   
+    background:url(../images/Revalidator.png) left top no-repeat;
+}
+.Event table .EventDetails .boxTitleLeft
+{
+    float:left;
+    color:#275Fbb;
+    font-size:15px;
+    font-weight:bold;
+    padding-left:5px;
+}
+
+.Event table .EventDetails .boxTitleRight
+{
+    float:Right;
+    font-size:13px;
+    font-weight:bold;    
+    height:auto;
+}
+.Event table .EventDetails tr td
+{
+    padding-right:20px;
+}
+.Event table .EventDetails .requireZebraCrossing
+{
+    text-align:left;
+    width:100%;    
+    border: 1px solid #ccc;       
+}
+.Event table .EventDetails  .requireZebraCrossing th
+{
+	vertical-align:middle;
+	text-align:left;
+	padding-left:2px;
+	padding-right:2px;	
+	background-color:#C5D7FD;
+	height:25px;		
+}
+.Event table .EventDetails  .requireZebraCrossing tr
+{	
+	text-align:left;	
+	border:	 1px solid #ccc;   
+	height:25px;
+}
+.eventicon
+{
+    width:24px;
+	height:24px;
+	float:left;	
+	display:inline;	
+}
+.eventprevious
+{   
+    background:url(../images/next_arrow1.png) left top no-repeat;
+   
+}
+.eventnext
+{ 
+    background:url(../images/prev_arrow1.png) left top no-repeat;    
+}
+
+.eventpreviousdisable
+{   
+    background:url(../images/next_arrow_dis.png) left top no-repeat;   
+}
+.eventnextdisable
+{ 
+    background:url(../images/prev_arrow_dis.png) left top no-repeat;    
+}
+
+.resizedTextbox {width: 90px; height: 20px} 
+
+.enableCellPadding
+{
+    border-collapse: collapse;
+}
+
+.txtRedColor
+{
+    color:#000000;
+}
+
+.txtGreenColor
+{
+    color:#000000;
+}
+
+.txtBlueColor
+{
+    color:#000000;
+}
+
+.keySelected
+{
+    font-weight:bold;        
+}
+
+.topSpacing
+{
+    padding-top:1em;
+}
+
+.leftSpacing
+{
+    padding-left:1.5em;
+}
+
+.loginMessage
+{
+    background-color:#fffed3;
+    border:1px solid #ccc;
+    height:30px; 
+    width:10 ;
+    text-align:center;
+    line-height:2.4em;
+}
+
+.SelectMultiple
+{
+    height:54px;
+}
+
+.NoContraintTimeshift
+{
+    height: 500px;
+    text-align: center;
+}
+.mGrid input[type=label]
+{
+    color: White;
+}
+.mGrid tr
+{
+    padding: 2px;
+    border: solid 1px #c1c1c1;
+    color: black;
+    text-align: left;
+    font-size: 11px;
+}
+.mGrid
+{
+    padding: 4px 2px;
+    color: #000000;
+    width:148px;
+    /*background: #424242 url(../images/grd_head.png) repeat-x top;*/
+    /*background: #AFDCEC;*/
+    border-left: solid 0px #828282;
+    vertical-align:middle;    
+    padding-left: 12px;
+}
+
+.popupTable
+{
+    background-color: #fff;
+    /*border: solid 1px #ccc;*/
+    border-collapse: collapse;
+    font-family: Verdana,Arial,sans-serif;
+}
+
+.popup
+{
+    /*padding-left:10px;*/
+    /*background: #f0f0f0;*/ 
+    vertical-align:middle;
+}
+
+.trpopupTable
+{
+   /* padding: 5px;*/
+    /*border-bottom: solid 1px #ccc;*/ 
+    height:38px;
+    margin:15px 15px 15px 15px; 
+}
+
+.xppstyle
+{
+    width:50%;
+    padding-left:50px;
+    vertical-align:middle;
+}
+
+.ckbstyle
+{
+    vertical-align:middle;
+}
+
+.empty
+{
+    border-bottom-width:0px !important;
+    vertical-align:top;
+}
+
+.tdActiveWidth
+{
+    width:100px !important;
+}
+
+.tdActiveWidths
+{
+    width:80px !important;
+}
+
+#Page1 tr td a
+{
+   float:left;
+    height:25px;
+    width:20px;
+    line-height:24px;
+    font-size:11px;
+    background:transparent url(../images/btn-page-pagination.png) left top no-repeat;
+    text-align:center;
+    display:inline;
+    padding-right:2px; 
+}
+
+#Page1 tr td a.paging1
+{
+	width:20px;	
+	text-align:left;			   
+	color:#333333;
+	margin-right:2px; 
+	margin-left:2px;			   
+}			
+			
+#Page1 tr td a.pagePrev1
+{	
+	background:url(../images/pageControl/prev.png) left top no-repeat;
+}
+#Page1 tr td a.first1
+{	
+	background: url(../images/pageControl/first.png) left top no-repeat;
+}			
+#Page1 tr td a.pageNext1
+{
+	background: url(../images/pageControl/next.png) left top no-repeat;   
+}
+#Page1 tr td a.last1{			
+	background: url(../images/pageControl/last.png) left top no-repeat;
+}
+
+
+.aMarginTimeTable
+{
+    margin-bottom:3px;
+}
+
+.tdCellBorder
+{
+    border: 1px solid #a8acad; 
+    padding-top: 8px;
+}
+
+.ttTable
+{
+    table-layout:auto !important;
+}
+
+.ttName
+{
+    padding-left:10px;
+    padding-bottom:5px
+}
+.ttControlName
+{
+    padding-left:10px;
+    padding-right:10px;
+}
+.ttControlDescription
+{
+    padding-right:10px;
+}
+.ttCommand
+{
+    vertical-align: bottom;
+    width:200px
+}
+.ttCenterButton
+{
+    border: 1px solid #ccc;
+    background-color: White;
+    vertical-align: middle;
+    padding-left: 10px; 
+    padding-right: 10px
+}
+.ttButton
+{
+    width:120px;
+}
+.LockPlanTable
+{
+    padding-left: 10px !important;
+}
+.LockPlanContainer
+{
+    padding: 10px;
+}
+.LockPlanHeader
+{
+    float: left;
+    vertical-align: middle;
+    padding-left: 5px;
+    padding-right: 15px;
+}
+.LockPlanData
+{
+    border-bottom-width: 0px!important;
+    width: 25%;
+    vertical-align: top!important;
+    padding:5px;
+}
+
+.fieldsetTable tr td
+{
+    vertical-align:middle;
+}
+
+/*       New Styles            */
+
+.viewDetailsList {
+		border-top:1px solid #ccc;
+		border-bottom:1px solid #ccc;
+		min-height:1px;
+		padding:4px 0px 15px 20px;
+	}
+	.viewDetailsList ul li{
+		float:left;
+		width:182px;
+		display:inline;
+		margin-right:45px;
+		margin-top:11px;
+	}
+	.viewDetailsList ul li.last{
+		margin-right:0px;
+	}	
+			.viewDetailsList ul li .cellBox{
+			    
+		    }
+			.viewDetailsList ul li .cellBox .cellBoxInner{
+                height:170px; /*Don't change the height, it has dependency*/
+			}
+				.viewDetailsList ul li .cellBox .cellBoxInner .inputWrapper{
+					float:left;
+					width:24px;
+					height:24px;
+					display:inline;
+					margin-left:6px;
+					margin-top:6px;
+					background-position:left top;
+					background-repeat:no-repeat;
+				}
+				.viewDetailsList ul li .cellBox .cellBoxInner h3{
+					line-height:24px;
+					float:left;
+					display:inline;
+					font-size:18px;
+					margin-top:6px;
+					margin-left:10px;
+				}
+				.viewDetailsList .norecordsfound
+				{
+				    text-align:center;
+				    color:#ff0000;
+				}
+				.viewDetailsList ul li .cellBox .cellBoxInner .inputWrapperColorYellow{
+					background-image:url(../images/icon-status-color-yellow.png);
+				}
+				#.viewDetailsList ul li .cellBox .cellBoxInner .inputWrapperColorRed{
+					background-image:url(../images/icon-status-color-red.png);
+			    }
+
+				.viewDetailsList ul li .cellBox .cellBoxInner .inputWrapperColorBlue{
+					background-image:url(../images/icon-status-color-blue.png);
+				}
+				.viewDetailsList ul li .cellBox .cellBoxInner .inputWrapperColorOrange{
+					background-image:url(../images/icon-status-color-orange.png);
+				}
+				.viewDetailsList ul li .cellBox .cellBoxInner .inputWrapperColorGreen,
+				.checkGreen
+				{
+					background-image:url(../images/icon-status-color-green.png);
+				}
+					.viewDetailsList ul li .cellBox .cellBoxInner .inputWrapper input[type=checkbox]{
+						margin:5px 0 0 5px;												
+					}
+					
+					.viewDetailsList ul li .cellBox .cellBoxInner .previewImageList{
+						padding-left:14px;
+						padding-right:14px;
+						min-height:1px;
+					}
+						.viewDetailsList ul li .cellBox .cellBoxInner .previewImageList .leftPreview{
+							float:left;
+							width:73px;
+							height:61px;
+							display:inline;
+							background-color:#ccc;
+						}
+						.viewDetailsList ul li .cellBox .cellBoxInner .previewImageList .rightPreview{
+							float:right;
+							width:73px;
+							height:61px;
+							display:inline;
+							background-color:#ccc;
+						}
+					
+					.viewDetailsList ul li .cellBox .cellBoxInner p{
+						font-size:12px;
+						font-weight:bold;
+						text-align:center;
+						line-height:26px;
+					}
+					.viewDetailsList ul li .cellBox .cellBoxInner .authorizationList{
+						padding-left:14px;
+					}
+						.viewDetailsList ul li .cellBox .cellBoxInner .authorizationList .iconAuthorization{
+							float:left;
+						}
+						
+.userMessageTable
+{
+    width:100%;
+}	
+.userMessageTable tr td
+{
+    padding-left:5px;
+}		
+
+.pinInformationTable
+{
+    width:100%;
+}		
+.pinInformationTable tr td
+{
+    padding-left:5px;
+}	
+
+.revalidationInformationTable
+{
+    width:100%;
+}		
+.revalidationInformationTable tr td
+{
+    padding-left:5px;
+    vertical-align:middle;
+}	
+
+.newTextboxStyle
+{
+    height:15px;
+}
+
+.masteruserFieldset
+{
+    height: 220px;
+    width:96%
+}
+
+.pinFieldset
+{
+    height: 90px;
+    width:96%
+}
+
+.messageFieldset
+{
+    width:96%;
+}
+.generalInfofieldset
+{
+    width:96%;
+}
+.userPin
+{
+    width: 50px;
+    height:20px !important;
+    padding:2px 2px 0px 6px !important;
+    vertical-align: middle;
+}
+.timeDropdown
+{
+    height: 26px;
+    vertical-align: middle;
+    padding: 3px;
+}
+
+.smallTextbox
+{
+    width:20px;
+    height:20px !important;
+    padding:2px 2px 0px 6px !important;
+    vertical-align: middle;
+}
+.textAreaMessage
+{
+    width:530px;
+    height:80px;
+}
+.revalidationCount
+{
+    height: 25px;
+    width: 50px;
+    vertical-align: middle;
+    padding:3px;
+}
+
+.boxRoomdisplay{
+	height:20px;
+	background-color:#fff;
+	padding-left:6px;
+	overflow:hidden;
+	/*border-width:thick;
+	border-color:Gray;
+	border-style:ridge;*/
+	border:1px solid #ccc;
+	vertical-align:middle;
+	padding-left:.6em
+}
+.gridImages
+{
+    cursor:pointer;
+}
+
+#btnFilter
+{
+    height:23px;
+    width:23px;
+}
+
+#btnFilter:hover
+{
+    height:21px;
+    width:23px;
+    padding-left:0px;
+}
+
+#btnClear:hover
+{
+    height:23px;
+    width:23px;
+    padding-left:1px;
+}
+
+.legendClass
+{
+    font-size:14px;
+}
+
+.roomOccupancyFieldset
+{
+     width: 530px;
+     height: 263px;
+     padding-right:30px;
+}
+
+.authorizationFieldset
+{
+  width : 253px;
+  height: 263px;
+}
+.Note
+{
+    float:left;
+    padding:10px;
+    font-size:9pt;    
+}
+.Containerbox
+{
+text-align:left;
+width:20px;
+height:31px;
+background-color:#c4c4c4;
+overflow:hidden;
+margin:2px auto 0px;
+vertical-align:text-bottom;
+border:1px solid #ccc;
+border-radius: 5px;
+-moz-border-radius: 5px;
+}
+.Containerbox .Content
+{
+    padding:.6em
+}
+
+.ContainerOrangebox
+{
+text-align:left;
+width:25px;
+height:25px;
+background-color:#FFA500;
+overflow:hidden;
+margin:2px auto 0px;
+vertical-align:text-bottom;
+border:1px solid #ccc;
+border-radius: 5px;
+-moz-border-radius: 5px;
+}
+
+.ContainerBluebox
+{
+text-align:left;
+width:25px;
+height:25px;
+background-color:#87CEFA;
+overflow:hidden;
+margin:2px auto 0px;
+vertical-align:text-bottom;
+border:1px solid #ccc;
+border-radius: 5px;
+-moz-border-radius: 5px;
+}
+
+.ContainerGreenbox
+{
+text-align:left;
+width:25px;
+height:25px;
+background-color:#5FFB17;
+overflow:hidden;
+margin:2px auto 0px;
+vertical-align:text-bottom;
+border:1px solid #ccc;
+border-radius: 5px;
+-moz-border-radius: 5px;
+}
+
+.ContainerOrangeOffline
+{
+    text-align:left;
+    float:left;
+    width:auto;
+    min-width:100px;
+    height:20px;
+    padding-left:11px;
+    background-color:#FFA500;    
+    margin:2px auto 0px;
+    vertical-align:text-bottom;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    padding-top:5px;
+}
+
+.ContainerWhiteOffline
+{
+    text-align:left;
+    float:left;
+    width:auto;
+    min-width:90px;
+    height:20px;
+    padding-left:11px;
+    background-color:#5feb92;    
+    margin:2px auto 0px;
+    vertical-align:text-bottom;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    padding-top:5px;
+}
+
+.ContainerWhiteOffline:hover
+{
+    cursor:pointer;
+}
+
+.SystemPrev,
+.SystemNext
+{
+    height:23px;
+    width:23px;
+    padding-left:1px;
+    padding-bottom:1px;
+    cursor:pointer;
+}
+
+#btnDatePicker:hover
+{
+    height:23px;
+    width:23px;
+    padding-left:1px;
+    padding-bottom:1px;
+    cursor:pointer;
+}
+
+#btnDatePicker1:hover
+{
+    height:23px;
+    width:23px;
+    padding-left:1px;
+    padding-bottom:1px;
+    cursor:pointer;
+}
+/* for Groups encode panel*/
+.GroupsEncodePanel
+{
+   width: 100%; 
+   height: 100%;
+   border:1px solid #ccc;
+}
+.progressNumber
+{
+    padding-left:3px;
+}
+#divgrpEncMsg
+{
+    overflow-y: scroll; 
+    padding-left: 10px;
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    min-height:400px;    
+}
+
+.plus
+{
+    background:url(../images/btn-folder.png) center 0px no-repeat;    
+    cursor:pointer;
+    text-decoration:none;
+    display:block;
+    height:20px;
+    width:20px;
+    background-position:left bottom;
+}
+.minus
+{
+    background:url(../images/btn-folder.png) center 0px no-repeat;    
+    cursor:pointer;
+    display:block;
+	text-decoration:none;
+	height:20px;
+    width:20px;
+    background-position:left top;
+}
+
+.setText
+{
+    float:left;
+    padding-left:2px;
+    text-decoration:underline;    
+}
+.setTextDisabled
+{
+    padding-left:2px;
+    text-decoration:none !important;
+    color:#808080 !important;
+    cursor:text !important;
+}
+
+.peripheralrowStyle
+{
+	padding-left:12px;
+	width:250px;
+	vertical-align:middle;
+}
+
+.padding2px
+{
+    padding-top:2px;
+}
+.slashtext
+{
+    font-size:13pt;
+}
+.extSuiteList thead th
+{
+    vertical-align:middle;
+	text-align:left;
+	padding-left:2px;
+	padding-right:2px;
+	height:28px;
+	background-color:#C5D7FD;
+	white-space: nowrap;
+}
+
+.extSuiteList tbody .odd td{
+	background-color:#f0f0f0;
+	white-space: nowrap;
+	height:28px;
+}
+
+.extSuiteList tbody .even td{
+	white-space: nowrap;
+	height:28px;
+}
+
+/* Construct property dropdown */
+.PropertycodeDiv
+{
+    float:right;
+    padding-right:10px;
+}
+
+.PropertycodeDiv label
+{
+    padding-right:10px;
+    font-size:15px;
+}
+.PropertycodeDiv select
+{
+    height:20px;
+    width:100px;
+    background-color:#000;
+    color:#fff;
+}
+
+.PropertycodeDiv .template
+{
+    color:#0173BF;   
+}
+/* END */
+
+#container .containerBoxts{
+	background:url(../images/bg-body-left.png) left top repeat-y;
+	padding-left:4px;
+	min-height:10px;
+}
+		
+#container .containerBoxts .containerInner{
+	background-color:#fff;
+	min-height:10px;
+}
+#content.singleColumn .tableList .requireZebraCrossingSuite thead th{
+		vertical-align:middle;
+		text-align:left;
+		padding-left:2px;
+		padding-right:2px;
+		height:33px;
+		background-color:#9DCDF3;
+	}
+
+#content.singleColumn .tableList .requireZebraCrossingSuite .sorted
+	{	    
+		text-align:left;
+		padding-bottom: 0px;
+	}	
+/* END */
+/* END */
+
+.xpprowStyle
+{
+	padding-left:12px;
+	width:161px;
+	vertical-align:middle;
+}
+
+a abbr ,
+a abbr label
+{
+	cursor: pointer;
+}
+
+/*this style is used in Lock Page*/
+.textboxLock
+{
+	width:153px;
+	height:10px;
+}
+
+/*this style is used in Lock Page*/
+.DropdownlistLock
+{
+	width:179px;
+	height:28px;
+}
+
+.madatoryInfofont
+{
+    font-family:Arial;
+    font-size:x-small;
+    color:#808080;
+}
+
+/*style for overflowing label */
+.adjustLabel
+{
+    overflow: hidden; 
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.grayButton
+{
+    color: #333333 !important;
+}
+
+.functionCate
+{
+    width:223px !important;
+}
+
+.loading-indicator {
+	height: 100%;
+	width: 100%;
+	background: url(../images/pleaseWaitLoader.gif);	
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.loading-indicator-overlay {
+	background-color: #FFFFFF;
+	opacity: 0.6;
+	filter: alpha(opacity = 60);
+}
+
+.SmartCardtdWidth
+{
+    width:56%;
+}
+.SmartCardTabletdWidth
+{
+    width:65%;
+}
+
+.SmartCardTextBox {
+    height:25px;
+    padding: 1px !important;
+    width:150px;
+}
+.smartCardAttributes tr
+{
+    height:30px;
+}
+
+.ConfigText
+{
+    text-align: right !important;
+    padding-right:30px !important;
+    padding-top:5px !important;
+    padding-bottom:5px !important;
+}
+
+.ConfigTextpp
+{
+    text-align: left !important;
+    padding-top:5px !important;
+    padding-bottom:5px !important;
+}
+
+/* Sub Menu Class */
+.SubMenu, .SubMenu ul{
+    margin:0;
+    padding:0;
+    list-style-type:none;
+    list-style-position:outside;
+    position:relative;
+    line-height:1.5em; 
+    z-index:999;
+}
+
+.SubMenu a
+{
+    display:block;
+    padding:0px 5px;
+    border:0px solid #333;
+    font-size:9pt;
+    font-weight:bold;
+    color:#53A4EC;
+    text-decoration:none;    
+    background-color:#1D1D1D;
+    text-align:left;    
+}
+.SubMenu a:hover
+{
+ color:#fff;
+  text-align:left;
+}
+
+.SubMenu li{
+    float:left;
+    position:relative;
+    padding-right:10px;
+
+}
+
+.SubMenu ul {
+position:absolute;
+display:none;
+width:12em;
+top:1.5em;
+}
+
+.SubMenu li ul a{
+width:12em;
+height:auto;
+float:left;
+white-space:nowrap;
+z-index:100;
+padding-top:5px; 
+}
+
+.SubMenu ul ul{
+top:auto;
+}	
+
+.SubMenu li ul ul {
+left:12em;
+margin:0px 0 0 10px;
+}
+
+.SubMenu li:hover ul ul, .SubMenu li:hover ul ul ul, .SubMenu li:hover ul ul ul ul{
+display:none;
+
+}
+.SubMenu li:hover ul, .SubMenu li li:hover ul, .SubMenu li li li:hover ul, .SubMenu li li li li:hover ul{
+display:block;
+
+}
+
+/* Sub Menu End */
+.current {
+ background :url(../images/bg-nav.png) repeat;
+}
+
+.applicationLogout{
+	display:inline-block;
+	background:transparent url(../images/Btn_Logout_05.png) no-repeat;
+	padding-left:5px;
+	height:25px;
+	width:100%;
+	font-size:12px;
+	font-weight:bold;
+	color:#fff !important;
+	text-decoration:none;
+	overflow:hidden;
+	line-height:24px;
+	text-align: left;
+	text-shadow:none;
+}
+	.applicationLogout .btnR{
+		display:inline-block;
+		background:transparent url(../images/Btn_Logout_05.png) right -50px no-repeat;
+		padding-right:5px;
+		height:25px;
+		cursor:pointer;
+	}
+		.applicationLogout .btnC{
+			display:inline-block;
+			background:transparent url(../images/Btn_Logout_05.png) left -25px repeat-x;
+			height:25px;
+			padding-left:23px;
+			text-align:center;
+			cursor:pointer;
+		}
+		
+.applicationLogout:hover,
+.applicationLogout:active,
+.applicationLogout:focus
+{
+    text-decoration:none;
+    color:#000 !important;
+}
+
+.OptionMainImport,
+.OptionMainImport fieldset,
+.OptionCheckbox fieldset,
+.OptionCheckbox table
+{
+    background-color:rgb(239,239,239);   
+}
+.OptionCheckbox fieldset
+{
+    width:700px;
+}
+
+.OptionCheckbox table tr td
+{
+    padding:10px
+}
+
+.OptionMainImport .mainFieldset .lblimportOption
+{     
+      color:#000;
+      font-size:15px;
+      font-weight:bold;
+}
+
+.OptionMainImport table tr td
+{
+    padding-left:20px;
+    padding-top:20px;
+    padding-bottom:5px;
+}
+
+.KeyinInfo
+{
+    height:22px;
+    width:22px;
+}
+
+[class^='icon-'], [class*=' icon-']
+{
+	width: 14px;
+	height: 14px;
+	line-height: 14px;
+	margin-top: 1px;
+	vertical-align: text-top;
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-position-x: 14px;
+	background-position-y: 14px;
+}
+.icon-plus
+{
+	background-position-x: -408px;
+	background-position-y: -96px;
+}
+.btn
+{
+	text-align: center;
+	color: #333;
+	line-height: 20px;
+	padding-top: 4px;
+	padding-right: 12px;
+	padding-bottom: 4px;
+	padding-left: 12px;
+	font-size: 14px;
+	margin-bottom: 0px;
+	vertical-align: middle;
+	border-top-color: rgba(0,0,0,0.1);
+	border-right-color: rgba(0,0,0,0.1);
+	border-bottom-color: #b3b3b3;
+	border-left-color: rgba(0,0,0,0.1);
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	display: inline-block;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+	cursor: pointer;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+	box-shadow: inset 0px 1px 0px rgba(255,255,255,0.2), 0px 1px 2px rgba(0,0,0,0.05);
+	background-repeat: repeat-x;
+	background-color: rgb(245, 245, 245);
+}
+.btn-success
+{
+	color: #fff;
+	border-top-color: rgba(0,0,0,0.1);
+	border-right-color: rgba(0,0,0,0.1);
+	border-bottom-color: rgba(0,0,0,0.25);
+	border-left-color: rgba(0,0,0,0.1);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+	background-repeat: repeat-x;
+	background-color: rgb(0, 107, 184);
+}
+
+.fileinput-button
+{
+	overflow: hidden;
+	position: relative;
+}
+.fileinput-button input
+{
+	top: 0px;
+	right: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	filter: alpha(opacity=0);
+	position: absolute;
+	cursor: pointer;
+	direction: ltr;
+	opacity: 0;
+}
+
+.btn-primary
+{
+	color: #fff;
+	border-top-color: rgba(0,0,0,0.1);
+	border-right-color: rgba(0,0,0,0.1);
+	border-bottom-color: rgba(0,0,0,0.25);
+	border-left-color: rgba(0,0,0,0.1);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+	background-repeat: repeat-x;
+	background-color: rgb(91, 183, 91);
+}
+ol li,
+.note
+{
+    margin-top:5px;
+    margin-bottom:5px;
+    font-size:13px;
+}
+.fileDetails
+{
+    cursor:text !important;
+    margin-right:10px;
+    margin-top:10px;
+    background-color:#ccc;
+}
+
+/*Tabs*/
+
+
+  .tabs {
+  position: relative;   
+  min-height: 380px; /* This part sucks */
+  clear: both;
+  margin-top: 15px;
+}
+.tab {
+  float: left;
+}
+.tab label {
+  background: #fff; 
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  margin-left: -1px; 
+  position: relative;
+  left: 1px; 
+  cursor: pointer;  
+}
+.tab [type=radio] {
+  display: none;   
+}
+.content {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  background: white;
+  right: 0;
+  bottom: 0;
+  border: 1px solid #ccc; 
+  height: 508px;
+}
+[type=radio]:checked ~ label {
+  background: #1569C7;
+  border-bottom: 1px solid white;
+  z-index: 2;
+  color: #fff;
+}
+[type=radio]:checked ~ label ~ .content {
+  z-index: 1;
+}
+
+
+

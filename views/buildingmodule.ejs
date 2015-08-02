@@ -1,0 +1,741 @@
+                    <div id="container" ng-controller="buildingmodule">
+                        <div class="containerBox">
+                            <div class="containerBoxR">
+                                <div class="containerInner">
+                                    <div>
+                                        <table class="BreadCrumAndMenu">
+                                            <tr>
+                                                <td class="BreadCrumColumn">
+                                                    <!-- breadcrum -->
+                                                    Home <span style='padding-left: 2px'><a href="#"><img src="images/icon-breadcrumb.png" /></a></span>  Building Module
+                                                </td>
+                                                <td class="SubMenuColumn" id="divSubMenu"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="pageDetails">
+                            <!-- page html -->
+                            <div class="containerBox">
+                                <div class="containerBoxR">
+                                    <div class="containerInner">
+                                        <div id="pageTitle">
+                                            <h2>Building Module</h2>
+                                        </div>
+                                        <br />
+                                        <!-- <select ng-model="template" ng-options="t.name for t in templates"></select> -->
+                                        <table width="100%" id="buildingerrormessage" style="display: none;">
+                                        	<tr>
+                                        		<td align="center">
+													<div>
+														<b>This feature is only available for administrator.</b>
+													</div>
+													<br />
+												</td>
+											</tr>
+										</table>
+                                        <table width="100%" id="tablebuildingmodule" style="box-shadow: 0 4px 3px -1px gray;">
+                                            <tr>
+                                                <td style="width: 12%">
+                                                    <div class="receptioncolumn">
+                                                        <div class="receptioncolumnHeader">
+                                                            <h2>
+                                                                Building Menus
+                                                            </h2>
+                                                            <div class="receptioncolumnContent">
+                                                                <div id="content" class="singleColumn">
+                                                                    <table width="100%">
+                                                                        <tr>
+                                                                            <td align="center" style="vertical-align: middle;" id="tdgetdetails">
+                                                                                <img ng-click="getbuildingdetails()" title="Building Details" style="cursor: pointer; height: 60px; width: 50px;" src="img/buildingdetails.png" alt="">
+                                                                                <div>Buildings Details</div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <br />
+                                                                                <div style="border-bottom: thin solid #67a0e5;">
+                                                                                </div>
+                                                                                <br />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td align="center" style="vertical-align: middle;" id="tdadd">
+                                                                                <img ng-click="addbuilding()" title="Add Building" style="cursor: pointer; height: 60px; width: 50px;" src="img/addbuilding.png" alt="">
+                                                                                <div>Add Building</div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <br />
+                                                                                <div style="border-bottom: thin solid #67a0e5;">
+                                                                                </div>
+                                                                                <br />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td align="center" style="vertical-align: middle;" id="tdedit">
+                                                                                <img ng-click="editbuilding()" title="Edit Building" style="cursor: pointer; height: 60px; width: 50px;" src="img/editbuilding.png" alt="">
+                                                                                <div>Edit Building</div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <br />
+                                                                                <div style="border-bottom: thin solid #67a0e5;">
+                                                                                </div>
+                                                                                <br />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td align="center" style="vertical-align: middle;" id="tddelete">
+                                                                                <img ng-click="deletebuilding()" title="Delete Building" style="cursor: pointer; height: 60px; width: 50px;" src="img/deletebuilding.png" alt="">
+                                                                                <div>Delete Building</div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                    <!-- <div ng-include src="template.url"></div> -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td style="width: 88%">
+                                                    <div class="receptioncolumn">
+                                                        <div class="receptioncolumnHeader">
+                                                            <h2>
+                                                                Information
+                                                            </h2>
+                                                            <div class="receptioncolumnContent">
+                                                                <div id="content" class="singleColumn">
+                                                                    <div id="divBuildingDetails" style="display: none">
+                                                                        <div class="box contentBox">
+                                                                            <div class="boxInner">
+                                                                                <div class="boxContent">
+                                                                                    <div id="divParent">
+                                                                                        <div class="pageControl">
+                                                                                            <div class="pageDisplay">
+                                                                                                <span class="pageDispalyLabel">
+                                                                                                </span>
+                                                                                                <span class="pageDispalySelectLabel">Show</span>
+                                                                                                <div class="selectBox">
+                                                                                                    <select ng-model="noofrecordsDetails" class="pageRp" ng-change="getbuildingrecordsfordisplay()" ng-options="obj.value as obj.name for obj in recordCount.data">                                                                                                        
+                                                                                                    </select>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="pagination">
+                                                                                                <table width="100%">
+                                                                                                    <tr>
+                                                                                                        <td>
+                                                                                                            <div style="float: right" class="gridPaging">
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                        <div class="tableList" style="background-color: White; max-height: 330px; overflow: auto;">
+                                                                                            <table width="100%" cellpadding="0" cellspacing="0" class="requireZebraCrossingGrid"
+                                                                                                   id="tblGrid">
+                                                                                                <thead>
+                                                                                                    <tr class="trgrColumn">
+                                                                                                        <th style="padding-left: 1%">
+                                                                                                            Name
+                                                                                                        </th>
+                                                                                                        <th>
+                                                                                                            Address
+                                                                                                        </th>
+                                                                                                        <th>
+                                                                                                            Client
+                                                                                                        </th>
+                                                                                                        <th>
+                                                                                                            Contact Name
+                                                                                                        </th>
+                                                                                                        <th>
+                                                                                                            Contact Number
+                                                                                                        </th>
+                                                                                                        <th>
+                                                                                                            Release Date
+                                                                                                        </th>
+                                                                                                        <th>
+                                                                                                            Details
+                                                                                                        </th>
+                                                                                                    </tr>
+                                                                                                </thead>
+                                                                                                <tbody>
+                                                                                                    <tr ng-repeat="item in buildingGrid">
+                                                                                                        <td style="padding-left: 1%">
+                                                                                                            {{item.BuildingName}}
+                                                                                                        </td>
+                                                                                                        <td>
+                                                                                                            {{item.Address}}
+                                                                                                        </td>
+                                                                                                        <td>
+                                                                                                            {{item.ClientName}}
+                                                                                                        </td>
+                                                                                                        <td>
+                                                                                                            {{item.ContactName}}
+                                                                                                        </td>
+                                                                                                        <td>
+                                                                                                            {{item.ContactNumber}}
+                                                                                                        </td>
+                                                                                                        <td>
+                                                                                                            {{item.ReleaseDate}}
+                                                                                                        </td>
+                                                                                                        <td>
+                                                                                                            <span><a href="javascript:void(0)" onclick="showDetails(event, {{item.BuildingId}})"><img title="details" style="height: 24px; width: 24px;" src="img/details.png" /></a></span>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </tbody>
+                                                                                            </table>
+                                                                                        </div>
+
+                                                                                        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl">
+                                                                                        </span><span class="corner br"></span>
+
+                                                                                        <div ng-repeat="item in buildingGrid">
+                                                                                            <div id="divHideongrid-{{item.BuildingId}}" style="display:none;">
+                                                                                                <div class="box contentBox">
+                                                                                                    <div class="boxInner">
+                                                                                                        <div class="boxContent">
+                                                                                                            <div id="divParent">
+                                                                                                                <div class="tableList" style="background-color: White;">
+                                                                                                                    <table width="100%" cellpadding="0" cellspacing="0" class="requireZebraCrossingGrid"
+                                                                                                                           id="tblLatitude">
+                                                                                                                        <thead>
+                                                                                                                            <tr class="trgrColumn">
+                                                                                                                                <th style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px; background-color: #C5D7FD; border-right: 1px solid #ccc">
+                                                                                                                                    Check Point 1 Latitude
+                                                                                                                                </th>
+                                                                                                                                <th style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px; background-color: #C5D7FD; border-right: 1px solid #ccc">
+                                                                                                                                    Check Point 2 Latitude
+                                                                                                                                </th>
+                                                                                                                                <th style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px; background-color: #C5D7FD; border-right: 1px solid #ccc">
+                                                                                                                                    Check Point 3 Latitude
+                                                                                                                                </th>
+                                                                                                                                <th style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px; background-color: #C5D7FD; border-right: 1px solid #ccc">
+                                                                                                                                    Check Point 4 Latitude
+                                                                                                                                </th>
+                                                                                                                                <th style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px; background-color: #C5D7FD; border-right: 1px solid #ccc">
+                                                                                                                                    Check Point 5 Latitude
+                                                                                                                                </th>
+                                                                                                                            </tr>
+                                                                                                                        </thead>
+                                                                                                                        <tbody>
+                                                                                                                            <tr>
+                                                                                                                                <td style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px; border-right: 1px solid #ccc">
+                                                                                                                                    {{item.CheckPoint1_Latitude}}
+                                                                                                                                </td>
+                                                                                                                                <td style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px; border-right: 1px solid #ccc">
+                                                                                                                                    {{item.CheckPoint2_Latitude}}
+                                                                                                                                </td>
+                                                                                                                                <td style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px; border-right: 1px solid #ccc">
+                                                                                                                                    {{item.CheckPoint3_Latitude}}
+                                                                                                                                </td>
+                                                                                                                                <td style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px; border-right: 1px solid #ccc">
+                                                                                                                                    {{item.CheckPoint4_Latitude}}
+                                                                                                                                </td>
+                                                                                                                                <td style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px;">
+                                                                                                                                    {{item.CheckPoint5_Latitude}}
+                                                                                                                                </td>
+                                                                                                                            </tr>
+                                                                                                                        </tbody>
+                                                                                                                    </table>
+                                                                                                                </div>
+
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <br />
+                                                                                                <br />
+                                                                                                <br />
+
+                                                                                                <div class="box contentBox">
+                                                                                                    <div class="boxInner">
+                                                                                                        <div class="boxContent">
+                                                                                                            <div id="divParent">
+                                                                                                                <div class="tableList" style="background-color: White;">
+                                                                                                                    <table width="100%" cellpadding="0" cellspacing="0" class="requireZebraCrossingGrid"
+                                                                                                                           id="tblLongitude">
+                                                                                                                        <thead>
+                                                                                                                            <tr class="trgrColumn">
+                                                                                                                                <th style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px; background-color: #C5D7FD; border-right: 1px solid #ccc">
+                                                                                                                                    Check Point 1 Longitude
+                                                                                                                                </th>
+                                                                                                                                <th style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px; background-color: #C5D7FD; border-right: 1px solid #ccc">
+                                                                                                                                    Check Point 2 Longitude
+                                                                                                                                </th>
+                                                                                                                                <th style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px; background-color: #C5D7FD; border-right: 1px solid #ccc">
+                                                                                                                                    Check Point 3 Longitude
+                                                                                                                                </th>
+                                                                                                                                <th style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px; background-color: #C5D7FD; border-right: 1px solid #ccc">
+                                                                                                                                    Check Point 4 Longitude
+                                                                                                                                </th>
+                                                                                                                                <th style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px; background-color: #C5D7FD;">
+                                                                                                                                    Check Point 5 Longitude
+                                                                                                                                </th>
+                                                                                                                            </tr>
+                                                                                                                        </thead>
+                                                                                                                        <tbody>
+                                                                                                                            <tr>
+                                                                                                                                <td style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px; border-right: 1px solid #ccc">
+                                                                                                                                    {{item.CheckPoint1_Longitude}}
+                                                                                                                                </td>
+                                                                                                                                <td style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px; border-right: 1px solid #ccc">
+                                                                                                                                    {{item.CheckPoint2_Longitude}}
+                                                                                                                                </td>
+                                                                                                                                <td style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px; border-right: 1px solid #ccc">
+                                                                                                                                    {{item.CheckPoint3_Longitude}}
+                                                                                                                                </td>
+                                                                                                                                <td style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px; border-right: 1px solid #ccc">
+                                                                                                                                    {{item.CheckPoint4_Longitude}}
+                                                                                                                                </td>
+                                                                                                                                <td style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px;">
+                                                                                                                                    {{item.CheckPoint5_Longitude}}
+                                                                                                                                </td>
+                                                                                                                            </tr>
+                                                                                                                        </tbody>
+                                                                                                                    </table>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+
+
+                                                                                        <div class="pageControl">
+                                                                                            <div class="pageDisplay">
+                                                                                                <span class="pageDispalyLabel">
+                                                                                                </span>
+                                                                                                <span class="pageDispalySelectLabel">Show</span>
+                                                                                                <div class="selectBox">
+                                                                                                    <select ng-model="noofrecordsDetails" class="pageRp" ng-change="getbuildingrecordsfordisplay()" ng-options="obj.value as obj.name for obj in recordCount.data">
+                                                                                                    </select>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="pagination">
+                                                                                                <table width="100%">
+                                                                                                    <tr>
+                                                                                                        <td>
+                                                                                                            <div style="float: right" class="gridPaging">
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div id="divBuildingAdd" style="display: none">
+                                                                        <table width="100%">
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <fieldset style="margin-top: 1%; margin-top: 1%; height: 290px">
+                                                                                        <legend><b>Building Details</b></legend>
+
+                                                                                        <table width="100%">
+                                                                                            <tr>
+                                                                                                <td>
+                                                                                                    <br />
+                                                                                                    <br />
+                                                                                                    <br />
+                                                                                                    <div class="cell firstCell">
+                                                                                                        <h3>Name</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onkeyup="removeErrorControl('txtname');" ng-model="nameAdd" id="txtname" />
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Address</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onkeyup="removeErrorControl('txtaddress');" ng-model="addressAdd" id="txtaddress" />
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Client</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <select ng-model="clientsAdd" id="ddlClientsAdd" ng-options="item.ClientId as item.ClientName for item in buildingclients" style="height: 30px; width: 167px">                                                                             
+                                                                                                            </select>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="clearAll">
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <br />
+                                                                                                    <br />
+                                                                                                    <br />
+                                                                                                    <div class="cell firstCell">
+                                                                                                        <h3>Contact Name</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onkeyup="removeErrorControl('txtcontactname');" ng-model="contactnameAdd" id="txtcontactname" />
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Contact Number</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onkeyup="removeErrorControl('txtcontactnumber');" ng-model="contactnumberAdd" id="txtcontactnumber" />
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Release Date</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onchange="changeeventcalled('txtreleasedate');" class="datepicker" ng-model="releasedateAdd" id="txtreleasedate" />
+                                                                                                        </div>
+                                                                                                    </div>
+
+                                                                                                    <div class="clearAll">
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </table>
+                                                                                    </fieldset>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <fieldset style="margin-top: 1%; margin-top: 1%; height: 290px">
+                                                                                        <legend><b>Check Point Details</b></legend>
+                                                                                        <table width="100%">
+                                                                                            <tr>
+                                                                                                <td>
+                                                                                                    <div class="cell firstCell">
+                                                                                                        <h3>Check Point 1 Latitude</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onkeyup="removeErrorControl('txtlatitude1');" ng-model="lat1Add" id="txtlatitude1" />
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Check Point 2 Latituder</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onkeyup="removeErrorControl('txtlatitude2');" ng-model="lat2Add" id="txtlatitude2" />
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Check Point 3 Latitude</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onkeyup="removeErrorControl('txtlatitude3');" ng-model="lat3Add" id="txtlatitude3" />
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Check Point 4 Latitude</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onkeyup="removeErrorControl('txtlatitude4');" ng-model="lat4Add" id="txtlatitude4" />
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Check Point 5 Latitude</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onkeyup="removeErrorControl('txtlatitude5');" ng-model="lat5Add" id="txtlatitude5" />
+                                                                                                        </div>
+                                                                                                    </div>
+
+                                                                                                    <div class="clearAll">
+                                                                                                    </div>
+
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <div class="cell firstCell">
+                                                                                                        <h3>Check Point 1 Longitude</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onkeyup="removeErrorControl('txtlongitude1');" ng-model="lon1Add" id="txtlongitude1" />
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Check Point 2 Longitude</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onkeyup="removeErrorControl('txtlongitude2');" ng-model="lon2Add" id="txtlongitude2" />
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Check Point 3 Longitude</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onkeyup="removeErrorControl('txtlongitude3');" ng-model="lon3Add" id="txtlongitude3" />
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Check Point 4 Longitude</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onkeyup="removeErrorControl('txtlongitude4');" ng-model="lon4Add" id="txtlongitude4" />
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Check Point 5 Longitude</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onkeyup="removeErrorControl('txtlongitude5');" ng-model="lon5Add" id="txtlongitude5" />
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="clearAll">
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </table>
+                                                                                    </fieldset>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                        <br />
+                                                                        <div style="float: right; margin-right: 3%">
+                                                                            <a href="javascript:void(0)" ng-click="Add()" id="btnSave" class="btnGreen btnCancel">
+                                                                                <span class="btnR"><span class="btnC">Save</span></span>
+                                                                            </a>&nbsp;&nbsp;
+                                                                            <a href="javascript:void(0)" ng-click="resetAddAttribute()" id="btnCancelAdding" class="btnGreen btnCancel">
+                                                                                <span class="btnR"><span class="btnC">Cancel</span></span>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div id="divBuildingUpdate" style="display: none">
+                                                                        <table width="100%">
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <b>Select Building for editing</b>
+                                                                                </td>
+                                                                                <td style="padding-left: 30px">
+                                                                                    <select ng-model="buildingsEdit" id="ddlBuildings" ng-options="item.BuildingId as item.BuildingName for item in buildings" style="height: 30px; width: 740px" ng-change="loadbuildingdetailsbyid($event)">
+                                                                                    </select>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                        <table width="100%">
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <fieldset style="margin-top: 1%; margin-top: 1%; height: 290px">
+                                                                                        <legend><b>Building Details</b></legend>
+
+                                                                                        <table width="100%">
+                                                                                            <tr>
+                                                                                                <td>
+                                                                                                    <br />
+                                                                                                    <br />
+                                                                                                    <br />
+                                                                                                    <div class="cell firstCell">
+                                                                                                        <h3>Name</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onkeyup="removeErrorControl('txtnameEdit');" ng-model="nameEdit" id="txtnameEdit" />
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Address</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onkeyup="removeErrorControl('txtaddressEdit');" ng-model="addressEdit" id="txtaddressEdit" />
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Client</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <select ng-model="clientsEdit" id="ddlClientsEdit" ng-options="item.ClientId as item.ClientName for item in buildingclients" style="height: 30px; width: 167px">                                                                             
+                                                                                                            </select>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="clearAll">
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <br />
+                                                                                                    <br />
+                                                                                                    <br />
+                                                                                                    <div class="cell firstCell">
+                                                                                                        <h3>Contact Name</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onkeyup="removeErrorControl('txtcontactnameEdit');" ng-model="contactnameEdit" id="txtcontactnameEdit" />
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Contact Number</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onkeyup="removeErrorControl('txtcontactnumberEdit');" ng-model="contactnumberEdit" id="txtcontactnumberEdit" />
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Release Date</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onchange="changeeventcalled('txtreleasedateEdit');" class="datepicker" ng-model="releasedateEdit" id="txtreleasedateEdit" />
+                                                                                                        </div>
+                                                                                                    </div>
+
+                                                                                                    <div class="clearAll">
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </table>
+                                                                                    </fieldset>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <fieldset style="margin-top: 1%; margin-top: 1%; height: 290px">
+                                                                                        <legend><b>Check Point Details</b></legend>
+                                                                                        <table width="100%">
+                                                                                            <tr>
+                                                                                                <td>
+                                                                                                    <div class="cell firstCell">
+                                                                                                        <h3>Check Point 1 Latitude</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onkeyup="removeErrorControl('txtlatitude1Edit');" ng-model="lat1Edit" id="txtlatitude1Edit" />
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Check Point 2 Latituder</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onkeyup="removeErrorControl('txtlatitude2Edit');" ng-model="lat2Edit" id="txtlatitude2Edit" />
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Check Point 3 Latitude</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onkeyup="removeErrorControl('txtlatitude3Edit');" ng-model="lat3Edit" id="txtlatitude3Edit" />
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Check Point 4 Latitude</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onkeyup="removeErrorControl('txtlatitude4Edit');" ng-model="lat4Edit" id="txtlatitude4Edit" />
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Check Point 5 Latitude</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onkeyup="removeErrorControl('txtlatitude5Edit');" ng-model="lat5Edit" id="txtlatitude5Edit" />
+                                                                                                        </div>
+                                                                                                    </div>
+
+                                                                                                    <div class="clearAll">
+                                                                                                    </div>
+
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <div class="cell firstCell">
+                                                                                                        <h3>Check Point 1 Longitude</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onkeyup="removeErrorControl('txtlongitude1Edit');" ng-model="lon1Edit" id="txtlongitude1Edit" />
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Check Point 2 Longitude</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onkeyup="removeErrorControl('txtlongitude2Edit');" ng-model="lon2Edit" id="txtlongitude2Edit" />
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Check Point 3 Longitude</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onkeyup="removeErrorControl('txtlongitude3Edit');" ng-model="lon3Edit" id="txtlongitude3Edit" />
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Check Point 4 Longitude</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onkeyup="removeErrorControl('txtlongitude4Edit');" ng-model="lon4Edit" id="txtlongitude4Edit" />
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Check Point 5 Longitude</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" onkeyup="removeErrorControl('txtlongitude5Edit');" ng-model="lon5Edit" id="txtlongitude5Edit" />
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="clearAll">
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </table>
+                                                                                    </fieldset>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                        <br />
+                                                                        <div style="float: right; margin-right: 3%">
+                                                                            <a href="javascript:void(0)" ng-click="Update()" id="btnsaveEditDetails" class="btnGreen btnCancel">
+                                                                                <span class="btnR"><span class="btnC">Save</span></span>
+                                                                            </a>&nbsp;&nbsp;
+                                                                            <a href="javascript:void(0)" ng-click="resetEditAttribute()" id="btnCancelEditing" class="btnGreen btnCancel">
+                                                                                <span class="btnR"><span class="btnC">Cancel</span></span>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div id="divBuildingDelete" style="display: none">
+                                                                        <div class="box contentBox">
+                                                                            <div class="boxInner">
+                                                                                <div class="boxContent">
+                                                                                    <div id="divParent">
+                                                                                        <div class="pageControl">
+                                                                                            <div class="pageDisplay">
+                                                                                                <span class="pageDispalyLabel">
+                                                                                                   <!--  Displaying <strong>0</strong> to
+                                                                                                    <strong>0</strong> of <strong>0</strong> -->
+                                                                                                </span>
+                                                                                                <span class="pageDispalySelectLabel">Show</span>
+                                                                                                <div class="selectBox">
+                                                                                                    <select ng-model="noofrecordsDelete" class="pageRp" ng-change="getbuildingrecordsfordisplayDelete()" ng-options="obj.value as obj.name for obj in recordCount.data">
+                                                                                                    </select>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="pagination">
+                                                                                                <table width="100%">
+                                                                                                    <tr>
+                                                                                                        <td>
+                                                                                                            <div style="float: right" class="gridPaging">
+                                                                                                                <!-- <ul>
+                                                                                                                    <li><a href="#" class="paging first"></a></li>
+                                                                                                                    <li><a href="#" class="paging pagePrev"></a></li>
+                                                                                                                    <li><span class="pageCurrent" title="1">1</span></li>
+                                                                                                                    <li><a href="#" class="paging pageNext"></a></li>
+                                                                                                                    <li><a href="#" class="paging last"></a></li>
+                                                                                                                </ul> -->
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                        <div class="tableList" style="background-color: White; max-height: 330px; overflow: auto;">
+                                                                                            <table width="100%" cellpadding="0" cellspacing="0" class="requireZebraCrossingGrid"
+                                                                                                   id="tblGrid">
+                                                                                                <thead>
+                                                                                                    <tr class="trgrColumn">
+                                                                                                        <th style="padding-left: 1%">
+                                                                                                            Name
+                                                                                                        </th>
+                                                                                                        <th>
+                                                                                                            Delete
+                                                                                                        </th>
+                                                                                                    </tr>
+                                                                                                </thead>
+                                                                                                <tbody>
+                                                                                                    <tr ng-repeat="item in deletebuildingGrid">
+                                                                                                        <td style="padding-left: 1%">
+                                                                                                            {{item.BuildingName}}
+                                                                                                        </td>
+                                                                                                        <td>
+                                                                                                            <span><a href="#" id="delete-{{item.BuildingId}}" ng-click="deletebuildingInfo($event)"><img title="Delete" style="height: 22px; width: 22px;" src="img/delete.png" /></a></span>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </tbody>
+                                                                                            </table>
+                                                                                        </div>
+
+                                                                                        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl">
+                                                                                        </span><span class="corner br"></span>
+
+                                                                                        <div class="pageControl">
+                                                                                            <div class="pageDisplay">
+                                                                                                <span class="pageDispalyLabel">
+                                                                                                </span>
+                                                                                                <span class="pageDispalySelectLabel">Show</span>
+                                                                                                <div class="selectBox">
+                                                                                                    <select ng-model="noofrecordsDelete" class="pageRp" ng-change="getbuildingrecordsfordisplayDelete()" ng-options="obj.value as obj.name for obj in recordCount.data">
+                                                                                                    </select>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="pagination">
+                                                                                                <table width="100%">
+                                                                                                    <tr>
+                                                                                                        <td>
+                                                                                                            <div style="float: right" class="gridPaging">
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+    					<button style="display: none" id="myElement1" name="save" ng-click="getdataforgrid()"></button>
+    					<button style="display: none" id="myElement2" name="update" ng-click="getbuildingrecordsfordisplayDelete()"></button>
+                    </div>

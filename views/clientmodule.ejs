@@ -1,0 +1,1002 @@
+
+<div id="container" ng-controller="clientmodule">
+    <div class="containerBox">
+        <div class="containerBoxR">
+            <div class="containerInner">
+                <div>
+                    <table class="BreadCrumAndMenu">
+                        <tr>
+                            <td class="BreadCrumColumn">
+                                <!-- breadcrum -->
+                                Home <span style='padding-left: 2px'><a href="#"><img src="images/icon-breadcrumb.png" /></a></span> Client Module
+                            </td>
+                            <td class="SubMenuColumn" id="divSubMenu"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="pageDetails">
+        <!-- page html -->
+        <div class="containerBox">
+            <div class="containerBoxR">
+                <div class="containerInner">
+                    <div id="pageTitle">
+                        <h2>Client Module</h2>
+                    </div>
+                    <br />
+                    <table width="100%" id="tableclientmodule">
+                        <tr>
+                            <td style="width: 12%">
+                                <div class="receptioncolumn">
+                                    <div class="receptioncolumnHeader" style="max-height: 592px !important; height: 592px !important;">
+                                        <h2>
+                                            Client Menus
+                                        </h2>
+                                        <div class="receptioncolumnContent">
+                                            <div id="content" class="singleColumn">
+                                                <table width="100%">
+                                                    <tr>
+                                                        <td align="center" style="vertical-align: middle;" id="tdgetdetails">
+                                                            <img ng-click="getclientdetails()" title="Client Details" style="cursor: pointer; height: 70px; width: 70px;" src="img/info_client.png" alt="">
+                                                            <div>Client Details</div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td id="tdsearchBorder">
+                                                            <br />
+                                                            <div style="border-bottom: thin solid #67a0e5;">
+                                                            </div>
+                                                            <br />
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td align="center" style="vertical-align: middle;" id="tdsearch">
+                                                            <img ng-click="searchclient()" title="Search Client" style="cursor: pointer; height: 70px; width: 70px;" src="img/searchclient.png" alt="">
+                                                            <div>Search Client</div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td id="tddetailsBorder">
+                                                            <br />
+                                                            <div style="border-bottom: thin solid #67a0e5;">
+                                                            </div>
+                                                            <br />
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" style="vertical-align: middle;" id="tdadd">
+                                                            <img ng-click="addclient()" title="Add Client" style="cursor: pointer; height: 70px; width: 70px;" src="img/addclient.png" alt="">
+                                                            <div>Add Client</div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td id="tdaddBorder">
+                                                            <br />
+                                                            <div style="border-bottom: thin solid #67a0e5;">
+                                                            </div>
+                                                            <br />
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" style="vertical-align: middle;" id="tddashboard">
+                                                            <img ng-click="dashboardclient()" title="Dashboard Client" style="cursor: pointer; height: 70px; width: 70px;" src="img/dashboard.png" alt="">
+                                                            <div>Dashboard</div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td id="tddarshBoardBorder">
+                                                            <br />
+                                                            <div style="border-bottom: thin solid #67a0e5;">
+                                                            </div>
+                                                            <br />
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" style="vertical-align: middle;" id="tdedit">
+                                                            <img ng-click="editclient()" title="Edit Client" style="cursor: pointer; height: 70px; width: 70px;" src="img/editclient.png" alt="">
+                                                            <div>Edit Client</div>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td id="tdeditBorder">
+                                                            <br />
+                                                            <div style="border-bottom: thin solid #67a0e5;">
+                                                            </div>
+                                                            <br />
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" style="vertical-align: middle;" id="tddelete">
+                                                            <img ng-click="deleteclient()" title="Delete Client" style="cursor: pointer; height: 70px; width: 70px;" src="img/deleteclient.png" alt="">
+                                                            <div>Delete Client</div>
+                                                        </td>
+                                                    </tr>
+
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="width: 88%">
+                                <div class="receptioncolumn">
+                                    <div class="receptioncolumnHeader" style="max-height: 592px !important;height: 592px !important;">
+                                        <h2>
+                                            Information
+                                        </h2>
+                                        <div class="receptioncolumnContent">
+                                            <div id="content" class="singleColumn">
+
+                                                <div>
+                                                    <div class="tabs" id="graphContent">
+                                                        <div class="tab">
+                                                            <input type="radio" id="tab-1" name="tab-group-1" checked>
+                                                            <label for="tab-1">Alerts</label>
+
+                                                            <div class="content">
+                                                                <table width="100%">
+                                                                    <tr>
+                                                                        <!-- <td style="width: 22%">
+                                                                            <div class="receptioncolumn">
+                                                                                <div class="receptioncolumnHeader" style="min-height: 330px; height: 330px; overflow: auto">
+                                                                                    <h2>
+                                                                                        Graph
+                                                                                    </h2>
+                                                                                    <div class="receptioncolumnContent" style="margin-right: 10px;">
+                                                                                        <div id="content" class="singleColumn">
+                                                                                            <br />
+                                                                                            <br />
+                                                                                            <br />
+                                                                                            <br />
+                                                                                            <div id="pieChartBox" class="box chartBox">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td> -->
+                                                                        <td>
+                                                                            <div class="receptioncolumn">
+                                                                                <div class="receptioncolumnHeader" style="min-height: 485px; height: 485px; overflow: auto">
+                                                                                    <h2>
+                                                                                        Alerts
+                                                                                    </h2>
+                                                                                    <div class="receptioncolumnContent">
+                                                                                        <div id="content" class="singleColumn">
+                                                                                            <div class="box contentBox">
+                                                                                                <div class="boxInner">
+                                                                                                    <div class="boxContent">
+                                                                                                        <div id="divParent">
+                                                                                                        
+                                                                                                       		<div class="pageControl">
+										                                                                        <div class="pageDisplay">
+										                                                                            <span class="pageDispalyLabel">
+										                                                                                <!--  Displaying <strong>0</strong> to
+										                                                                                 <strong>0</strong> of <strong>0</strong> -->
+										                                                                            </span>
+										                                                                            <span class="pageDispalySelectLabel">Show</span>
+										                                                                            <div class="selectBox">
+										                                                                                <select ng-model="noofrecordsforalert" class="pageRp" ng-change="getalertdataforclients()" ng-options="obj.value as obj.name for obj in recordCount.data"></select>
+										                                                                            </div>
+										                                                                        </div>
+										                                                                        <div class="pagination">
+										                                                                            <table width="100%">
+										                                                                                <tr>
+										                                                                                    <td>
+										                                                                                        <div style="float: right" class="gridPaging" id="gridPagingHide">
+										                                                                                            <!-- <ul>
+										                                                                                                <li><a href="#" class="paging first"></a></li>
+										                                                                                                <li><a href="#" class="paging pagePrev"></a></li>
+										                                                                                                <li><span class="pageCurrent" title="1">1</span></li>
+										                                                                                                <li><a href="#" class="paging pageNext"></a></li>
+										                                                                                                <li><a href="#" class="paging last"></a></li>
+										                                                                                            </ul> -->
+										                                                                                        </div>
+										                                                                                    </td>
+										                                                                                </tr>
+										                                                                            </table>
+										                                                                        </div>
+										                                                                    </div>
+                                                                                                            <div class="tableList" style="background-color: White; max-height: 330px; overflow: auto;">
+                                                                                                                <table width="100%" cellpadding="0" cellspacing="0" class="requireZebraCrossingGrid"
+                                                                                                                       id="tblGrid">
+                                                                                                                    <thead>
+                                                                                                                        <tr class="trgrColumn">
+                                                                                                                            <th style="padding-left: 1%">
+                                                                                                                                Alert Name
+                                                                                                                            </th>
+                                                                                                                            <th>
+                                                                                                                                Accept Date
+                                                                                                                            </th>
+                                                                                                                            <th>
+                                                                                                                                Accept Alert
+                                                                                                                            </th>
+                                                                                                                        </tr>
+                                                                                                                    </thead>
+                                                                                                                    <tbody>
+                                                                                                                        <tr ng-repeat="item in clientalertgrid">
+                                                                                                                            <td style="padding-left: 1%">
+                                                                                                                                {{item.alertname}}
+                                                                                                                            </td>
+                                                                                                                            <td>
+                                                                                                                            	{{item.alertdate}}
+                                                                                                                            </td>
+                                                                                                                            <td>
+                                                                                                                                <a ng-click="acceptalert($event)" href="javascript:void(0)" id="btnaccept-{{item.id}}" class="btnGreen btnCancel">
+                                                                                                                                    <span class="btnR"><span class="btnC">Accept</span></span>
+                                                                                                                                </a>
+                                                                                                                            </td>
+                                                                                                                        </tr>
+                                                                                                                    </tbody>
+                                                                                                                </table>
+                                                                                                            </div>
+                                                                                                            <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl">
+                                                                                                            </span><span class="corner br"></span>
+                                                                                                            <div class="pageControl">
+										                                                                        <div class="pageDisplay">
+										                                                                            <span class="pageDispalyLabel">
+										                                                                                <!--  Displaying <strong>0</strong> to
+										                                                                                 <strong>0</strong> of <strong>0</strong> -->
+										                                                                            </span>
+										                                                                            <span class="pageDispalySelectLabel">Show</span>
+										                                                                            <div class="selectBox">
+										                                                                                <select ng-model="noofrecordsforalert" class="pageRp" ng-change="getalertdataforclients()" ng-options="obj.value as obj.name for obj in recordCount.data"></select>
+										                                                                            </div>
+										                                                                        </div>
+										                                                                        <div class="pagination">
+										                                                                            <table width="100%">
+										                                                                                <tr>
+										                                                                                    <td>
+										                                                                                        <div style="float: right" class="gridPaging" id="gridPagingHide">
+										                                                                                            <!-- <ul>
+										                                                                                                <li><a href="#" class="paging first"></a></li>
+										                                                                                                <li><a href="#" class="paging pagePrev"></a></li>
+										                                                                                                <li><span class="pageCurrent" title="1">1</span></li>
+										                                                                                                <li><a href="#" class="paging pageNext"></a></li>
+										                                                                                                <li><a href="#" class="paging last"></a></li>
+										                                                                                            </ul> -->
+										                                                                                        </div>
+										                                                                                    </td>
+										                                                                                </tr>
+										                                                                            </table>
+										                                                                        </div>
+										                                                                    </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="tab">
+                                                            <input type="radio" id="tab-2" name="tab-group-1">
+                                                            <label for="tab-2">Location</label>
+                                                            <div class="content">
+                                                                <table width="100%">
+                                                                    <tr>
+                                                                        <td colspan="2">
+                                                                            <div style="margin-top: 5px;">
+                                                                                <strong style="margin-left: 10px;">Select Client : </strong>
+
+                                                                                <select ng-model="darshboardClientDisplay" ng-change="reloadbuildings()" ng-options="item.ClientId as item.ClientName for item in buildingsclient" style="height: 30px; width: 350px"></select>
+                                                                                &nbsp;&nbsp;
+                                                                                <strong style="margin-left: 10px;">Select Building : </strong>
+
+                                                                                <select ng-model="darshboardDisplay" ng-change="getlatandlong()" ng-options="item.BuildingId as item.BuildingName for item in dashboardbuildings" style="height: 30px; width: 350px"></select>
+
+                                                                            </div>
+                                                                            <div class="receptioncolumn">
+                                                                                <div class="receptioncolumnHeader" style="min-height: 450px; height: 450px; overflow: auto">
+                                                                                    <h2>
+                                                                                        GMaps Location of Guards
+                                                                                    </h2>
+                                                                                    <div class="receptioncolumnContent">
+                                                                                        <div id="content" class="singleColumn">
+                                                                                            <div id="map" style="height: 405px; width: 902px">
+
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div id="divClientDetails" style="display: none">
+                                                    <div class="box contentBox">
+                                                        <div class="boxInner" id="divclienthide">
+                                                            <div class="boxContent">
+                                                                <div id="divParent">
+                                                                    <div class="pageControl">
+                                                                        <div class="pageDisplay">
+                                                                            <span class="pageDispalyLabel">
+                                                                                <!--  Displaying <strong>0</strong> to
+                                                                                 <strong>0</strong> of <strong>0</strong> -->
+                                                                            </span>
+                                                                            <span class="pageDispalySelectLabel">Show</span>
+                                                                            <div class="selectBox">
+                                                                                <select ng-model="noofrecordsDetails" class="pageRp" ng-change="getdataforgrid()" ng-options="obj.value as obj.name for obj in recordCount.data"></select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="pagination">
+                                                                            <table width="100%">
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <div style="float: right" class="gridPaging" id="gridPagingHide">
+                                                                                            <!-- <ul>
+                                                                                                <li><a href="#" class="paging first"></a></li>
+                                                                                                <li><a href="#" class="paging pagePrev"></a></li>
+                                                                                                <li><span class="pageCurrent" title="1">1</span></li>
+                                                                                                <li><a href="#" class="paging pageNext"></a></li>
+                                                                                                <li><a href="#" class="paging last"></a></li>
+                                                                                            </ul> -->
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="tableList" style="background-color: White; max-height: 4200px; overflow: auto;">
+                                                                        <table width="100%" cellpadding="0" cellspacing="0" class="requireZebraCrossingGrid"
+                                                                               id="tblGrid">
+                                                                            <thead id="theadClientDetails1">
+                                                                                <tr class="trgrColumn">
+                                                                                    <th style="padding-left: 1%">
+                                                                                        Firstname
+                                                                                    </th>
+                                                                                    <th>
+                                                                                        Lastname
+                                                                                    </th>
+                                                                                    <th>
+                                                                                        Address
+                                                                                    </th>
+                                                                                    <th>
+                                                                                        City
+                                                                                    </th>
+                                                                                    <th>
+                                                                                        State
+                                                                                    </th>
+                                                                                    <th>
+                                                                                        Start Date
+                                                                                    </th>
+                                                                                    <th>
+                                                                                        End Date
+                                                                                    </th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody id="theadClientDetails2">
+                                                                                <tr ng-repeat="item in clientGrid">
+                                                                                    <td style="padding-left: 1%">
+                                                                                        {{item.Firstname}}
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        {{item.Lastname}}
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        {{item.Address}}
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        {{item.City}}
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        {{item.State}}
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        {{item.StartDate}}
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        {{item.EndDate}}
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+
+                                                                    <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl">
+                                                                    </span><span class="corner br"></span>
+
+                                                                    <div class="pageControl" id="pageControlhide">
+                                                                        <div class="pageDisplay">
+                                                                            <span class="pageDispalyLabel">
+                                                                            </span>
+                                                                            <span class="pageDispalySelectLabel">Show</span>
+                                                                            <div class="selectBox">
+                                                                                <select ng-model="noofrecordsDetails" class="pageRp" ng-change="getdataforgrid()" ng-options="obj.value as obj.name for obj in recordCount.data"></select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="pagination">
+                                                                            <table width="100%">
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <div style="float: right" class="gridPaging">
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div id="divClientAdd" style="display: none">
+                                                    <table width="100%">
+                                                        <tr>
+                                                            <td>
+                                                                <fieldset style="margin-top: 1%; margin-top: 1%; height: 350px">
+                                                                    <legend><b>Client Details</b></legend>
+
+                                                                    <table width="100%">
+                                                                        <tr>
+                                                                            <td>
+
+                                                                                <div class="cell firstCell">
+                                                                                    <h3>Name</h3>
+                                                                                    <div class="cellBody">
+                                                                                        <input type="text" ng-model="nameAdd" id="txtclient" onkeyup="removeErrorControl('txtclient');" />
+                                                                                    </div>
+                                                                                    <br />
+                                                                                    <h3>Address</h3>
+                                                                                    <div class="cellBody">
+                                                                                        <input type="text" ng-model="addressAdd" id="txtaddress" onkeyup="removeErrorControl('txtaddress');" />
+                                                                                    </div>
+                                                                                    <br />
+                                                                                    <h3>City</h3>
+                                                                                    <div class="cellBody">
+                                                                                        <input type="text" ng-model="cityAdd" id="txtcity" onkeyup="removeErrorControl('txtcity');" />
+                                                                                    </div>
+                                                                                    <br />
+                                                                                    <h3>Zip code</h3>
+                                                                                    <div class="cellBody">
+                                                                                        <input type="text" ng-model="zipcodeAdd" id="txtzipcode" onkeyup="removeErrorControl('txtzipcode');" />
+                                                                                    </div>
+                                                                                    <br />
+                                                                                    <h3>Start Date</h3>
+                                                                                    <div class="cellBody">
+                                                                                        <input type="text" class="datepicker" ng-model="startdateAdd" id="txtstartdate" onchange="removeErrorControl('txtstartdate');"/>
+                                                                                    </div>
+                                                                                    <br />
+                                                                                    <h3>SSN Number</h3>
+                                                                                    <div class="cellBody">
+                                                                                        <input type="text" ng-model="ssnAdd" id="txtssn"  onkeyup="removeErrorControl('txtssn');"/>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="clearAll">
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+
+
+                                                                                <div class="cell firstCell">
+                                                                                    <h3>Surname</h3>
+                                                                                    <div class="cellBody">
+                                                                                        <input type="text" ng-model="surnameAdd" id="txtsurname" onkeyup="removeErrorControl('txtsurname');"/>
+                                                                                    </div>
+                                                                                    <br />
+                                                                                    <h3>Contact Number</h3>
+                                                                                    <div class="cellBody">
+                                                                                        <input type="text" ng-model="contactnumberAdd" id="txtcontactnumber" onkeyup="removeErrorControl('txtcontactnumber');" />
+                                                                                    </div>
+                                                                                    <br />
+                                                                                    <h3>State</h3>
+                                                                                    <div class="cellBody">
+                                                                                        <input type="text" ng-model="stateAdd" id="txtstate" onkeyup="removeErrorControl('txtstate');"/>
+                                                                                    </div>
+                                                                                    <br />
+                                                                                    <h3>Email</h3>
+                                                                                    <div class="cellBody">
+                                                                                        <input type="text" ng-model="emailAdd" id="txtemail" onkeyup="removeErrorControl('txtemail');"/>
+                                                                                    </div>
+                                                                                    <br />
+                                                                                    <h3>End Date</h3>
+                                                                                    <div class="cellBody">
+                                                                                        <input type="text" class="datepicker" ng-model="enddateAdd" id="txtenddate" onchange="removeErrorControl('txtenddate');"/>
+                                                                                    </div>
+                                                                                    <br />
+                                                                                    <h3>Password</h3>
+                                                                                    <div class="cellBody">
+                                                                                        <input type="password" ng-model="passwordAdd" id="txtpassword" onkeyup="removeErrorControl('txtpassword');" />
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div class="clearAll">
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </fieldset>
+                                                            </td>
+                                                        </tr>
+                                                    </table>   <br />
+
+                                                    <div style="float: right; margin-right: 3%">
+                                                        <a href="javascript:void(0)" ng-click="Add()" id="btnSave" class="btnGreen btnCancel">
+                                                            <span class="btnR"><span class="btnC">Save</span></span>
+                                                        </a>&nbsp;&nbsp;
+                                                        <a href="javascript:void(0)" ng-click="resetAddAttribute()" id="btnCancelAdding" class="btnGreen btnCancel">
+                                                            <span class="btnR"><span class="btnC">Cancel</span></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+                                                <div id="divClientUpdate" style="display: none">
+                                                    <table width="100%">
+                                                        <tr id="selectClientId">
+                                                            <td>
+                                                                <b>Select Client for editing</b>
+                                                            </td>
+                                                            <td style="padding-left: 30px" id="tdselectOption">
+                                                                <select ng-model="clientsEdit" id="ddlClients" ng-options="item.ClientId as item.ClientName for item in clients" style="height: 30px; width: 740px" ng-change="loadclientdetailsbyid($event)"></select>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <table width="100%">
+                                                        <tr>
+                                                            <td>
+                                                                <fieldset style="margin-top: 1%; margin-top: 1%; height: 350px">
+                                                                    <legend><b>Client Details</b></legend>
+
+                                                                    <table width="100%">
+                                                                        <tr>
+                                                                            <td>
+
+                                                                                <div class="cell firstCell">
+                                                                                    <h3>Name</h3>
+                                                                                    <div class="cellBody">
+                                                                                        <input type="text" ng-model="nameEdit" id="txtnameEdit" onkeyup="removeErrorControl('txtnameEdit');"/>
+                                                                                    </div>
+                                                                                    <br />
+                                                                                    <h3>Address</h3>
+                                                                                    <div class="cellBody">
+                                                                                        <input type="text" ng-model="addressEdit" id="txtaddressEdit" onkeyup="removeErrorControl('txtaddressEdit');"/>
+                                                                                    </div>
+                                                                                    <br />
+                                                                                    <h3>City</h3>
+                                                                                    <div class="cellBody">
+                                                                                        <input type="text" ng-model="cityEdit" id="txtcityEdit" onkeyup="removeErrorControl('txtcityEdit');"/>
+                                                                                    </div>
+                                                                                    <br />
+                                                                                    <h3>Zip code</h3>
+                                                                                    <div class="cellBody">
+                                                                                        <input type="text" ng-model="zipcodeEdit" id="txtzipcodeEdit" onkeyup="removeErrorControl('txtzipcodeEdit');"/>
+                                                                                    </div>
+                                                                                    <br />
+                                                                                    <h3>Start Date</h3>
+                                                                                    <div class="cellBody">
+                                                                                        <input type="text" class="datepicker" ng-model="startdateEdit" id="txtstartdateEdit" onchange="removeErrorControl('txtstartdateEdit');"/>
+                                                                                    </div>
+                                                                                    <br />
+                                                                                    <h3>SSN Number</h3>
+                                                                                    <div class="cellBody">
+                                                                                        <input type="text" ng-model="ssnEdit" id="txtssnEdit" onkeyup="removeErrorControl('txtssnEdit');" />
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="clearAll">
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+
+
+                                                                                <div class="cell firstCell">
+                                                                                    <h3>Surname</h3>
+                                                                                    <div class="cellBody">
+                                                                                        <input type="text" ng-model="surnameEdit" id="txtsurnameEdit" onkeyup="removeErrorControl('txtsurnameEdit');"/>
+                                                                                        <input type="hidden" id="clientsEdit" ng-model="hiddenclietid">
+                                                                                    </div>
+                                                                                    <br />
+                                                                                    <h3>Contact Number</h3>
+                                                                                    <div class="cellBody">
+                                                                                        <input type="text" ng-model="contactnumberEdit" id="txtcontactnumberEdit" onkeyup="removeErrorControl('txtcontactnumberEdit');"/>
+                                                                                    </div>
+                                                                                    <br />
+                                                                                    <h3>State</h3>
+                                                                                    <div class="cellBody">
+                                                                                        <input type="text" ng-model="stateEdit" id="txtstateEdit" onkeyup="removeErrorControl('txtstateEdit');"/>
+                                                                                    </div>
+                                                                                    <br />
+                                                                                    <h3>Email</h3>
+                                                                                    <div class="cellBody">
+                                                                                        <input type="text" ng-model="emailEdit" id="txtemailEdit" onkeyup="removeErrorControl('txtemailEdit');"/>
+                                                                                    </div>
+                                                                                    <br />
+                                                                                    <h3>End Date</h3>
+                                                                                    <div class="cellBody">
+                                                                                        <input type="text" class="datepicker" ng-model="enddateEdit" id="txtenddateEdit" onchange="removeErrorControl('txtenddateEdit');"/>
+                                                                                    </div>
+                                                                                    <br />
+                                                                                    <h3>Password</h3>
+                                                                                    <div class="cellBody">
+                                                                                        <input type="password" ng-model="passwordEdit" id="txtpasswordEdit" onkeyup="removeErrorControl('txtpasswordEdit');"/>
+                                                                                        <input type="hidden" id="hdnpassword" ng-model="hiddenpassword">
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div class="clearAll">
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </fieldset>
+                                                            </td>
+                                                        </tr>
+                                                    </table> <br />
+
+                                                    <div style="float: right; margin-right: 3%">
+                                                        <a href="javascript:void(0)" ng-click="Update()" id="btnSave" class="btnGreen btnCancel">
+                                                            <span class="btnR"><span class="btnC">Save</span></span>
+                                                        </a>&nbsp;&nbsp;
+                                                        <a href="javascript:void(0)" ng-click="resetEditAttribute()" id="btnCancelEditing" class="btnGreen btnCancel">
+                                                            <span class="btnR"><span class="btnC">Cancel</span></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+                                                
+                                                <div id="divClientDelete" style="display: none">
+                                                    <div class="box contentBox">
+                                                        <div class="boxInner">
+                                                            <div class="boxContent">
+                                                                <div id="divParent">
+                                                                    <div class="pageControl">
+                                                                        <div class="pageDisplay">
+                                                                            <span class="pageDispalyLabel">
+                                                                                <!--  Displaying <strong>0</strong> to
+                                                                                 <strong>0</strong> of <strong>0</strong> -->
+                                                                            </span>
+                                                                            <span class="pageDispalySelectLabel">Show</span>
+                                                                            <div class="selectBox">
+                                                                                <select ng-model="noofrecordsDelete" class="pageRp" ng-change="getdataforgridfordelete()" ng-options="obj.value as obj.name for obj in recordCount.data"></select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="pagination">
+                                                                            <table width="100%">
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <div style="float: right" class="gridPaging">
+                                                                                            <!-- <ul>
+                                                                                                <li><a href="#" class="paging first"></a></li>
+                                                                                                <li><a href="#" class="paging pagePrev"></a></li>
+                                                                                                <li><span class="pageCurrent" title="1">1</span></li>
+                                                                                                <li><a href="#" class="paging pageNext"></a></li>
+                                                                                                <li><a href="#" class="paging last"></a></li>
+                                                                                            </ul> -->
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="tableList" style="background-color: White; max-height: 420px; overflow: auto;">
+                                                                        <table width="100%" cellpadding="0" cellspacing="0" class="requireZebraCrossingGrid"
+                                                                               id="tblGrid">
+                                                                            <thead>
+                                                                                <tr class="trgrColumn">
+                                                                                    <th style="padding-left: 1%">
+                                                                                        Name
+                                                                                    </th>
+                                                                                    <th>
+                                                                                        Delete
+                                                                                    </th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr ng-repeat="item in deleteclientGrid">
+                                                                                    <td style="padding-left: 1%">
+                                                                                        {{item.Firstname}} {{item.Lastname}}
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <span><a href="#" id="delete-{{item.ClientId}}" ng-click="deleteclientInfo($event)"><img title="Delete" style="height: 22px; width: 22px;" src="img/delete.png" /></a></span>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+
+
+                                                                    <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl">
+                                                                    </span><span class="corner br"></span>
+
+                                                                    <div class="pageControl">
+                                                                        <div class="pageDisplay">
+                                                                            <span class="pageDispalyLabel">
+                                                                            </span>
+                                                                            <span class="pageDispalySelectLabel">Show</span>
+                                                                            <div class="selectBox">
+                                                                                <select ng-model="noofrecordsDelete" class="pageRp" ng-change="getdataforgridfordelete()" ng-options="obj.value as obj.name for obj in recordCount.data"></select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="pagination">
+                                                                            <table width="100%">
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <div style="float: right" class="gridPaging">
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div id="divClientSearch" style="display: none">
+                                                    <div class="box filterPanel">
+                                                        <div class="boxInner">
+                                                            <div class="boxTitle">
+                                                                <a href="#" class="folderCtrl" onclick="folderExpand(this);"></a>
+                                                                <h3>Filter</h3>
+                                                            </div>
+                                                            <div class="boxContent">
+                                                                <div class="boxFilterBody">
+                                                                    <div class="cellRow requireSameHeightCell">
+                                                                        <div class="cell firstCell">
+                                                                            <div class="cellBody">
+                                                                                <table width="100%">
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <div class="cell firstCell">
+                                                                                                <h3>Firstname</h3>
+                                                                                                <div class="cellBody">
+                                                                                                    <input type="text" ng-model="nameSearch" id="txtnameSearch" />
+                                                                                                </div>
+                                                                                                <br />
+                                                                                                <h3>Contact Number</h3>
+                                                                                                <div class="cellBody">
+                                                                                                    <input type="text" ng-model="contactnumberSearch" id="txtcontactnumberSearch" />
+                                                                                                </div>
+                                                                                                <br />
+
+
+
+                                                                                            </div>
+                                                                                            <div class="clearAll">
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <div class="cell firstCell">
+                                                                                                <h3>Lastname</h3>
+                                                                                                <div class="cellBody">
+                                                                                                    <input type="text" ng-model="surnameSearch" id="txtsurnameSearch" />
+                                                                                                </div>
+                                                                                                <br />
+                                                                                                <h3>Email</h3>
+                                                                                                <div class="cellBody">
+                                                                                                    <input type="text" ng-model="emailSearch" id="txtemailSearch" />
+                                                                                                </div>
+                                                                                                <br />
+                                                                                            </div>
+                                                                                            <div class="clearAll">
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <div class="cell firstCell">
+                                                                                                <h3>Address</h3>
+                                                                                                <div class="cellBody">
+                                                                                                    <input type="text" ng-model="addressSearch" id="txtaddressSearch" />
+                                                                                                </div>
+                                                                                                <br />
+                                                                                                <h3>SSN Number</h3>
+                                                                                                <div class="cellBody">
+                                                                                                    <input type="text" ng-model="ssnSearch" id="txtssnSearch" />
+                                                                                                </div>
+                                                                                                <br />
+
+                                                                                            </div>
+                                                                                            <div class="clearAll">
+                                                                                            </div>
+                                                                                        </td>
+
+                                                                                        <td>
+                                                                                            <div class="cell firstCell">
+                                                                                                <h3>City</h3>
+                                                                                                <div class="cellBody">
+                                                                                                    <input type="text" ng-model="citySearch" id="txtcitySearch" />
+                                                                                                </div>
+                                                                                                <br />
+                                                                                                <h3>Start Date</h3>
+                                                                                                <div class="cellBody">
+                                                                                                    <input type="text" ng-model="startDateSearch" id="txtstartDateSearch" />
+                                                                                                </div>
+                                                                                                <br />
+                                                                                            </div>
+                                                                                            <div class="clearAll">
+                                                                                            </div>
+                                                                                        </td>
+
+
+                                                                                        <td>
+                                                                                            <div class="cell firstCell">
+
+                                                                                                <h3>State</h3>
+                                                                                                <div class="cellBody">
+                                                                                                    <input type="text" ng-model="stateSearch" id="txtstateSearch" />
+                                                                                                </div>
+                                                                                                <br />
+                                                                                                <h3>End Date</h3>
+                                                                                                <div class="cellBody">
+                                                                                                    <input type="text" ng-model="endDateSearch" id="txtendDateSearch" />
+                                                                                                </div>
+                                                                                                <br />
+
+
+                                                                                            </div>
+
+                                                                                            <div class="clearAll">
+                                                                                            </div>
+                                                                                        </td>
+
+                                                                                    </tr>
+
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="clearAll">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div style="float: right; margin-right: 3%">
+                                                        <a href="javascript:void(0)" ng-click="SearchClient()" id="btnSave" class="btnGreen btnCancel">
+                                                            <span class="btnR"><span class="btnC">Search</span></span>
+                                                        </a>&nbsp;&nbsp;
+                                                        <a href="javascript:void(0)" ng-click="resetSearchAttribute()" id="btnCancelEditing" class="btnGreen btnCancel">
+                                                            <span class="btnR"><span class="btnC">Cancel</span></span>
+                                                        </a>
+                                                    </div>
+                                                    <br />
+                                                    <br />
+                                                    <br />
+                                                    <div style="border: 1px solid #ccc; display: none;" id="divsearchgrid">
+                                                        <div class="pageControl">
+                                                            <div class="pageDisplay">
+                                                                <span class="pageDispalyLabel">
+                                                                </span>
+                                                                <span class="pageDispalySelectLabel">Show</span>
+                                                                <div class="selectBox">
+                                                                    <select ng-model="noofrecordsSearch" class="pageRp" ng-change="getclientrecordsfordisplaySearch()" ng-options="obj.value as obj.name for obj in recordCount.data"></select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="pagination">
+                                                                <table width="100%">
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div style="float: right" class="gridPaging">
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tableList" style="background-color: White; max-height: 320px; overflow: auto;">
+                                                            <table width="100%" cellpadding="0" cellspacing="0" class="requireZebraCrossingGrid"
+                                                                   id="tblGrid">
+                                                                <thead>
+                                                                    <tr class="trgrColumn">
+                                                                        <th style="padding-left: 1%">
+                                                                            Firstname
+                                                                        </th>
+                                                                        <th>
+                                                                            Lastname
+                                                                        </th>
+                                                                        <th>
+                                                                            Address
+                                                                        </th>
+                                                                        <th>
+                                                                            SSN Number
+                                                                        </th>
+                                                                        <th>
+                                                                            City
+                                                                        </th>
+                                                                        <th>
+                                                                            State
+                                                                        </th>
+                                                                        <th>
+                                                                            Start Date
+                                                                        </th>
+                                                                        <th>
+                                                                            End Date
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody id="tbodyclientinfo">
+                                                                    <tr ng-repeat=" value in clientSearchGrid">
+                                                                        <td style="padding-left: 1%">
+                                                                            {{value.Firstname}}
+                                                                        </td>
+                                                                        <td>
+                                                                            {{value.Lastname}}
+                                                                        </td>
+                                                                        <td>
+                                                                            {{value.Address}}
+                                                                        </td>
+                                                                        <td>
+                                                                            {{value.SSNNumber}}
+                                                                        </td>
+                                                                        <td>
+                                                                            {{value.City}}
+                                                                        </td>
+                                                                        <td>
+                                                                            {{value.State}}
+                                                                        </td>
+                                                                        <td>
+                                                                            {{value.startDate}}
+                                                                        </td>
+                                                                        <td>
+                                                                            {{value.EndDate}}
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+
+
+                                                        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl">
+                                                        </span><span class="corner br"></span>
+                                                        <div class="pageControl">
+                                                            <div class="pageDisplay">
+                                                                <span class="pageDispalyLabel">
+                                                                </span>
+                                                                <span class="pageDispalySelectLabel">Show</span>
+                                                                <div class="selectBox">
+                                                                    <select ng-model="noofrecordsSearch" class="pageRp" ng-change="getclientrecordsfordisplaySearch()" ng-options="obj.value as obj.name for obj in recordCount.data"></select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="pagination">
+
+                                                                <table width="100%">
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div style="float: right" class="gridPaging">
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button style="display: none" id="myElement3" name="save" ng-click="getdataforgrid()"></button>
+    <button style="display: none" id="myElement4" name="save" ng-click="getdataforgridfordelete()"></button>
+    <button style="display: none" id="myElement2" name="update" ng-click="getclientrecordsfordisplaySearch()"></button>
+    <button style="display: none" id="myElement5" name="update" ng-click="getalertdataforclients()"></button>
+</div>
+
+
+

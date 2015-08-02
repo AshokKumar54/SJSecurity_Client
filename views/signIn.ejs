@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title><%= title %></title>
+    <!-- Bootstrap Core CSS -->
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="stylesheets/style.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="stylesheets/stylish-portfolio.css" rel="stylesheet">
+    
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+	<script>
+		function ErrorControlRemove(value){    		
+    		removeErrorControl(value);
+    	}
+    	
+    	function RemoveErrorLabel(value){    	
+    		document.getElementById(value).style.display = "none";
+    	}
+    	
+		function loginController($scope, $http){
+			localStorage.clear();
+			
+			$scope.signin = function() {
+    				var password = $scope.password;
+    				var username = $scope.username;
+    				
+    				document.getElementById("lblUsernameerror").style.display = "none";
+    				document.getElementById("lblPassworderror").style.display = "none";
+    				
+    				if(username == "" || username == undefined){
+    					document.getElementById("lblUsernameerror").style.display = "";
+    				}
+    				else if(password == "" || password == undefined){
+    					document.getElementById("lblPassworderror").style.display = "";
+    				}
+    				else{    				
+						var url = "/signin/username/" + username + "/password/" + password;   				
+	    				$http({
+							method: 'GET',
+							url: url						
+							}).success(function(response){
+								if(response.value.error == false){
+									localStorage.setItem("userid", response.value.result[0].UserId);
+									localStorage.setItem("roleid", response.value.result[0].RoleId);
+									window.location.href = "/sjsecurity";
+								}			
+								else{
+									alert(response.value.message);
+								}			
+							}).error(function(err){
+								alert(err.value.message);
+					     });
+					}
+		    	};
+		}
+	</script>
+</head>
+
+<body ng-controller="loginController">
+    <!-- Header -->
+	    <header id="top" class="header">
+	        <div class="text-vertical-center">
+	        	<table width="100%">
+	        		<tr>
+	        			<td align="center">	        				
+					        <table class="tblSignIn">
+					        	<tr>
+					        		<td align="center">
+					        			<img title="SJ Security" style="height: 270px; width: 270px; margin-bottom: -115px;" src="img/logo.png" alt="SJ Security" />
+					        		</td>
+					        	</tr>
+					        	<tr>
+					        		<td>
+					        			<br />
+					        		</td>
+					        	</tr>
+					        	<tr>
+					        		<td align="center">
+					        			<p style="margin-top: -20px; font-weight: bold"><input onkeyup="RemoveErrorLabel('lblUsernameerror')" ng-model="username" class="textbox" type="text" placeholder="Email Address" id="txtEmail" name="email"></p>
+					        			<label style="display:none" id='lblUsernameerror' class='error1' href='#' title='Please enter username'></label>
+					        		</td>
+					        	</tr>
+					        	<tr>
+					        		<td>
+					        			<br />
+					        		</td>
+					        	</tr>
+					        	<tr>
+					        		<td align="center">
+					        			<p style="margin-top: -20px; font-weight: bold"><input onkeyup="RemoveErrorLabel('lblPassworderror')" ng-model="password" class="textbox" type="password" placeholder="Password" id="txtPassword" name="password"></p>
+					        			<label style="display:none" id='lblPassworderror' class='error1' href='#' title='Please enter password'></label>
+					        		</td>
+					        	</tr>
+					        	<tr>
+					        		<td>
+					        			<br />
+					        		</td>
+					        	</tr>
+					        	<tr>
+					        		<td align="center">
+					        			<a href="javascript:void(0)" ng-click="signin()" id="btnsignin" class="btnGreen btnCancel">
+                        				<span class="btnR"><span class="btnC">Sign in</span></span></a> 
+					        		</td>
+					        	</tr>
+					        	<tr>
+					        		<td>
+					        			<br />
+					        		</td>
+					        	</tr>
+					        </table>
+	        			</td>
+	        		</tr>	        		
+	        	</table>
+	        </div>
+	    </header>    
+	
+	    <!-- Footer -->
+	        <div class="footer">
+	        	<label>Copyright &copy; SJ Security 2015</label>
+	        </div>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

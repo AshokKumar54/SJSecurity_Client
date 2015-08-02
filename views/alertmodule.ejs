@@ -1,0 +1,1378 @@
+                    <div id="container" ng-controller="alertmodule">
+                        <div class="containerBox">
+                            <div class="containerBoxR">
+                                <div class="containerInner">
+                                    <div>
+                                        <table class="BreadCrumAndMenu">
+                                            <tr>
+                                                <td class="BreadCrumColumn">
+                                                    <!-- breadcrum -->
+                                                    Home <span style='padding-left: 2px'><a href="#"><img src="images/icon-breadcrumb.png" /></a></span>  Alert Module
+                                                </td>
+                                                <td class="SubMenuColumn" id="divSubMenu"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="pageDetails">
+                            <!-- page html -->
+                            <div class="containerBox">
+                                <div class="containerBoxR">
+                                    <div class="containerInner">
+                                        <div id="pageTitle">
+                                            <h2>Alert Module</h2>
+                                        </div>
+                                        <br />
+                                        <table width="100%">
+                                            <tr>
+                                                <td style="width: 12%">
+                                                    <div class="receptioncolumn">
+                                                        <div class="receptioncolumnHeader" style="min-height: 648px; height: 648px;">
+                                                            <h2>
+                                                                Alert Menus
+                                                            </h2>
+                                                            <div class="receptioncolumnContent">
+                                                                <div id="content" class="singleColumn">
+                                                                	<table width="100%">
+                                                                        <tr>
+                                                                            <td align="center" style="vertical-align: middle;" id="tddetails">
+                                                                                <img ng-click="listAlerts()" title="Alert List" style="cursor: pointer; height: 60px; width: 50px;" src="img/alertimage.png" alt="">
+                                                                                <div>List Alerts</div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <br />
+                                                                                <div style="border-bottom: thin solid #67a0e5;">
+                                                                                </div>
+                                                                                <br />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                        <td align="center" style="vertical-align: middle;" id="tdadd">
+                                                                                <img ng-click="addalert()" title="Add Alert" style="cursor: pointer; height: 60px; width: 50px;" src="img/alertimage.png" alt="">
+                                                                                <div>Add Alert</div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <br />
+                                                                                <div style="border-bottom: thin solid #67a0e5;">
+                                                                                </div>
+                                                                                <br />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td align="center" style="vertical-align: middle;" id="tdbyBuildAdm">
+                                                                                <img ng-click="listAlertByBuilding()" title="List Alert" style="cursor: pointer; height: 60px; width: 50px;" src="img/alertimage.png" alt="">
+                                                                                <div>Alerts by Building</div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <br />
+                                                                                <div style="border-bottom: thin solid #67a0e5;">
+                                                                                </div>
+                                                                                <br />
+                                                                            </td>
+                                                                        </tr>
+                                                                        
+                                                                        <tr>
+                                                                            <td align="center" style="vertical-align: middle;" id="tdbyClientAdm">
+                                                                                <img ng-click="listAlertByClient()" title="List by Client" style="cursor: pointer; height: 60px; width: 50px;" src="img/alertimage.png" alt="">
+                                                                                <div>Alerts By Client</div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <br />
+                                                                                <div style="border-bottom: thin solid #67a0e5;">
+                                                                                </div>
+                                                                                <br />
+                                                                            </td>
+                                                                        </tr>
+                                                                         <tr>
+                                                                        <td align="center" style="vertical-align: middle;" id="tddelete">
+                                                                                <img ng-click="deletealert()" title="Delete Alert" style="cursor: pointer; height: 60px; width: 50px;" src="img/alertimage.png" alt="">
+                                                                                <div>Delete Alert</div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <br />
+                                                                                <div style="border-bottom: thin solid #67a0e5;">
+                                                                                </div>
+                                                                                <br />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td align="center" style="vertical-align: middle;" id="tdsearch">
+                                                                                <img ng-click="searchalert()" title="Search Guard" style="cursor: pointer; height: 60px; width: 50px;" src="img/alertimage.png"" alt="">
+                                                                                <div>Search Alert</div>
+                                                                            </td>
+                                                                        </tr>
+                                                                  
+                                                                    </table>
+                                                                </div>
+                                                            
+                                                            <div id="tabsforclient" class="singleColumn" style="display : none;">
+                                                            	<table width="100%" height="100%">
+                                                            		      
+                                                                        <tr>
+                                                                            <td align="center" style="vertical-align: middle;" id="tddetailsClient">
+                                                                                <img ng-click="listAlertsfrClient()" title="Alert List" style="cursor: pointer; height: 60px; width: 50px;" src="img/alertimage.png" alt="">
+                                                                                <div>List Alerts</div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <br />
+                                                                                <div style="border-bottom: thin solid #67a0e5;">
+                                                                                </div>
+                                                                                <br />
+                                                                            </td>
+                                                                        </tr>
+                                                                     
+                                                                         <tr>
+                                                                            <td align="center" style="vertical-align: middle;" id="tdSubmittedAlert">
+                                                                                <img ng-click="listSubmittedAlert()" title="Alert List" style="cursor: pointer; height: 60px; width: 50px;" src="img/alertimage.png" alt="">
+                                                                                <div>Submitted Alert</div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <br />
+                                                                                <div style="border-bottom: thin solid #67a0e5;">
+                                                                                </div>
+                                                                                <br />
+                                                                            </td>
+                                                                        </tr>
+                                                                         <tr>
+                                                                            <td align="center" style="vertical-align: middle;" id="tdsearchCL">
+                                                                                <img ng-click="searchalert()" title="Search Alert" style="cursor: pointer; height: 60px; width: 50px;" src="img/alertimage.png"" alt="">
+                                                                                <div>Search Alert</div>
+                                                                            </td>
+                                                                        </tr>
+                                                            	</table>
+                                                            </div>
+                                                            <div id="tabsforguard" class="singleColumn" style="display : none;">
+                                                            	<table width="100%" height="100%">
+                                                            		      
+                                                                        
+                                                                        <tr>
+                                                                            <td align="center" style="vertical-align: middle;" id="tdSubmittedAlertG">
+                                                                                <img ng-click="listSubmittedAlertGuard()" title="Alert List" style="cursor: pointer; height: 60px; width: 50px;" src="img/alertimage.png" alt="">
+                                                                                <div>Submitted Alert</div>
+                                                                            </td>
+                                                                        </tr>
+                                                                           
+                                                                        <tr>
+                                                                            <td>
+                                                                                <br />
+                                                                                <div style="border-bottom: thin solid #67a0e5;">
+                                                                                </div>
+                                                                                <br />
+                                                                            </td>
+                                                                        </tr>
+                                                                         <tr>
+                                                                         	 <td align="center" style="vertical-align: middle;" id="tddetailsGuard">
+                                                                                <img ng-click="listAlertsbybuildG()" title="Alert List" style="cursor: pointer; height: 60px; width: 50px;" src="img/alertimage.png" alt="">
+                                                                                <div>Alerts By Building</div>
+                                                                            </td>
+                                                                         </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <br />
+                                                                                <div style="border-bottom: thin solid #67a0e5;">
+                                                                                </div>
+                                                                                <br />
+                                                                            </td>
+                                                                        </tr>
+                                                                         <tr>
+                                                                            <td align="center" style="vertical-align: middle;" id="tdsearchGRD">
+                                                                                <img ng-click="searchalert()" title="Search Alert" style="cursor: pointer; height: 60px; width: 50px;" src="img/alertimage.png"" alt="">
+                                                                                <div>Search Alert</div>
+                                                                            </td>
+                                                                        </tr>
+                                                            	</table>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td style="width: 88%">
+                                                    <div class="receptioncolumn" >
+                                                        <div class="receptioncolumnHeader" style="min-height: 648px; height: 648px;">
+                                                            <h2>
+                                                                Information
+                                                            </h2>
+                                                            <div class="receptioncolumnContent">
+                                                                <div id="content" class="singleColumn">
+                                                                    <!--Start of details div-->
+                                                                	<div id="divAlertDetails" style="display : none;">
+                                                                		<!--Start of details div for admin-->
+                                                                		<div id="alertsListForAdmin" style="display:none;">
+																			<div class="box contentBox">
+																				<div class="boxInner">
+																					<div class="boxContent">
+																						<div id="divParent">
+																					 		<div class="pageControl">
+																							    <div class="pageDisplay">
+																									<span class="pageDispalyLabel"></span>
+																									<span class="pageDispalySelectLabel">Show</span>
+																									<div class="selectBox">
+	                                                                                                   <select ng-model="noofrecordsDetails" class="pageRp" ng-change="listalertrecordsfordisplay()" ng-options="obj.value as obj.name for obj in recordCount.data"></select>
+																									</div>
+																								 </div>
+																								 <div class="pagination">
+																									<table width="100%">
+																										<tr>
+																											<td>
+																												<div style="float: right" class="gridPaging"></div>
+																											</td>
+																										</tr>
+																									</table>
+																								  </div>
+																							 </div>
+																							 <div class="tableList" style="background-color: White; max-height: 520px; overflow: auto;">
+																								<table width="100%" cellpadding="0" cellspacing="0" class="requireZebraCrossingGrid" id="tblGrid">
+																									<thead>
+																									<tr class="trgrColumn">
+																									<th style="padding-left: 1%;text-align: center;" align="center">Alert Name</th>
+																									<th align="center" style="text-align: center;">Building Id</th>
+																									<th align="center" style="text-align: center;">Client Id</th>
+																									<th align="center" style="text-align: center;">Severity</th>
+																									<th align="center" style="text-align: center;">Description</th>
+																									
+																									</tr>
+																									</thead>
+																									<tbody>
+																									<tr ng-repeat="item in allAlertsList">
+																									<td style="padding-left: 1%;text-align: center;" align="center">{{item.alertname}}</td>
+																									<td align="center" style="text-align: center;">{{item.buildingid}}</td>
+																									<td align="center" style="text-align: center;">{{item.clientid}}</td>
+																									<td align="center" style="text-align: center;">{{item.severity}}</td>
+																									<td align="center" style="text-align: center;">{{item.description}}</td>
+																									</tr>
+																									<tbody>
+																								</table>
+																							 </div>
+																							  <div class="pageControl">
+		                                                                                        <div class="pageDisplay">
+		                                                                                            <span class="pageDispalyLabel"></span>
+		                                                                                            <span class="pageDispalySelectLabel">Show</span>
+		                                                                                            <div class="selectBox">
+		                                                                                                <select ng-model="noofrecordsDetails" class="pageRp" ng-change="listalertrecordsfordisplay()" ng-options="obj.value as obj.name for obj in recordCount.data">
+		                                                                                                </select>
+		                                                                                            </div>
+		                                                                                          </div>
+		                                                                                          <div class="pagination">
+		                                                                                            <table width="100%">
+		                                                                                              <tr>
+		                                                                                              <td>
+		                                                                                                 <div style="float: right" class="gridPaging"></div>
+		                                                                                              </td>
+		                                                                                              </tr>
+		                                                                                             </table>
+		                                                                                         </div>
+                                                                                       		 </div>													
+																						</div>
+																					</div>
+																				</div>
+																		  </div>
+																		
+																		<br/>
+																		
+																		<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl">
+                                                                                        </span><span class="corner br"></span>
+                                                                                        
+                                                                                          
+                                                                                       		 
+                                                                                </div>
+                                                                        <!--end of alert details div for admin--> 
+                                                                        <!--start of alert details div for client-->               		 
+                                                                        
+                                                                         <!--end of alert details div for client-->              		 
+                                                                      
+																	</div>
+																	<!--end of details div-->
+                                                                    <!--Start of add div-->
+                                                                    
+                                                                    <div id="divAddAlert" style="display : none;">
+                                                                    	<table width="100%">
+                                                                    		<tr>
+                                                                    			<td>
+                                                                    				<fieldset style="margin-top: 1%; margin-top: 1%; height: 290px">
+                                                                    					<legend><b>Alert Details</b></legend>
+                                                                    					
+                                                                    					<table width="100%">
+                                                                    						<tr>
+                                                                    							<td>
+                                                                    								<div class="cell firstCell">
+                                                                    									<h3>Alert Name</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" ng-model="newalertname" id="newalertname" onkeyup="removeErrorControl('newalertname');"/>
+                                                                                                        </div>
+                                                                                                       
+                                                                                                        <br />
+                                                                                                        <h3>Client Id</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <select ng-model="newclientid" id="newclientid" ng-change="listBuildingsByClient()" ng-options="item.ClientId as item.ClientName for item in clients" style="height: 30px; width: 167px" >                                                                             
+                                                                                                            </select>
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Building Id</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <select ng-model="newbuildingid" id="newbuildingid" ng-options="item.buildingid as item.buildingname for item in buildingslist" style="height: 30px; width: 167px" >                                                                             
+                                                                                                            </select>
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Severity</h3>
+                                                                                                        <div class="selectBox">
+	                                                                                                  		 <select ng-model="newseverity" style="width: 167px; height: 30px;" id="newseverity" class="pageRp" ng-options="obj.value as obj.name for obj in severityData.data" ></select>
+																										</div>
+                                                                                                        <br />
+                                                                                                         <h3>Description</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="textarea" style="width: 167px; height: 26px;" ng-model="newdescription" id="newdescription" />
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                      </div>
+                                                                                                      <div class="clearAll">
+                                                                                                    </div>
+                                                                                                       <div class="clearAll">
+                                                                                                       </div>
+                                                                    							</td>
+                                                                    						</tr>
+                                                                    					</table>
+                                                                    					
+                                                                    				</fieldset>
+                                                                    			</td>
+                                                                    			
+                                                                    		</tr>
+                                                                    		 
+                                                                    	</table>
+                                                                    	
+                                                                    	<br />
+                                                                        <div style="float: right; margin-right: 3%">
+                                                                            <a href="javascript:void(0)" ng-click="createAlert()" id="btnSave" class="btnGreen btnCancel">
+                                                                                <span class="btnR"><span class="btnC">Save</span></span>
+                                                                            </a>&nbsp;&nbsp;
+                                                                            <a href="javascript:void(0)" ng-click="resetAddAttribute()" id="btnCancelAdding" class="btnGreen btnCancel">
+                                                                                <span class="btnR"><span class="btnC">Cancel</span></span>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                   
+                                                                    <!--end of add div-->
+                                                                    <!--Start of list alertbybuilding div for admin-->
+                                                                		<div id="alertsListByBuilding" style="display:none;">
+																							 <table width="100%" style="margin-top: 10px">
+																							 <tr>
+																							 	<td>
+																									 <h3>Select the building</h3>
+																							 	</td>
+																							 	<td>
+																					 				<div class="cellBody">
+																					 					<table>
+                                                                                                            	<tr>
+                                                                                                            		<td>
+		                                                                                                            <select ng-model="selbuildingid" id="selbuildingid" ng-options="item.BuildingId as item.BuildingName for item in buildings" style="height: 30px; width: 680px">                                                                             
+		                                                                                                            </select>
+		                                                                                                            </td>
+		                                                                                                            <td style="vertical-align: middle; margin-top: 0px">
+			                                                                                                            &nbsp;&nbsp;<a href="javascript:void(0)" ng-click="listByBuilding()" id="btnSave" class="btnGreen btnCancel">
+											                                                                                <span class="btnR"><span class="btnC">Display</span></span>
+											                                                                            </a>&nbsp;&nbsp;
+											                                                                         </td>
+											                                                                    </tr>
+									                                                                    </table>
+								                                                                     </div>
+								                                                                </td>
+								                                                              
+								                                                              </tr>
+																					 		</table>
+																					 		<br>
+																			<div class="box contentBox">
+																				<div class="boxInner">
+																					<div class="boxContent">
+																						<div id="divParent" class="gridalertbuilding" style="display:none">
+																					 		<div class="pageControl">																					 				
+																							    <div class="pageDisplay">
+																									<span class="pageDispalyLabel"></span>
+																									<span class="pageDispalySelectLabel">Show</span>
+																									<div class="selectBox">
+	                                                                                                   <select ng-model="noofrecordsDetailsBuilding" class="pageRp" ng-change="listalertrecordsbybuild1()" ng-options="obj.value as obj.name for obj in recordCount.data"></select>
+																									</div>
+																								 </div>
+																								 <div class="pagination">
+																									<table width="100%">
+																										<tr>
+																											<td>
+																												<div style="float: right" class="gridPaging"></div>
+																											</td>
+																										</tr>
+																									</table>
+																								  </div>
+																							 </div>
+																							 <div class="tableList" style="background-color: White; max-height: 520px; overflow: auto;">
+																								<table width="100%" cellpadding="0" cellspacing="0" class="requireZebraCrossingGrid"id="tblGrid">
+																									<thead>
+																									<tr class="trgrColumn">
+																									<th style="padding-left: 1%;text-align: center;" align="center">Alert Name</th>
+																									<th align="center" style="text-align: center;">Building Id</th>
+																									<th align="center" style="text-align: center;">Client Id</th>
+																									<th align="center" style="text-align: center;">Severity</th>
+																									<th align="center" style="text-align: center;">Description</th>
+																									
+																									</tr>
+																									</thead>
+																									<tbody>
+																									<tr ng-repeat="item in allAlertsListbyBuilding">
+																									<td style="padding-left: 1%;text-align: center;" align="center">{{item.alertname}}</td>
+																									<td align="center" style="text-align: center;">{{item.buildingid}}</td>
+																									<td align="center" style="text-align: center;">{{item.clientid}}</td>
+																									<td align="center" style="text-align: center;">{{item.severity}}</td>
+																									<td align="center" style="text-align: center;">{{item.description}}</td>
+																									</tr>
+																									<tbody>
+																								</table>
+																							 </div>
+																							  <div class="pageControl">
+		                                                                                        <div class="pageDisplay">
+		                                                                                            <span class="pageDispalyLabel"></span>
+		                                                                                            <span class="pageDispalySelectLabel">Show</span>
+		                                                                                            <div class="selectBox">
+		                                                                                                <select ng-model="noofrecordsDetailsBuilding" class="pageRp" ng-change="listalertrecordsbybuild()" ng-options="obj.value as obj.name for obj in recordCount.data">
+		                                                                                                </select>
+		                                                                                            </div>
+		                                                                                          </div>
+		                                                                                          <div class="pagination">
+		                                                                                            <table width="100%">
+		                                                                                              <tr>
+		                                                                                              <td>
+		                                                                                                 <div style="float: right" class="gridPaging"></div>
+		                                                                                              </td>
+		                                                                                              </tr>
+		                                                                                             </table>
+		                                                                                         </div>
+                                                                                       		 </div>													
+																						</div>
+																					</div>
+																				</div>
+																		  </div>
+																		
+																		<br/>
+																		
+																		<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl">
+                                                                                        </span><span class="corner br"></span>
+                                                                                        
+                                                                                          
+                                                                                       		 
+                                                                                </div>
+                                                                        <!--end of list alertbyBuilding div for admin--> 
+                                                                        
+                                                                       <!--Start of list alertbyClient div for admin-->
+                                                                		<div id="alertsListByClientForAdmin" style="display:none;">
+																							 <table width="100%" style="margin-top: 10px">
+																							 <tr>
+																							 	<td>
+																									 <h3>Select the Client</h3>
+																							 	</td>
+																							 	<td>
+																					 				<div class="cellBody">																					 				
+                                                                                                            <table>
+                                                                                                            	<tr>
+                                                                                                            		<td>
+		                                                                                                            <select ng-model="selclientid" id="selclientid" ng-options="item.ClientId as item.ClientName for item in clients" style="height: 30px; width: 680px">                                                                             
+		                                                                                                            </select>
+		                                                                                                            </td>
+		                                                                                                            <td style="vertical-align: middle; margin-top: 0px">
+		                                                                                                            &nbsp;&nbsp;<a href="javascript:void(0)" ng-click="listByClient()" id="btnSave" class="btnGreen btnCancel">
+										                                                                                <span class="btnR"><span class="btnC">Display</span></span>
+										                                                                            </a>
+										                                                                            </td>
+									                                                                            </tr>
+									                                                                        </table>
+								                                                                     </div>
+								                                                                </td>
+								                                                              
+								                                                              </tr>
+																					 		</table>
+																					 		<br>
+																			<div class="box contentBox">
+																				<div class="boxInner">
+																					<div class="boxContent">
+																						<div id="divParent" class="gridalertclients" style="display:none">
+																					 		<div class="pageControl">																					 				
+																							    <div class="pageDisplay">
+																									<span class="pageDispalyLabel"></span>
+																									<span class="pageDispalySelectLabel">Show</span>
+																									<div class="selectBox">
+	                                                                                                   <select ng-model="noofrecordsDetailsByClient" class="pageRp" ng-change="listalertrecordsbyclient()" ng-options="obj.value as obj.name for obj in recordCount.data"></select>
+																									</div>
+																								 </div>
+																								 <div class="pagination">
+																									<table width="100%">
+																										<tr>
+																											<td>
+																												<div style="float: right" class="gridPaging"></div>
+																											</td>
+																										</tr>
+																									</table>
+																								  </div>
+																							 </div>
+																							 <div class="tableList" style="background-color: White; max-height: 520px; overflow: auto;">
+																								<table width="100%" cellpadding="0" cellspacing="0" class="requireZebraCrossingGrid"id="tblGrid">
+																									<thead>
+																									<tr class="trgrColumn">
+																									<th style="padding-left: 1%;text-align: center;" align="center">Alert Name</th>
+																									<th align="center" style="text-align: center;">Building Id</th>
+																									<th align="center" style="text-align: center;">Client Id</th>
+																									<th align="center" style="text-align: center;">Severity</th>
+																									<th align="center" style="text-align: center;">Description</th>
+																									
+																									</tr>
+																									</thead>
+																									<tbody>
+																									<tr ng-repeat="item in allAlertsLisByClient">
+																									<td style="padding-left: 1%;text-align: center;" align="center">{{item.alertname}}</td>
+																									<td align="center" style="text-align: center;">{{item.buildingid}}</td>
+																									<td align="center" style="text-align: center;">{{item.clientid}}</td>
+																									<td align="center" style="text-align: center;">{{item.severity}}</td>
+																									<td align="center" style="text-align: center;">{{item.description}}</td>
+																									</tr>
+																									<tbody>
+																								</table>
+																							 </div>
+																							  <div class="pageControl">
+		                                                                                        <div class="pageDisplay">
+		                                                                                            <span class="pageDispalyLabel"></span>
+		                                                                                            <span class="pageDispalySelectLabel">Show</span>
+		                                                                                            <div class="selectBox">
+		                                                                                                <select ng-model="noofrecordsDetailsByClient" class="pageRp" ng-change="listalertrecordsbyclient()" ng-options="obj.value as obj.name for obj in recordCount.data">
+		                                                                                                </select>
+		                                                                                            </div>
+		                                                                                          </div>
+		                                                                                          <div class="pagination">
+		                                                                                            <table width="100%">
+		                                                                                              <tr>
+		                                                                                              <td>
+		                                                                                                 <div style="float: right" class="gridPaging"></div>
+		                                                                                              </td>
+		                                                                                              </tr>
+		                                                                                             </table>
+		                                                                                         </div>
+                                                                                       		 </div>													
+																						</div>
+																					</div>
+																				</div>
+																		  </div>
+																		
+																		<br/>
+																		
+																		<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl">
+                                                                                        </span><span class="corner br"></span>
+                                                                                        
+                                                                                          
+                                                                                       		 
+                                                                                </div>
+                                                                        <!--end of list alertbyClient div for admin--> 
+                                                                       
+                                                                    <!--Start of delete div-->
+                                                                    <div id="divDeleteAlert" style="display : none;">
+                                                                    	<div class="box contentBox">
+                                                                            <div class="boxInner">
+                                                                                <div class="boxContent">
+                                                                                    <div id="divParent">
+                                                                                        <div class="pageControl">
+                                                                                            <div class="pageDisplay">
+                                                                                            	<span class="pageDispalyLabel"></span>
+                                                                                            	<span class="pageDispalySelectLabel">Show</span>
+                                                                                                <div class="selectBox">
+                                                                                                    <select ng-model="noofrecordsDelete" class="pageRp" ng-change="getalertrecordsfordelete()" ng-options="obj.value as obj.name for obj in recordCount.data">
+                                                                                                    </select>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="pagination">
+                                                                                                <table width="100%">
+                                                                                                    <tr>
+                                                                                                        <td>
+                                                                                                            <div style="float: right" class="gridPaging">                                                                                                                
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="tableList" style="background-color: White; max-height: 520px; overflow: auto;">
+																								<table width="100%" cellpadding="0" cellspacing="0" class="requireZebraCrossingGrid"id="tblGrid">
+																									<thead>
+																									<tr class="trgrColumn">
+																									<th style="padding-left: 1%;text-align: center;" align="center">Alert Name</th>
+																									<th align="center" style="text-align: center;">Building Id</th>
+																									<th align="center" style="text-align: center;">Client Id</th>
+																									<th align="center" style="text-align: center;">Severity</th>
+																									<th align="center" style="text-align: center;">Description</th>
+																									<th align="center" style="text-align: center;">Delete Alert</th>
+																									</tr>
+																									
+                                                                                                </thead>
+                                                                                                <tbody>
+                                                                                                    <tr ng-repeat="item in deleteAlertsList">
+                                                                                                    <td style="padding-left: 1%;text-align: center;" align="center">{{item.alertname}}</td>
+																									<td align="center" style="text-align: center;">{{item.buildingid}}</td>
+																									<td align="center" style="text-align: center;">{{item.clientid}}</td>
+																									<td align="center" style="text-align: center;">{{item.severity}}</td>
+																									<td align="center" style="text-align: center;">{{item.description}}</td>
+																									 <td>
+                                                                                                            <img title="Delete" style="height: 22px; width: 22px;" ng-click="removeAlert($index)" src="img/delete.png" />
+                                                                                                        </td>
+                                                                                                    </tr>
+																									
+                                                                                                </tbody>
+                                                                                            </table>
+                                                                                        </div>
+                                                                                        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl">
+                                                                                        </span><span class="corner br"></span>
+                                                                                        <div class="pageControl">
+                                                                                            <div class="pageDisplay">
+                                                                                                <span class="pageDispalyLabel"></span>
+                                                                                                <span class="pageDispalySelectLabel">Show</span>
+                                                                                                <div class="selectBox">
+                                                                                                    <select ng-model="noofrecordsDelete" class="pageRp" ng-change="getalertrecordsfordelete()" ng-options="obj.value as obj.name for obj in recordCount.data">
+                                                                                                    </select>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="pagination">
+                                                                                                <table width="100%">
+                                                                                                    <tr>
+                                                                                                        <td>
+                                                                                                            <div style="float: right" class="gridPaging">
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        
+                                                                                     </div>
+                                                                                 </div>
+                                                                             </div>
+                                                                         </div>
+                                                                    </div>
+                                                                    <!--end of delete div-->
+                                                            <!--  CLIENT MODULE -->
+                                                                    
+                                                                    <!-- Start of List Client ALert -->
+                                                                    	  <div id="alertsListClient" style="display:none;">
+																			<div class="box contentBox">
+																				<div class="boxInner">
+																					<div class="boxContent">
+																						<div id="divParent">
+																					 		<div class="pageControl" style="border: 1px solid #ccc;">
+																					 		   <div class="pageDisplay">
+																									<span class="pageDispalyLabel"></span>
+																									<span class="pageDispalySelectLabel">Show</span>
+																									<div class="selectBox">
+	                                                                                                   <select ng-model="noofrecordslistclient" class="pageRp" ng-change="listalertrecordsforclient()" ng-options="obj.value as obj.name for obj in recordCount.data"></select>
+																									</div>
+																								 </div>
+																								 <div class="pagination">
+																									<table width="100%">
+																										<tr>
+																											<td>
+																												<div style="float: right" class="gridPaging"></div>
+																											</td>
+																										</tr>
+																									</table>
+																								  </div>
+																							 </div>
+																							
+																					 		<br>
+																							 <div class="tableList" style="background-color: White; max-height: 220px; overflow: auto; border: 1px solid #ccc;">
+																								<table width="100%" cellpadding="0" cellspacing="0" class="requireZebraCrossingGrid"id="tblGrid">
+																									<thead>
+																									<tr class="trgrColumn">
+																									<th style="padding-left: 1%;text-align: center;" align="center">Alert Name</th>
+																									<th align="center" style="text-align: center;">Building Id</th>
+																									<th align="center" style="text-align: center;">Client Id</th>
+																									<th align="center" style="text-align: center;">Severity</th>
+																									<th align="center" style="text-align: center;">Description</th>
+																									
+																									</tr>
+																									</thead>
+																									<tbody>
+																									<tr ng-repeat="item in allAlertsListforlistclient">
+																									<td style="padding-left: 1%;text-align: center;" align="center">{{item.alertname}}</td>
+																									<td align="center" style="text-align: center;">{{item.buildingid}}</td>
+																									<td align="center" style="text-align: center;">{{item.clientid}}</td>
+																									<td align="center" style="text-align: center;">{{item.severity}}</td>
+																									<td align="center" style="text-align: center;">{{item.description}}</td>
+																									</tr>
+																									<tbody>
+																								</table>
+																							 </div>
+																							  <div class="pageControl" style="border: 1px solid #ccc;">
+		                                                                                        <div class="pageDisplay">
+		                                                                                            <span class="pageDispalyLabel"></span>
+		                                                                                            <span class="pageDispalySelectLabel">Show</span>
+		                                                                                            <div class="selectBox">
+		                                                                                                <select ng-model="noofrecordslistclient" class="pageRp" ng-change="listalertrecordsforclient()" ng-options="obj.value as obj.name for obj in recordCount.data">
+		                                                                                                </select>
+		                                                                                            </div>
+		                                                                                          </div>
+		                                                                                          <div class="pagination">
+		                                                                                            <table width="100%">
+		                                                                                              <tr>
+		                                                                                              <td>
+		                                                                                                 <div style="float: right" class="gridPaging"></div>
+		                                                                                              </td>
+		                                                                                              </tr>
+		                                                                                             </table>
+		                                                                                         </div>
+                                                                                       		 </div>													
+																						</div>
+																					</div>
+																				</div>
+																		  </div>
+																		
+																		<br/>
+																		
+																		<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl">
+                                                                                        </span><span class="corner br"></span>
+                                                                                        
+                                                                                          
+                                                                                       		 
+                                                                                </div>
+                                                                        
+                                                                    
+                                                                    <!-- End of list client ALert  -->
+                                                                    
+                                                                    
+                                                                    
+                                                                     
+                                                                    <!-- start submitted alerts -->
+                                                                    <div id="alertsSubmittedClient" style="display:none;">
+																			<div class="box contentBox">
+																				<div class="boxInner">
+																					<div class="boxContent">
+																						<div id="divParent">
+																					 		<div class="pageControl" style="border: 1px solid #ccc;">
+																					 		   <div class="pageDisplay">
+																									<span class="pageDispalyLabel"></span>
+																									<span class="pageDispalySelectLabel">Show</span>
+																									<div class="selectBox">
+	                                                                                                   <select ng-model="noofrecordssubmittedalert" class="pageRp" ng-change="listalertsumittedrecords()" ng-options="obj.value as obj.name for obj in recordCount.data"></select>
+																									</div>
+																								 </div>
+																								 <div class="pagination">
+																									<table width="100%">
+																										<tr>
+																											<td>
+																												<div style="float: right" class="gridPaging"></div>
+																											</td>
+																										</tr>
+																									</table>
+																								  </div>
+																							 </div>
+																							
+																					 		<br>
+																							 <div class="tableList" style="background-color: White; max-height: 220px; overflow: auto; border: 1px solid #ccc;">
+																								<table width="100%" cellpadding="0" cellspacing="0" class="requireZebraCrossingGrid"id="tblGrid">
+																									<thead>
+																									<tr class="trgrColumn">
+																									<th style="padding-left: 1%;text-align: center;" align="center">Alert Name</th>
+																									<th align="center" style="text-align: center;">Building Id</th>
+																									<th align="center" style="text-align: center;">Client Id</th>
+																									<th align="center" style="text-align: center;">Severity</th>
+																									<th align="center" style="text-align: center;">Description</th>
+																									<th align="center" style="text-align: center;">Submitted by</th>
+																									<th align="center" style="text-align: center;">Submitted Date</th>
+																									<th align="center" style="text-align: center;">Take Action</th>
+																									</tr>
+																									</thead>
+																									<tbody>
+																									<tr ng-repeat="item in allAlertsSubmittedalert">
+																									<td style="padding-left: 1%;text-align: center;" align="center">{{item.alertname}}</td>
+																									<td align="center" style="text-align: center;">{{item.buildingid}}</td>
+																									<td align="center" style="text-align: center;">{{item.clientid}}</td>
+																									<td align="center" style="text-align: center;">{{item.severity}}</td>
+																									<td align="center" style="text-align: center;">{{item.description}}</td>
+																									<td align="center" style="text-align: center;"><a href="javascript:void(0)" ng-click="getDetail(item.guardid)">{{item.guardid}}</a></td>
+																									<td align="center" style="text-align: center;">{{item.alertdate}}</td>
+																									<td>
+                                                                                                         <img title="Take Action" style="height: 22px; width: 22px;" ng-click="takeAction($index)" src="img/actionalert.jpg" />
+                                                                                                    </td>
+																									</tr>
+																									<tbody>
+																								</table>
+																							 </div>
+																							  <div class="pageControl" style="border: 1px solid #ccc;">
+		                                                                                        <div class="pageDisplay">
+		                                                                                            <span class="pageDispalyLabel"></span>
+		                                                                                            <span class="pageDispalySelectLabel">Show</span>
+		                                                                                            <div class="selectBox">
+		                                                                                                <select ng-model="noofrecordssubmittedalert" class="pageRp" ng-change="listalertsumittedrecords()" ng-options="obj.value as obj.name for obj in recordCount.data">
+		                                                                                                </select>
+		                                                                                            </div>
+		                                                                                          </div>
+		                                                                                          <div class="pagination">
+		                                                                                            <table width="100%">
+		                                                                                              <tr>
+		                                                                                              <td>
+		                                                                                                 <div style="float: right" class="gridPaging"></div>
+		                                                                                              </td>
+		                                                                                              </tr>
+		                                                                                             </table>
+		                                                                                         </div>
+                                                                                       		 </div>													
+																						</div>
+																					</div>
+																				</div>
+																		  </div>
+																		
+																		<br/>
+																		
+																		<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl">
+                                                                         </span><span class="corner br"></span>
+                                                                   						               
+                                                                        <!-- CODE ADDED FORGUARD DETAILS -->     
+                                                                      <div id="guardInformation" style="display:none;">
+                                                                       <table width="100%">
+                                                                       					<tr>
+																							<td>
+																								<br>
+																							</td>
+																						<tr>
+																							
+ 																							<td>
+																								<b>GUARD  DETAILS</b>
+																							</td>
+																						<tr> 
+																						<tr>
+																							<td>
+																								<br>
+																							</td>
+																						<tr>
+																							                                                                                                                                          						<br>
+                                                                    					<tr ng-repeat="items in guardDetaillist">
+                                                                    						<td>
+																							<div class="cell firstCell">
+	 																						<h3>First Name</h3>
+	  																						<div class="cellBody">
+	  																						<input type="text" placeholder="{{items.firstname}}" ng-model="guardLastName" id="guardLastName" disabled/>
+	  																						</div>
+	 																						
+																							</td>
+																							<td>
+																							<div class="cell firstCell">
+	 																						<h3> Last Name</h3>
+	  																						<div class="cellBody">
+	  																						<input type="text" placeholder="{{items.lastname}}" ng-model="guardLastName" id="guardLastName" disabled/>
+	  																						</div>
+	 																						
+																							</td>
+																							<td>
+																							<div class="cell firstCell">
+	 																						<h3>Phone Number</h3>
+	  																						<div class="cellBody">
+	  																						<input type="text" placeholder="{{items.phonenumber}}" ng-model="guardPhonenumber" id="guardPhonenumber" disabled/>
+	  																						</div>
+	 																						
+																							</td>
+																							<td>
+																							<div class="cell firstCell">
+	 																						<h3>Email Address</h3>
+	  																						<div class="cellBody">
+	  																						<input type="text" placeholder="{{items.email}}" ng-model="guardPhonenumber" id="guardPhonenumber" disabled/>
+	  																						</div>
+	 																						
+																							</td>
+																						</tr>
+																						<tr>
+																							<td>
+																								<br>
+																							</td>
+																						<tr>
+																						<td>
+																						<a href="javascript:void(0)" ng-click="hideDetails()" id="btnSave" class="btnGreen btnCancel">
+								                                                                                <span class="btnR"><span class="btnC">Clear</span></span>
+								                                                        </a>&nbsp;&nbsp;
+								                                                        </td>
+																						</tr>
+																						
+																		</table>
+																		
+																		</div>							               
+                                                                        </div>
+                                                                        
+                                                                    
+                                                                    <!-- end submitted alert list -->
+                                                      <!--  END OF CLIENT MODULE -->
+                                                      
+                                                      <!-- START OF GUARD MODULE -->
+                                                      
+                                                      <!-- Start of list alerts by building ByGuard div -->
+                                                                		<div id="alertsByGuardBuild" style="display:none;">
+																			<div class="box contentBox">
+																				<div class="boxInner">
+																					<div class="boxContent">
+																						<table width="50%">
+																								 <tr>
+																								 	<td>
+																										 <h3>Select the building</h3>
+																								 	</td>
+																								 	<td>
+																						 				<div class="cellBody">
+																							 				<table width="100%" style="margin-top: 10px">
+																											 <tr>
+																											 	<td>
+	                                                                                                            <select ng-model="selbuildingid" id="selbuildingid" ng-options="item.buildingid as item.buildingname for item in listBuildByGu" style="height: 30px; width: 167px">                                                                             
+	                                                                                                            </select>
+	                                                                                                            </td>
+	                                                                                                            <td>	                                                                                                            
+	                                                                                                            <a href="javascript:void(0)" ng-click="listByBuildingGuard()" id="btnSave" class="btnGreen btnCancel">
+									                                                                                <span class="btnR"><span class="btnC">Display</span></span>
+									                                                                            </a>&nbsp;&nbsp;
+									                                                                            </td>
+									                                                                           </tr>
+									                                                                           </table>
+									                                                                     </div>
+									                                                                </td>
+									                                                              
+									                                                              </tr>
+																					 		</table>
+																					 		<br>
+																						<div id="divParent" class="divsubmitbuildingalertgrid">
+																					 		<div class="pageControl" style="border: 1px solid #ccc;">																					 				
+																							    <div class="pageDisplay">
+																									<span class="pageDispalyLabel"></span>
+																									<span class="pageDispalySelectLabel">Show</span>
+																									<div class="selectBox">
+	                                                                                                   <select ng-model="noofrecordsDetailsguard" class="pageRp" ng-change="listalertbyguardbuild()" ng-options="obj.value as obj.name for obj in recordCount.data"></select>
+																									</div>
+																								 </div>
+																								 <div class="pagination">
+																									<table width="100%">
+																										<tr>
+																											<td>
+																												<div style="float: right" class="gridPaging"></div>
+																											</td>
+																										</tr>
+																									</table>
+																								  </div>
+																							 </div>																							 
+																							 <div class="tableList" style="background-color: White; max-height: 220px; overflow: auto; border: 1px solid #ccc;">
+																								<table width="100%" cellpadding="0" cellspacing="0" class="requireZebraCrossingGrid"id="tblGrid">
+																									<thead>
+																									<tr class="trgrColumn">
+																									<th style="padding-left: 1%;text-align: center;" align="center">Alert Name</th>
+																									<th align="center" style="text-align: center;">Building Id</th>
+																									<th align="center" style="text-align: center;">Client Id</th>
+																									<th align="center" style="text-align: center;">Severity</th>
+																									<th align="center" style="text-align: center;">Description</th>
+																									<th align="center" style="text-align: center;">Take Action</th>
+																									</tr>
+																									</thead>
+																									<tbody>
+																									<tr ng-repeat="item in allAlertsListguard">
+																									<td style="padding-left: 1%;text-align: center;" align="center">{{item.alertname}}</td>
+																									<td align="center" style="text-align: center;">{{item.buildingid}}</td>
+																									<td align="center" style="text-align: center;">{{item.clientid}}</td>
+																									<td align="center" style="text-align: center;">{{item.severity}}</td>
+																									<td align="center" style="text-align: center;">{{item.description}}</td>
+																									<td>
+                                                                                                         <img title="Submit Alert" style="height: 22px; width: 22px;" ng-click="submitAlert($index)" src="img/sendalert.jpg" />
+                                                                                                    </td>
+
+																									</tr>
+																									<tbody>
+																								</table>
+																							 </div>
+																							  <div class="pageControl" style="border: 1px solid #ccc;">
+		                                                                                        <div class="pageDisplay">
+		                                                                                            <span class="pageDispalyLabel"></span>
+		                                                                                            <span class="pageDispalySelectLabel">Show</span>
+		                                                                                            <div class="selectBox">
+		                                                                                                <select ng-model="noofrecordsDetailsguard" class="pageRp" ng-change="listalertbyguardbuild()" ng-options="obj.value as obj.name for obj in recordCount.data">
+		                                                                                                </select>
+		                                                                                            </div>
+		                                                                                          </div>
+		                                                                                          <div class="pagination">
+		                                                                                            <table width="100%">
+		                                                                                              <tr>
+		                                                                                              <td>
+		                                                                                                 <div style="float: right" class="gridPaging"></div>
+		                                                                                              </td>
+		                                                                                              </tr>
+		                                                                                             </table>
+		                                                                                         </div>
+                                                                                       		 </div>													
+																						</div>
+																					</div>
+																				</div>
+																		  </div>
+																		
+																		<br/>
+																		
+																		<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl">
+                                                                                        </span><span class="corner br"></span>
+                                                                       </div>
+                                                                        <!--end of list alertbyBuilding div for guard--> 
+                                                      
+                                                      <!-- Start of list alerts Submitted ByGuard div -->
+                                                                		<div id="alertsSubmittedByGuard" style="display:none;">
+																			<div class="box contentBox">
+																				<div class="boxInner">
+																					<div class="boxContent">
+																						<div id="divParent">
+																					 		<div class="pageControl" style="border: 1px solid #ccc;">																					 				
+																							    <div class="pageDisplay">
+																									<span class="pageDispalyLabel"></span>
+																									<span class="pageDispalySelectLabel">Show</span>
+																									<div class="selectBox">
+	                                                                                                   <select ng-model="noofrecordssubmittedalertguard" class="pageRp" ng-change="listalertsubmitbyguard()" ng-options="obj.value as obj.name for obj in recordCount.data"></select>
+																									</div>
+																								 </div>
+																								 <div class="pagination">
+																									<table width="100%">
+																										<tr>
+																											<td>
+																												<div style="float: right" class="gridPaging"></div>
+																											</td>
+																										</tr>
+																									</table>
+																								  </div>
+																							 </div>
+																							 
+																							 
+																					 		<br>
+																							 <div class="tableList" style="background-color: White; max-height: 220px; overflow: auto; border: 1px solid #ccc;">
+																								<table width="100%" cellpadding="0" cellspacing="0" class="requireZebraCrossingGrid"id="tblGrid">
+																									<thead>
+																									<tr class="trgrColumn">
+																									<th style="padding-left: 1%;text-align: center;" align="center">Alert Id</th>
+																									<th align="center" style="text-align: center;">Guard Id</th>
+																									<th align="center" style="text-align: center;">Alert Date</th>
+																									
+																									
+																									
+																									</tr>
+																									</thead>
+																									<tbody>
+																									<tr ng-repeat="item in allsubmitAlertsList">
+																									<td style="padding-left: 1%;text-align: center;" align="center">{{item.alertid}}</td>
+																									<td align="center" style="text-align: center;">{{item.guardid}}</td>
+																									<td align="center" style="text-align: center;">{{item.alertdate}}</td>
+																									
+																									</tr>
+																									<tbody>
+																								</table>
+																							 </div>
+																							  <div class="pageControl" style="border: 1px solid #ccc;">
+		                                                                                        <div class="pageDisplay">
+		                                                                                            <span class="pageDispalyLabel"></span>
+		                                                                                            <span class="pageDispalySelectLabel">Show</span>
+		                                                                                            <div class="selectBox">
+		                                                                                                <select ng-model="noofrecordssubmittedalertguard" class="pageRp" ng-change="listalertsubmitbyguard()" ng-options="obj.value as obj.name for obj in recordCount.data">
+		                                                                                                </select>
+		                                                                                            </div>
+		                                                                                          </div>
+		                                                                                          <div class="pagination">
+		                                                                                            <table width="100%">
+		                                                                                              <tr>
+		                                                                                              <td>
+		                                                                                                 <div style="float: right" class="gridPaging"></div>
+		                                                                                              </td>
+		                                                                                              </tr>
+		                                                                                             </table>
+		                                                                                         </div>
+                                                                                       		 </div>													
+																						</div>
+																					</div>
+																				</div>
+																		  </div>
+																		
+																		<br/>
+																		
+																		<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl">
+                                                                                        </span><span class="corner br"></span>
+                                                                       </div>
+                                                                        <!--end of list alertbyBuilding div for client--> 
+                                                      
+                                                                
+                                                      <!-- END OF GUARD MODULE -->
+                                                      
+                                                                    <!--Start of search div for admin-->
+                                                                    <div id="divSearchAlert" style="display : none;">
+                                                                    	<table width="100%">
+                                                                    		<tr>
+                                                                    			<td>
+                                                                    				<fieldset style="margin-top: 1%; margin-top: 1%; height: 70px">
+                                                                    					<legend><b>Search Options</b></legend>
+                                                                    					<table width="100%">
+                                                                    					<tr>
+	                                                                    					<td>
+																							<div class="cell firstCell">
+	 																						<h3>Alert Name</h3>
+	  																						<div class="cellBody">
+	  																						<input type="text" ng-model="searchAlertName" id="searchAlertName" />
+	  																						</div>
+	 																						</div>
+																							</td>
+																							<td>
+																							<div class="cell firstCell">
+																							 <h3>Client Id</h3>
+	                                                                                          <div id="clientcell" class="cellBody">
+	                                                                                          <select ng-model="searchclientid" id="searchclientid" ng-change="listBuildingsByClientSearch()"  ng-options="item.ClientId as item.ClientName for item in clients" style="height: 30px; width: 167px">                                                                             
+	                                                                                          </select>
+	                                                                                          </div>
+	                                                                                          </td>
+	                                                                                          <td>
+	                                                                                          <div class="cell firstCell">
+																							 <h3>Building</h3>
+																							  <div id="buildingcell" class="cellBody">
+																								    <select ng-model="searchBuilding" id="searchBuilding" ng-options="item.buildingid as item.buildingname for item in buildingslist" style="height: 30px; width: 167px">                                                                             
+														                                             </select>
+																								    </div>
+																							  </div>
+																							</td>
+																							
+																							<td>
+																							<div class="cell firstCell">
+																							 <h3>Severity</h3>
+                                                                                              <div class="selectBox">
+	                                                                                          <select ng-model="searchseverity" id="searchseverity" style="width: 167px; height: 30px;" class="pageRp" ng-options="obj.value as obj.name for obj in severityData.data"></select>
+																					   		 </div>
+																							  <br />
+																							 </div>
+																							</td>
+																							
+                                                                    					</tr>
+                                                                    					</table>
+                                                                    				</fieldset>
+                                                                    			</td>
+                                                                    		</tr>
+                                                                    	</table>
+                                                                    	<br/>
+                                                                    	<div style="float: right; margin-right: 3%">
+                                                                            <a href="javascript:void(0)" ng-click="searchAlertInfo()" id="btnSave" class="btnGreen btnCancel">
+                                                                                <span class="btnR"><span class="btnC">Search</span></span>
+                                                                            </a>&nbsp;&nbsp;
+                                                                            <a href="javascript:void(0)" ng-click="resetSearchAttribute()" id="btnCancelEditing" class="btnGreen btnCancel">
+                                                                                <span class="btnR"><span class="btnC">Cancel</span></span>
+                                                                            </a>
+                                                                        </div>
+                                                                        <br/>
+                                                                        <br/>
+                                                                        <div class="tableList searchDataGrid" style="background-color: White;overflow: auto;display:none; border: 1px solid #ccc;" id="searchDataGrid">
+                                                                        					<div class="pageControl">
+																					 				
+																							    <div class="pageDisplay">
+																									<span class="pageDispalyLabel"></span>
+																									<span class="pageDispalySelectLabel">Show</span>
+																									<div class="selectBox">
+	                                                                                                   <select ng-model="noofrecordsSearch" class="pageRp" ng-change="searchAlertrecords()" ng-options="obj.value as obj.name for obj in recordCount.data"></select>
+																									</div>
+																								 </div>
+																								 <div class="pagination">
+																									<table width="100%">
+																										<tr>
+																											<td>
+																												<div style="float: right" class="gridPaging"></div>
+																											</td>
+																										</tr>
+																									</table>
+																								  </div>
+																							 </div>
+																							<table width="100%" height="80px" cellpadding="0" cellspacing="0" class="requireZebraCrossingGrid"id="tblGrid">
+																								<thead>
+																									<tr class="trgrColumn">
+																										<th style="padding-left: 1%;text-align: center;" align="center">Alert Name</th>
+																										<th align="center" style="text-align: center;">Building</th>
+																										<th align="center" style="text-align: center;">Client ID</th>
+																										<th align="center" style="text-align: center;">Severity</th>
+																										<th align="center" style="text-align: center;">Description</th>
+																										
+																										
+																									</tr>
+																								</thead>
+																								<tbody>
+																									<tr ng-repeat="item in searchAlertList">
+																										<td style="padding-left: 1%;text-align: center;" align="center">{{item.alertname}}</td>
+																										<td align="center" style="text-align: center;">{{item.buildingid}}</td>
+																										<td align="center" style="text-align: center;">{{item.clientid}}</td>
+																										<td align="center" style="text-align: center;">{{item.severity}}</td>
+																										<td align="center" style="text-align: center;">{{item.description}}</td>
+																										
+																									</tr>
+																								<tbody>
+																							</table>
+																							<div class="pageControl">
+																					 				
+																							    <div class="pageDisplay">
+																									<span class="pageDispalyLabel"></span>
+																									<span class="pageDispalySelectLabel">Show</span>
+																									<div class="selectBox">
+	                                                                                                   <select ng-model="noofrecordsSearch" class="pageRp" ng-change="searchAlertrecords()" ng-options="obj.value as obj.name for obj in recordCount.data"></select>
+																									</div>
+																								 </div>
+																								 <div class="pagination">
+																									<table width="100%">
+																										<tr>
+																											<td>
+																												<div style="float: right" class="gridPaging"></div>
+																											</td>
+																										</tr>
+																									</table>
+																								  </div>
+																							 </div>
+																						</div>
+																						<br/>
+																						
+                                                                    </div>
+                                                                   <!--End of search div for admin-->
+                                                                   <!--Start of search div for guard-->
+                                                                    <div id="divSearchAlertGuard" style="display : none;">
+                                                                    	<table width="100%">
+                                                                    		<tr>
+                                                                    			<td>
+                                                                    				<fieldset style="margin-top: 1%; margin-top: 1%; height: 100px">
+                                                                    					<legend><b>Search Options</b></legend>
+                                                                    					<table width="100%">
+                                                                    					<tr>
+	                                                                    					<td>
+																							<div class="cell firstCell">
+	 																						<h3>Alert Name</h3>
+	  																						<div class="cellBody">
+	  																						<input type="text" ng-model="searchAlertName" id="searchAlertName" />
+	  																						</div>
+	 																						
+																							</td>
+																							<td>
+																							<div class="cell firstCell">
+																							
+																							 <h3>Building</h3>
+																							  <div id="buildingcell" class="cellBody">
+																								    <select ng-model="searchBuilding" id="searchBuilding" ng-options="item.buildingid as item.buildingname for item in listBuildByGu" style="height: 30px; width: 167px">                                                                             
+														                                             </select>
+																								    </div>
+																							  </div>
+																							</td>
+																							
+																							<td>
+																							<div class="cell firstCell">
+																							 <h3>Severity</h3>
+                                                                                              <div class="selectBox">
+	                                                                                          <select ng-model="searchseverity" id="searchseverity" style="width: 167px; height: 30px;" class="pageRp" ng-options="obj.value as obj.name for obj in severityData.data"></select>
+																					   		 </div>
+																					   		 </td>
+																					   		
+                                                                    					</tr>
+                                                                    					</table>
+                                                                    				</fieldset>
+                                                                    			</td>
+                                                                    		</tr>
+                                                                    	</table>
+                                                                    	<br/>
+                                                                    	<div style="float: right; margin-right: 3%">
+                                                                            <a href="javascript:void(0)" ng-click="searchAlertInfo()" id="btnSave" class="btnGreen btnCancel">
+                                                                                <span class="btnR"><span class="btnC">Search</span></span>
+                                                                            </a>&nbsp;&nbsp;
+                                                                            <a href="javascript:void(0)" ng-click="resetSearchAttribute()" id="btnCancelEditing" class="btnGreen btnCancel">
+                                                                                <span class="btnR"><span class="btnC">Cancel</span></span>
+                                                                            </a>
+                                                                        </div>
+                                                                        <br/>
+                                                                        <br/>
+                                                                        <div class="tableList searchDataGrid" style="background-color: White;overflow: auto;display:none; border: 1px solid #ccc;">
+                                                                        					<div class="pageControl">
+																					 				
+																							    <div class="pageDisplay">
+																									<span class="pageDispalyLabel"></span>
+																									<span class="pageDispalySelectLabel">Show</span>
+																									<div class="selectBox">
+	                                                                                                   <select ng-model="noofrecordsSearch" class="pageRp" ng-change="searchAlertrecords()" ng-options="obj.value as obj.name for obj in recordCount.data"></select>
+																									</div>
+																								 </div>
+																								 <div class="pagination">
+																									<table width="100%">
+																										<tr>
+																											<td>
+																												<div style="float: right" class="gridPaging"></div>
+																											</td>
+																										</tr>
+																									</table>
+																								  </div>
+																							 </div>
+																							<table width="100%" height="80px" cellpadding="0" cellspacing="0" class="requireZebraCrossingGrid"id="tblGrid">
+																								<thead>
+																									<tr class="trgrColumn">
+																										<th style="padding-left: 1%;text-align: center;" align="center">Alert Name</th>
+																										<th align="center" style="text-align: center;">Building</th>
+																										<th align="center" style="text-align: center;">Client ID</th>
+																										<th align="center" style="text-align: center;">Severity</th>
+																										<th style="text-align: center;">Details</th>
+																										
+																									</tr>
+																								</thead>
+																								<tbody>
+																									<tr ng-repeat="item in searchAlertListGuard">
+																										<td style="padding-left: 1%;text-align: center;" align="center">{{item.alertname}}</td>
+																										<td align="center" style="text-align: center;">{{item.buildingid}}</td>
+																										<td align="center" style="text-align: center;">{{item.clientid}}</td>
+																										<td align="center" style="text-align: center;">{{item.severity}}</td>
+																										<td align="center" style="text-align: center;">{{item.description}}</td>
+																										
+																									</tr>
+																								<tbody>
+																							</table>
+																							<div class="pageControl">
+																					 				
+																							    <div class="pageDisplay">
+																									<span class="pageDispalyLabel"></span>
+																									<span class="pageDispalySelectLabel">Show</span>
+																									<div class="selectBox">
+	                                                                                                   <select ng-model="noofrecordsSearch" class="pageRp" ng-change="searchAlertrecords()" ng-options="obj.value as obj.name for obj in recordCount.data"></select>
+																									</div>
+																								 </div>
+																								 <div class="pagination">
+																									<table width="100%">
+																										<tr>
+																											<td>
+																												<div style="float: right" class="gridPaging"></div>
+																											</td>
+																										</tr>
+																									</table>
+																								  </div>
+																							 </div>
+																						</div>
+																						<br/>
+																						
+                                                                    </div>
+                                                                   <!--End of search div for admin-->
+ 
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button style="display: none" id="myElement1" name="save" ng-click="listalertrecordsfordisplay()"></button>
+    					<button style="display: none" id="myElement2" name="save1" ng-click="listalertrecordsbybuild1()"></button>
+    					<button style="display: none" id="myElement3" name="update1" ng-click="listalertrecordsbyclient()"></button>
+    					<button style="display: none" id="myElement4" name="update2" ng-click="getalertrecordsfordelete()"></button>
+    					<button style="display: none" id="myElement5" name="update3" ng-click="listalertrecordsforclient()"></button>
+    					<button style="display: none" id="myElement6" name="update4" ng-click="listalertsumittedrecords()"></button>
+    					<button style="display: none" id="myElement7" name="update5" ng-click="listalertbyguardbuild()"></button> 
+    					<button style="display: none" id="myElement8" name="update6" ng-click="listalertsubmitbyguard()"></button>
+    					<button style="display: none" id="myElement9" name="update7" ng-click="searchAlertrecords()"></button>
+                    </div>

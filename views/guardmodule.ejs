@@ -1,0 +1,1088 @@
+                    <div id="container" ng-controller="guardmodule">
+                        <div class="containerBox">
+                            <div class="containerBoxR">
+                                <div class="containerInner">
+                                    <div>
+                                        <table class="BreadCrumAndMenu">
+                                            <tr>
+                                                <td class="BreadCrumColumn">
+                                                    <!-- breadcrum -->
+                                                    Home <span style='padding-left: 2px'><a href="#"><img src="images/icon-breadcrumb.png" /></a></span>  Guard Module
+                                                </td>
+                                                <td class="SubMenuColumn" id="divSubMenu"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="pageDetails">
+                            <!-- page html -->
+                            <div class="containerBox">
+                                <div class="containerBoxR">
+                                    <div class="containerInner">
+                                        <div id="pageTitle">
+                                            <h2>Guard Module</h2>
+                                        </div>
+                                        <br />
+                                        <table width="100%">
+                                            <tr>
+                                                <td style="width: 12%">
+                                                    <div class="receptioncolumn" style="height:542px;max-height:700px;">
+                                                        <div class="receptioncolumnHeader" style="height:542px;max-height:700px;">
+                                                            <h2>
+                                                                Guard Menus
+                                                            </h2>
+                                                            <div class="receptioncolumnContent" style="max-height:700px;">
+                                                                <div id="content" class="singleColumn">
+                                                                	<table width="100%">
+                                                                        <tr>
+                                                                            <td align="center" style="vertical-align: middle;" id="tddetails">
+                                                                                <img ng-click="getguarddetails()" title="Guard Details" style="cursor: pointer; height: 60px; width: 50px;" src="img/guardDetails.jpg" alt="">
+                                                                                <div>Guard Details</div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <br />
+                                                                                <div style="border-bottom: thin solid #67a0e5;">
+                                                                                </div>
+                                                                                <br />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                        <td align="center" style="vertical-align: middle;" id="tdadd">
+                                                                                <img ng-click="addguard()" title="Add Guard" style="cursor: pointer; height: 60px; width: 50px;" src="img/addGuard.png" alt="">
+                                                                                <div>Add Guard</div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td id="tdaddline">
+                                                                                <br />
+                                                                                <div style="border-bottom: thin solid #67a0e5;">
+                                                                                </div>
+                                                                                <br />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td align="center" style="vertical-align: middle;" id="tdedit">
+                                                                                <img ng-click="editguard()" title="Edit Guard" style="cursor: pointer; height: 60px; width: 50px;" src="img/editGuard.png" alt="">
+                                                                                <div>Edit Guard</div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <br />
+                                                                                <div style="border-bottom: thin solid #67a0e5;">
+                                                                                </div>
+                                                                                <br />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td align="center" style="vertical-align: middle;" id="tddelete">
+                                                                                <img ng-click="deleteguard()" title="Delete Guard" style="cursor: pointer; height: 60px; width: 50px;" src="img/deleteGuard.png" alt="">
+                                                                                <div>Delete Guard</div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td id="tddeleteline">
+                                                                                <br />
+                                                                                <div style="border-bottom: thin solid #67a0e5;">
+                                                                                </div>
+                                                                                <br />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td align="center" style="vertical-align: middle;" id="tdsearch">
+                                                                                <img ng-click="searchguard()" title="Search Guard" style="cursor: pointer; height: 60px; width: 50px;" src="img/searchguard.png" alt="">
+                                                                                <div>Search Guard</div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td style="width: 88%">
+                                                    <div class="receptioncolumn" style="max-height:542px;">
+                                                        <div class="receptioncolumnHeader" style="max-height:542px;height:542px;">
+                                                            <h2>
+                                                                Information
+                                                            </h2>
+                                                            <div class="receptioncolumnContent" style="max-height:542px;">
+                                                                <div id="content" class="singleColumn">
+                                                                    <!--Start of details div-->
+                                                                	<div id="divGuardDetails" style="display : none;">
+                                                                		<!--Start of details div for admin-->
+                                                                		<div id="guardDetailsForAdmin" style="display:none;">
+																			<div class="box contentBox">
+																				<div class="boxInner">
+																					<div class="boxContent">
+																						<div id="divParent">
+																					 		<div class="pageControl">
+																							    <div class="pageDisplay">
+																									<span class="pageDispalyLabel"></span>
+																									<span class="pageDispalySelectLabel">Show</span>
+																									<div class="selectBox">
+	                                                                                                   <select ng-model="noofrecordsDetails" class="pageRp" ng-change="getguardrecordsfordisplay()" ng-options="obj.value as obj.name for obj in recordCount.data"></select>
+																									</div>
+																								 </div>
+																								 <div class="pagination">
+																									<table width="100%">
+																										<tr>
+																											<td>
+																												<div style="float: right" class="gridPaging"></div>
+																											</td>
+																										</tr>
+																									</table>
+																								  </div>
+																							 </div>
+																							 <div class="tableList" style="background-color: White; max-height: 420px; overflow: auto;">
+																								<table width="100%" cellpadding="0" cellspacing="0" class="requireZebraCrossingGrid"id="tblGrid">
+																									<thead>
+																									<tr class="trgrColumn">
+																									<th style="padding-left: 1%;text-align: center;" align="center">First Name</th>
+																									<th align="center" style="text-align: center;">Last Name</th>
+																									<th align="center" style="text-align: center;">Email Id</th>
+																									<th align="center" style="text-align: center;">Contact Number</th>
+																									<th align="center" style="text-align: center;">Address</th>
+																									<th align="center" style="text-align: center;">Guard Id No</th>
+																									<th align="center" style="text-align: center;">Background Check Status</th>
+																									<th style="text-align: center;">Details</th>
+																									</tr>
+																									</thead>
+																									<tbody>
+																									<tr ng-repeat="item in allGuardsList">
+																									<td style="padding-left: 1%;text-align: center;" align="center">{{item.firstname}}</td>
+																									<td align="center" style="text-align: center;">{{item.lastname}}</td>
+																									<td align="center" style="text-align: center;">{{item.email}}</td>
+																									<td align="center" style="text-align: center;">{{item.phonenumber}}</td>
+																									<td align="center" style="text-align: center;">{{item.address}},{{item.city}},<br>
+																									{{item.state}},{{item.zipcode}}</td>
+																									<td align="center" style="text-align: center;">{{item.guardno}}</td>
+																									<td align="center"style="text-align: center;" >{{item.backgroundcheck}}</td>
+																									<td style="text-align: center;">
+		                                                                                            <img title="details" ng-click="showDetails($index)" style="cursor: pointer; height: 24px; width: 24px;" src="img/guardInfo.png" alt="" />
+																									</td>
+																									</tr>
+																									<tbody>
+																								</table>
+																							 </div>
+																							  <div class="pageControl">
+		                                                                                        <div class="pageDisplay">
+		                                                                                            <span class="pageDispalyLabel"></span>
+		                                                                                            <span class="pageDispalySelectLabel">Show</span>
+		                                                                                            <div class="selectBox">
+		                                                                                                <select ng-model="noofrecordsDetails" class="pageRp" ng-change="getbuildingrecordsfordisplay()" ng-options="obj.value as obj.name for obj in recordCount.data">
+		                                                                                                </select>
+		                                                                                            </div>
+		                                                                                          </div>
+		                                                                                          <div class="pagination">
+		                                                                                            <table width="100%">
+		                                                                                              <tr>
+		                                                                                              <td>
+		                                                                                                 <div style="float: right" class="gridPaging"></div>
+		                                                                                              </td>
+		                                                                                              </tr>
+		                                                                                             </table>
+		                                                                                         </div>
+                                                                                       		 </div>													
+																						</div>
+																					</div>
+																				</div>
+																		  </div>
+																		
+																		<br/>
+																		
+																		<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl">
+                                                                                        </span><span class="corner br"></span>
+                                                                                        
+                                                                                          <div id="divGuardgrid" style="display:none;">
+                                                                                                <div class="box contentBox">
+                                                                                                    <div class="boxInner">
+                                                                                                        <div class="boxContent">
+                                                                                                            <div id="divParent">
+                                                                                                             <div class="tableList" style="background-color: White;">
+                                                                                                                    <table width="100%" cellpadding="0" cellspacing="0" class="requireZebraCrossingGrid"
+                                                                                                                           id="tblweeklyschedule" style="overflow: auto;">
+                                                                                                                        <thead>
+                                                                                                                            <tr class="trgrColumn">
+                                                                                                                                <th style="vertical-align: middle; text-align: center; padding-left: 10px; padding-right: 2px; height: 33px; background-color: #C5D7FD; border-right: 1px solid #ccc">
+                                                                                                                                    Start Date
+                                                                                                                                </th>
+                                                                                                                                <th style="vertical-align: middle; text-align: center; padding-left: 10px; padding-right: 2px; height: 33px; background-color: #C5D7FD; border-right: 1px solid #ccc">
+                                                                                                                                    End Date
+                                                                                                                                </th>
+                                                                                                                                <th style="vertical-align: middle; text-align: center; padding-left: 10px; padding-right: 2px; height: 33px; background-color: #C5D7FD; border-right: 1px solid #ccc">
+                                                                                                                                    Building Name
+                                                                                                                                </th>
+                                                                                                                            </tr>
+                                                                                                                        </thead>
+                                                                                                                        <tbody>
+                                                                                                                            <tr ng-repeat="item in weeklyScheduleList">
+                                                                                                                                <td style="vertical-align: middle; text-align: center; padding-left: 10px; padding-right: 2px; height: 33px; border-right: 1px solid #ccc">
+                                                                                                                                    {{item.startdate}}
+                                                                                                                                </td>
+                                                                                                                                <td style="vertical-align: middle; text-align: center; padding-left: 10px; padding-right: 2px; height: 33px; border-right: 1px solid #ccc">
+                                                                                                                                    {{item.enddate}}
+                                                                                                                                </td>
+                                                                                                                                <td style="vertical-align: middle; text-align: center; padding-left: 10px; padding-right: 2px; height: 33px; border-right: 1px solid #ccc">
+                                                                                                                                    {{item.buildingname}}
+                                                                                                                                </td>
+                                                                                                                            </tr>
+                                                                                                                        </tbody>
+                                                                                                                    </table>
+                                                                                                                </div>
+                                                                                                                
+                                                                                                             </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                       		 </div>
+                                                                                       		 
+                                                                                </div>
+                                                                        <!--end of guard details div for admin--> 
+                                                                        <!--start of guard details div for guard-->               		 
+                                                                        <div id="guardDetailsForGuard" style="display:none;">
+                                                                             <div class="box contentBox">
+																				<div class="boxInner">
+																					<div class="boxContent">
+																						<div id="divParent">
+																							<div class="tableList" style="background-color: White; max-height: 220px; overflow: auto;">
+																								<table width="100%" cellpadding="0" cellspacing="0" class="requireZebraCrossingGrid"id="tblGrid">
+																									<thead>
+																										<tr class="trgrColumn">
+																											<th style="padding-left: 1%;text-align: center;" align="center" >First Name</th>
+																											<th align="center" style="text-align: center;">Last Name</th>
+																											<th align="center" style="text-align: center;">Email Id</th>
+																											<th align="center" style="text-align: center;">Contact Number</th>
+																											<th align="center" style="text-align: center;">Address</th>
+																											<th align="center" style="text-align: center;">Guard Id No</th>
+																											<th align="center" style="text-align: center;">Background Check Status</th>
+																											<th style="text-align: center;">Details</th>
+																											
+																										</tr>
+																									</thead>
+																									<tbody>
+																										<tr ng-repeat="item in allGuardsList">
+																											<td style="padding-left: 1%;text-align: center;" align="center">{{item.firstname}}</td>
+																											<td align="center" style="text-align: center;">{{item.lastname}}</td>
+																											<td align="center" style="text-align: center;">{{item.email}}</td>
+																											<td align="center" style="text-align: center;">{{item.phonenumber}}</td>
+																											<td align="center" style="text-align: center;">{{item.address}},{{item.city}},<br>
+																											{{item.state}},{{item.zipcode}}</td>
+																											<td align="center" style="text-align: center;">{{item.guardno}}</td>
+																											<td align="center" style="text-align: center;">{{item.backgroundcheck}}</td>
+																											<td style="text-align: center;">
+	                                                                                                            <img title="details" ng-click="showDetails($index)" style="cursor: pointer; height: 24px; width: 24px;" src="img/guardInfo.png" alt="" />
+																											</td>
+																										</tr>
+																									<tbody>
+																								</table>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			 </div>
+																			 <br/>
+                                                                             <div id="divGuardgridForGuard" style="display:none;">
+                                                                             	<div class="box contentBox">
+                                                                             	 	<div class="boxInner">
+                                                                               			<div class="boxContent">
+                                                                               				<div id="divParent">
+                                                                                				<div class="tableList" style="background-color: White;">
+                                                                                                    <table width="100%" cellpadding="0" cellspacing="0" class="requireZebraCrossingGrid" id="tblweeklyschedule" style="overflow: auto;">
+                                                                                                         	     <thead>
+                                                                                                                 <tr class="trgrColumn">
+                                                                                                                 <th style="vertical-align: middle; text-align: center; padding-left: 10px; padding-right: 2px; height: 33px; background-color: #C5D7FD; border-right: 1px solid #ccc">
+                                                                                                                  Start Date
+                                                                                                                  </th>
+                                                                                                                  <th style="vertical-align: middle; text-align: center; padding-left: 10px; padding-right: 2px; height: 33px; background-color: #C5D7FD; border-right: 1px solid #ccc">
+                                                                                                                  End Date
+                                                                                                                  </th>
+                                                                                                                  <th style="vertical-align: middle; text-align: center; padding-left: 10px; padding-right: 2px; height: 33px; background-color: #C5D7FD; border-right: 1px solid #ccc">
+                                                                                                                  Building Name
+                                                                                                                  </th>
+                                                                                                                  </tr>
+                                                                                                                  </thead>
+                                                                                                                  <tbody>
+                                                                                                                  <tr ng-repeat="item in weeklyScheduleList">
+                                                                                                                  <td style="vertical-align: middle; text-align: center; padding-left: 10px; padding-right: 2px; height: 33px; border-right: 1px solid #ccc">
+                                                                                                                  {{item.startdate}}
+                                                                                                                  </td>
+                                                                                                                  <td style="vertical-align: middle; text-align: center; padding-left: 10px; padding-right: 2px; height: 33px; border-right: 1px solid #ccc">
+                                                                                                                  {{item.enddate}}
+                                                                                                                  </td>
+                                                                                                                  <td style="vertical-align: middle; text-align: center; padding-left: 10px; padding-right: 2px; height: 33px; border-right: 1px solid #ccc">
+                                                                                                                  {{item.buildingname}}
+                                                                                                                  </td>
+                                                                                                                  </tr>
+                                                                                                                  </tbody>
+                                                                                                       </table>
+                                                                                                  </div>
+                                                                                             </div>
+                                                                                        </div>
+                                                                                   </div>
+                                                                                </div>
+                                                                             </div>
+                                                                         </div>
+                                                                         <!--end of guard details div for guard-->              		 
+                                                                      
+																	</div>
+																	<!--end of details div-->
+                                                                    <!--Start of add div--> 
+                                                                    <div id="divAddGuard" style="display : none;">
+                                                                    	<table width="100%">
+                                                                    		<tr>
+                                                                    			<td>
+                                                                    				<fieldset style="margin-top: 1%; margin-top: 1%; height: 290px">
+                                                                    					<legend><b>Guard Details</b></legend>
+                                                                    					<table width="100%">
+                                                                    						<tr>
+                                                                    							<td>
+                                                                    								<div class="cell firstCell">
+                                                                    									<h3>First Name</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" ng-model="newFirstName" id="newFirstName" onkeyup="removeErrorControl('newFirstName');"/>
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Address</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" ng-model="newAddress" id="newAddress" onkeyup="removeErrorControl('newAddress');"/>
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>State</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" ng-model="newState" id="newState" onkeyup="removeErrorControl('newState');"/>
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Email</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                           <input type="email" ng-model="newEmail" id="newEmail" onkeyup="removeErrorControl('newEmail');"/>
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                         <h3>Guard ID Number</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" ng-model="newGuardNo" id="newGuardNo" onkeyup="removeErrorControl('newGuardNo');"/>
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                      </div>
+                                                                                                      <div class="clearAll">
+                                                                                                    </div>
+                                                                                                       <div class="clearAll">
+                                                                                                       </div>
+                                                                    							</td>
+                                                                    							<td>
+                                                                    								<div class="cell firstCell">
+                                                                                                        <h3>Last Name</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" ng-model="newLastName" id="newLastName" onkeyup="removeErrorControl('newLastName');"/>
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>City</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" ng-model="newCity" id="newCity" onkeyup="removeErrorControl('newCity');"/>
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Zip Code</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" ng-model="newzipCode" id="newzipCode" onkeyup="removeErrorControl('newzipCode');"/>
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Contact Number</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" ng-model="newNumber" id="newNumber" onkeyup="removeErrorControl('newNumber');"/>
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Background Check Status</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <select ng-model="newStatus" id="newStatus" ng-options="item.statusid as item.statusname for item in statuslist.data" style="height: 30px; width: 167px">                                                                             
+                                                                                                            </select>
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                    </div>
+                                                                                                    <div class="clearAll">
+                                                                                                    </div>
+                                                                                                     <div class="clearAll">
+                                                                                                    </div>
+                                                                                                </td>
+                                                                    						</tr>
+                                                                    					</table>
+                                                                    				</fieldset>
+                                                                    			</td>
+                                                                    			<td>
+                                                                    				<fieldset style="margin-top: 1%; margin-top: 1%; height: 290px">
+                                                                                        <legend><b>Guard Duty Details</b></legend>
+                                                                                        <table width="100%">
+                                                                                        	<tr>
+                                                                    							<td>
+                                                                    								<br />
+                                                                                                    <br />
+                                                                                                    <div class="cell firstCell">
+                                                                    									<h3>Start Date</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" class="datepicker" ng-model="newStartDate" id="newStartDate" onchange="removeErrorClass('newStartDate');"/>
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Building</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <select ng-model="newBuilding" id="newBuilding" ng-options="item.BuildingId as item.BuildingName for item in buildings" style="height: 30px; width: 167px">                                                                             
+                                                                                                            </select>
+                                                                                                        </div>
+                                                                                                      </div>
+                                                                                                       <div class="clearAll">
+                                                                                                    </div>
+                                                                                                    <div class="clearAll">
+                                                                                                    </div>
+                                                                    							</td>
+                                                                    							<td>
+                                                                    								<br />
+                                                                                                    <br />
+                                                                                                   <div class="cell firstCell">
+                                                                                                        <h3>End Date</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" class="datepicker" ng-model="newEndDate" id="newEndDate" onchange="removeErrorClass('newEndDate');"/>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                     <div class="clearAll">
+                                                                                                    </div>
+                                                                                                    <div class="clearAll">
+                                                                                                    </div>
+                                                                                                </td>
+                                                                    						</tr>
+                                                                                        </table>
+                                                                                    </fieldset>
+                                                                    			</td>
+                                                                    		</tr>
+                                                                    	</table>
+                                                                    	<br />
+                                                                        <div style="float: right; margin-right: 3%">
+                                                                            <a href="javascript:void(0)" ng-click="createGuard()" id="btnSave" class="btnGreen btnCancel">
+                                                                                <span class="btnR"><span class="btnC">Save</span></span>
+                                                                            </a>&nbsp;&nbsp;
+                                                                            <a href="javascript:void(0)" ng-click="resetAddAttribute()" id="btnCancelAdding" class="btnGreen btnCancel">
+                                                                                <span class="btnR"><span class="btnC">Cancel</span></span>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--end of add div-->
+                                                                    <!--Start of edit div-->
+                                                                    <div id="divEditGuard" style="display : none;">
+                                                                    <div id="editDivForGuardAdmin" style="display:none">
+                                                                    	<table width="100%">
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <b>Select Guard</b>
+                                                                                </td>
+                                                                                <td style="padding-left: 30px">
+                                                                                    <select ng-model="editGuardVal" id="editGuardVal" ng-change="getGuardDetailsById()" ng-options="item.guardid as item.guardname for item in guardList" style="height: 30px; width: 740px" ng-change="loadguarddetailsbyid($event)">
+                                                                                    </select>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                        <br/>
+                                                                        <table width="100%">
+                                                                    		<tr>
+                                                                    			<td>
+                                                                    				<fieldset style="margin-top: 1%; margin-top: 1%; height: 290px">
+                                                                    					<legend><b>Guard Details</b></legend>
+                                                                    					<table width="100%">
+                                                                    						<tr>
+                                                                    							<td>
+                                                                    								<div class="cell firstCell">
+                                                                    									<h3>First Name</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" ng-model="editFirstName" id="editFirstName" onkeyup="removeErrorControl('editFirstName');"/>
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Address</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" ng-model="editAddress" id="editAddress" onkeyup="removeErrorControl('editAddress');"/>
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>State</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" ng-model="editState" id="editState" onkeyup="removeErrorControl('editState');"/>
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Email</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                           <input type="text" ng-model="editEmail" id="editEmail" onkeyup="removeErrorControl('editEmail');" />
+                                                                                                        </div>
+                                                                                                        <br/>
+                                                                                                        <h3>Guard ID No</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" ng-model="editGuardNo" id="editGuardNo" onkeyup="removeErrorControl('editGuardNo');"/>
+                                                                                                        </div>
+                                                                                                        
+                                                                                                      </div>
+                                                                                                       <div class="clearAll">
+                                                                                                       </div>
+                                                                    							</td>
+                                                                    							<td>
+                                                                    								 <div class="cell firstCell">
+                                                                                                        <h3>Last Name</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" ng-model="editLastName" id="editLastName" onkeyup="removeErrorControl('editLastName');"/>
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>City</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" ng-model="editCity" id="editCity" onkeyup="removeErrorControl('editCity');"/>
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Zip Code</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" ng-model="editzipCode" id="editzipCode" onkeyup="removeErrorControl('editzipCode');"/>
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Contact Number</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" ng-model="editNumber" id="editNumber" onkeyup="removeErrorControl('editNumber');"/>
+                                                                                                        </div>
+                                                                                                        <br/>
+                                                                                                        <h3>Background Check Status</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <select ng-model="editStatus" id="editStatus" ng-options="item.statusid as item.statusname for item in statuslist.data" style="height: 30px; width: 167px">                                                                             
+                                                                                                            </select>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                     <div class="clearAll">
+                                                                                                    </div>
+                                                                                                </td>
+                                                                    						</tr>
+                                                                    					</table>
+                                                                    				</fieldset>
+                                                                    			</td>
+                                                                    			<td>
+                                                                    				<fieldset style="margin-top: 1%; margin-top: 1%; height: 290px">
+                                                                                        <legend><b>Guard Duty Details</b></legend>
+                                                                                        <table width="100%">
+                                                                                        	<tr>
+                                                                    							<td>
+                                                                    								<br />
+                                                                                                    <br />
+                                                                                                    <div class="cell firstCell">
+                                                                                                    	<h3>Building</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <select ng-model="editBuilding" id="editBuilding" ng-change="getWeeklyScheduleForId()" ng-options="item.BuildingId as item.BuildingName for item in buildings" style="height: 30px; width: 167px">                                                                             
+                                                                                                            </select>
+                                                                                                        </div>
+                                                                                                        
+                                                                    									<h3>Start Date</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" class="datepicker"
+                                                                                                            ng-model="editStartDate" id="editStartDate" onchange="removeErrorClass('editStartDate');"/>
+                                                                                                        </div>
+                                                                                                      </div>
+                                                                                                       <div class="clearAll">
+                                                                                                    </div>
+                                                                    							</td>
+                                                                    							<td>
+                                                                    								<br />
+                                                                                                    <br />
+                                                                                                    <br/>
+                                                                                                    <br/>
+                                                                                                    <div class="cell firstCell">
+                                                                                                      <div class="cellBody">
+                                                                                                      </div>
+                                                                                                       <br/>
+                                                                                                  		<h3>End Date</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" class="datepicker" ng-model="editEndDate" id="editEndDate" onchange="removeErrorClass('editEndDate');"/>
+                                                                                                        </div>
+                                                                                                     </div>
+                                                                                                  	 <div class="clearAll">
+                                                                                                    </div>
+                                                                                                </td>
+                                                                    						</tr>
+                                                                                        </table>
+                                                                                    </fieldset>
+                                                                    			</td>
+                                                                    		</tr>
+                                                                    	</table>
+                                                                    	<br />
+                                                                        <div style="float: right; margin-right: 3%">
+                                                                            <a href="javascript:void(0)" ng-click="updateGuard()" id="btnSave" class="btnGreen btnCancel">
+                                                                                <span class="btnR"><span class="btnC">Save</span></span>
+                                                                            </a>&nbsp;&nbsp;
+                                                                            <a href="javascript:void(0)" ng-click="resetEditAttribute()" id="btnCancelEditing" class="btnGreen btnCancel">
+                                                                                <span class="btnR"><span class="btnC">Cancel</span></span>
+                                                                            </a>
+                                                                        </div>
+                                                                        
+                                                                        </div>
+                                                                        
+                                                                        <div id="editDivforGuard" style="display:none;">
+                                                                        	<table width="100%">
+                                                                    		<tr>
+                                                                    			<td>
+                                                                    				<fieldset style="margin-top: 1%; margin-top: 1%; height: 310px">
+                                                                    					<legend><b>Guard Details</b></legend>
+                                                                    					<table width="100%">
+                                                                    						<tr>
+                                                                    							<td>
+                                                                    								<div class="cell firstCell">
+                                                                    									<h3>First Name</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" ng-model="editGuardFirstName" id="editGuardFirstName" onkeyup="removeErrorControl('editGuardFirstName');"/>
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Address</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" ng-model="editGuardAddress" id="editGuardAddress" onkeyup="removeErrorControl('editGuardAddress');"/>
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>State</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" ng-model="editGuardState" id="editGuardState" onkeyup="removeErrorControl('editGuardState');"/>
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Email</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                           <input type="text" ng-model="editGuardEmail" id="editGuardEmail" onkeyup="removeErrorControl('editGuardEmail');"/>
+                                                                                                        </div>
+                                                                                                        <br/>
+                                                                                                        <h3>Location Latitude</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" ng-model="editGuardLatitude" id="editGuardLatitude" onkeyup="removeErrorControl('editGuardLatitude');"/>
+                                                                                                        </div>
+                                                                                                        <br/>
+                                                                                                       </div>
+                                                                                                       <div class="clearAll">
+                                                                                                       </div>
+                                                                    							</td>
+                                                                    							<td>
+                                                                    								 <div class="cell firstCell">
+                                                                                                        <h3>Last Name</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" ng-model="editGuardLastName" id="editGuardLastName" onkeyup="removeErrorControl('editGuardLastName');"/>
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>City</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" ng-model="editGuardCity" id="editGuardCity" onkeyup="removeErrorControl('editGuardCity');"/>
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Zip Code</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" ng-model="editGuardZipCode" id="editGuardZipCode" onkeyup="removeErrorControl('editGuardZipCode');"/>
+                                                                                                        </div>
+                                                                                                        <br />
+                                                                                                        <h3>Contact Number</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" ng-model="editGuardNumber" id="editGuardNumber" onkeyup="removeErrorControl('editGuardNumber');"/>
+                                                                                                        </div>
+                                                                                                        <br/>
+                                                                                                        <h3>Location Longitude</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" ng-model="editGuardLongitude" id="editGuardLongitude" onkeyup="removeErrorControl('editGuardLongitude');"/>
+                                                                                                        </div>
+                                                                                                        <br/>
+                                                                                                        </div>
+                                                                                                     <div class="clearAll">
+                                                                                                    </div>
+                                                                                                </td>
+                                                                    						</tr>
+                                                                    					</table>
+                                                                    				</fieldset>
+                                                                    			</td>
+                                                                    			<td>
+                                                                    				<fieldset style="margin-top: 1%; margin-top: 1%; height: 310px">
+                                                                                        <legend><b>Guard Login Details</b></legend>
+                                                                                        <table width="100%">
+                                                                                        	<tr>
+                                                                    							<td>
+                                                                    								<br />
+                                                                                                    <br />
+                                                                                                    <br/>
+                                                                                                    <div class="cell firstCell">
+                                                                                                    	<h3>UserName</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="text" ng-model="editGuardUserName" id="editGuardUserName" />
+                                                                                                        </div>
+                                                                                                      </div>
+                                                                                                       <div class="clearAll">
+                                                                                                    </div>
+                                                                    							</td>
+                                                                    							<td>
+                                                                    								<br />
+                                                                                                    <br />
+                                                                                                    <br/>
+                                                                                                    <div class="cell firstCell">
+                                                                                                      <h3>Password</h3>
+                                                                                                        <div class="cellBody">
+                                                                                                            <input type="password" ng-model="editGuardPassword" id="editGuardPassword" />
+                                                                                                        </div>
+                                                                                                     </div>
+                                                                                                  	 <div class="clearAll">
+                                                                                                    </div>
+                                                                                                </td>
+                                                                    						</tr>
+                                                                                        </table>
+                                                                                    </fieldset>
+                                                                    			</td>
+                                                                    		</tr>
+                                                                    	</table>
+                                                                    	<br />
+                                                                        <div style="float: right; margin-right: 3%">
+                                                                            <a href="javascript:void(0)" ng-click="updateGuardDiv()" id="btnSave" class="btnGreen btnCancel">
+                                                                                <span class="btnR"><span class="btnC">Save</span></span>
+                                                                            </a>&nbsp;&nbsp;
+                                                                            
+                                                                        </div>
+                                                                        
+                                                                        </div>
+                                                                        
+                                                                    </div>
+                                                                    <!--end of edit div-->
+                                                                    <!--Start of delete div-->
+                                                                    <div id="divDeleteGuard" style="display : none;">
+                                                                    	<div class="box contentBox">
+                                                                            <div class="boxInner">
+                                                                                <div class="boxContent">
+                                                                                    <div id="divParent">
+                                                                                        <div class="pageControl">
+                                                                                            <div class="pageDisplay">
+                                                                                            	<span class="pageDispalyLabel"></span>
+                                                                                            	<span class="pageDispalySelectLabel">Show</span>
+                                                                                                <div class="selectBox">
+                                                                                                    <select ng-model="noofrecordsDelete" class="pageRp" ng-change="getguardrecordsfordelete()" ng-options="obj.value as obj.name for obj in recordCount.data">
+                                                                                                    </select>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="pagination">
+                                                                                                <table width="100%">
+                                                                                                    <tr>
+                                                                                                        <td>
+                                                                                                            <div style="float: right" class="gridPaging">                                                                                                                
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="tableList" style="background-color: White; max-height: 420px; overflow: auto;">
+                                                                                            <table width="100%" cellpadding="0" cellspacing="0" class="requireZebraCrossingGrid"
+                                                                                                   id="tblGrid">
+                                                                                                <thead>
+                                                                                                    <tr class="trgrColumn">
+                                                                                                        <th style="padding-left: 1%">
+                                                                                                            First Name
+                                                                                                        </th>
+                                                                                                        <th>
+                                                                                                            Last Name
+                                                                                                        </th>
+                                                                                                        <th>
+                                                                                                            Guard Id Number
+                                                                                                        </th>
+                                                                                                        <th>
+                                                                                                            Delete
+                                                                                                        </th>
+                                                                                                    </tr>
+                                                                                                </thead>
+                                                                                                <tbody>
+                                                                                                    <tr ng-repeat="item in deleteGuardsList">
+                                                                                                        <td style="padding-left: 1%">
+                                                                                                            {{item.firstname}}
+                                                                                                        </td>
+                                                                                                        <td>
+                                                                                                        	{{item.lastname}}
+                                                                                                        </td>
+                                                                                                        <td>
+                                                                                                        	{{item.guardno}}
+                                                                                                        </td>
+                                                                                                        <td>
+                                                                                                            <img title="Delete" style="height: 22px; width: 22px;" ng-click="removeGuard($index)" src="img/delete.png" />
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </tbody>
+                                                                                            </table>
+                                                                                        </div>
+                                                                                        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl">
+                                                                                        </span><span class="corner br"></span>
+                                                                                        <div class="pageControl">
+                                                                                            <div class="pageDisplay">
+                                                                                                <span class="pageDispalyLabel"></span>
+                                                                                                <span class="pageDispalySelectLabel">Show</span>
+                                                                                                <div class="selectBox">
+                                                                                                    <select ng-model="noofrecordsDelete" class="pageRp" ng-change="getguardrecordsfordelete()" ng-options="obj.value as obj.name for obj in recordCount.data">
+                                                                                                    </select>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="pagination">
+                                                                                                <table width="100%">
+                                                                                                    <tr>
+                                                                                                        <td>
+                                                                                                            <div style="float: right" class="gridPaging">
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        
+                                                                                     </div>
+                                                                                 </div>
+                                                                             </div>
+                                                                         </div>
+                                                                    </div>
+                                                                    <!--end of delete div-->
+                                                                    <!--Start of search div-->
+                                                                    <div id="divSearchGuard" style="display : none;">
+                                                                    	<table width="100%">
+                                                                    		<tr>
+                                                                    			<td>
+                                                                    			<div class="box filterPanel">
+																				    <div class="boxInner">
+																				        <div class="boxTitle">
+																				            <a href="#" class="folderCtrl" onclick="folderExpand(this);"></a>
+																				            <h3>Filter</h3>
+																				        </div>
+																				        <div class="boxContent">
+																				            <div class="boxFilterBody">
+																				                <div class="cellRow requireSameHeightCell">
+																				                    <div class="cell firstCell">
+																				                        <div class="cellBody">
+																				                            <table width="100%">
+					                                                                    					<tr>
+					                                                                    					<td>
+																											<div class="cell firstCell">
+					 																						<h3>First Name</h3>
+					  																						<div class="cellBody">
+					  																						<input type="text" ng-model="searchFirstName" id="searchFirstName" />
+					  																						</div>
+					  																						<br/>
+					 																						<h3>Guard ID No</h3>
+					    																					<div class="cellBody">
+					    																					<input type="text" ng-model="searchGuardNo" id="searchGuardNo" />
+					   																						 </div>
+					 																						</div>
+																											</td>
+					
+																											<td>
+																											<div class="cell firstCell">
+					 																					    <h3>Last Name</h3>
+					  																						<div class="cellBody">
+					  																						<input type="text" ng-model="searchLastName" id="searchLastName" />
+					 																						 </div>
+					 																						 <br/>
+					  																						<h3>Background Check Status</h3>
+					    																					<div class="cellBody">
+					  																					    <select ng-model="searchStatus" id="searchStatus" ng-options="item.statusid as item.statusname for item in statuslist.data" style="height: 30px; width: 167px">                                                                             
+																		                                     </select>
+					    																					</div>
+					 																						</div>
+																											</td>
+					
+																											<td>
+																											<div class="cell firstCell">
+																												 <h3>City</h3>
+																												  <div class="cellBody">
+																												  <input type="text" ng-model="searchCity" id="searchCity" />
+																												  
+																												  </div>
+																												  <br/>
+																												 <h3>Building</h3>
+																												    <div class="cellBody">
+																												    <select ng-model="searchBuilding" id="searchBuilding" ng-options="item.BuildingId as item.BuildingName for item in buildings" style="height: 30px; width: 167px">                                                                             
+																		                                             </select>
+																												    </div>
+																												  </div>
+																												</td>
+																												
+																												<td>
+																												<div class="cell firstCell">
+																												 <h3>State</h3>
+																												  <div class="cellBody">
+																												  <input type="text" ng-model="searchState" id="searchState" />
+																												  </div>
+																												  <br/>
+																												  <h3>Start Date</h3>
+																												    <div class="cellBody">
+																												    <input type="text" class="datepicker" ng-model="searchStartDate" id="searchStartDate" />
+																												    </div>
+																												  <br />
+																												 </div>
+																												</td>
+																												
+																												<td>
+																												<div class="cell firstCell">
+																												 <h3>Zip Code</h3>
+																												  <div class="cellBody">
+																												  <input type="text" ng-model="searchZipCode" id="searchZipCode" />
+																												  </div>
+																												  <br/>
+																												  <h3>End Date</h3>
+																												    <div class="cellBody">
+																												    <input type="text" class="datepicker" ng-model="searchEndDate" id="searchEndDate" />
+																												    </div>
+																												 </div>
+																												</td>
+					                                                                    					</tr>
+					                                                                    					</table>
+																				                        </div>
+																				                    </div>
+																				                    <div class="clearAll">
+																				                    </div>
+																				                </div>
+																				            </div>
+																				        </div>
+																				      </div>
+																				   </div>
+                                                                    			</td>
+                                                                    		</tr>
+                                                                    	</table>
+                                                                    	
+                                                                    	<div style="float: right; margin-right: 3%">
+                                                                            <a href="javascript:void(0)" ng-click="searchGuardInfo()" id="btnSave" class="btnGreen btnCancel">
+                                                                                <span class="btnR"><span class="btnC">Search</span></span>
+                                                                            </a>&nbsp;&nbsp;
+                                                                            <a href="javascript:void(0)" ng-click="resetSearchAttribute()" id="btnCancelEditing" class="btnGreen btnCancel">
+                                                                                <span class="btnR"><span class="btnC">Cancel</span></span>
+                                                                            </a>
+                                                                        </div>
+                                                                        <br/>
+                                                                        <br/>
+                                                                        <br/>
+                                                                        <div id="searchDataGrid" style="display:none; border: 1px solid #ccc">
+                                                                        	<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl">
+                                                                                        </span><span class="corner br"></span>
+                                                                                        <div class="pageControl">
+                                                                                            <div class="pageDisplay">
+                                                                                                <span class="pageDispalyLabel"></span>
+                                                                                                <span class="pageDispalySelectLabel">Show</span>
+                                                                                                <div class="selectBox">
+                                                                                                    <select ng-model="noofrecordsSearchDetails" class="pageRp" ng-change="getguardrecordsforsearch()" ng-options="obj.value as obj.name for obj in recordCount.data">
+                                                                                                    </select>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="pagination">
+                                                                                                <table width="100%">
+                                                                                                    <tr>
+                                                                                                        <td>
+                                                                                                            <div style="float: right" class="gridPaging">
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </div>
+                                                                                        </div>
+                                                                        	<div class="tableList" style="background-color: White; max-height: 320px; overflow: auto;">
+																							<table width="100%" cellpadding="0" cellspacing="0" class="requireZebraCrossingGrid"id="tblGrid">
+																								<thead>
+																									<tr class="trgrColumn">
+																										<th style="padding-left: 1%;text-align: center;" align="center">First Name</th>
+																										<th align="center" style="text-align: center;">Last Name</th>
+																										<th align="center" style="text-align: center;">Email Id</th>
+																										<th align="center" style="text-align: center;">Contact Number</th>
+																										<th align="center" style="text-align: center;">Address</th>
+																										<th align="center" style="text-align: center;">Guard Id No</th>
+																										<th align="center" style="text-align: center;">Background Check Status</th>
+																										<th style="text-align: center;">Details</th>
+																										
+																									</tr>
+																								</thead>
+																								<tbody id="tbodyguardinfo">
+																									<tr ng-repeat="item in searchGuardsList">
+																										<td style="padding-left: 1%;text-align: center;" align="center">{{item.firstname}}</td>
+																										<td align="center" style="text-align: center;">{{item.lastname}}</td>
+																										<td align="center" style="text-align: center;">{{item.email}}</td>
+																										<td align="center" style="text-align: center;">{{item.phonenumber}}</td>
+																										<td align="center" style="text-align: center;">{{item.address}},{{item.city}},<br>
+																										{{item.state}},{{item.zipcode}}</td>
+																										<td align="center" style="text-align: center;">{{item.guardno}}</td>
+																										<td align="center" style="text-align: center;">{{item.backgroundcheck}}</td>
+																										<td style="text-align: center;">
+                                                                                                            <img title="details" ng-click="showSearchDetails($index)" style="cursor: pointer; height: 24px; width: 24px;" src="img/guardInfo.png" alt="" />
+																										</td>
+																									</tr>
+																								<tbody>
+																							</table>
+																						</div>
+																			<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl">
+                                                                                        </span><span class="corner br"></span>
+                                                                                        <div class="pageControl">
+                                                                                            <div class="pageDisplay">
+                                                                                                <span class="pageDispalyLabel"></span>
+                                                                                                <span class="pageDispalySelectLabel">Show</span>
+                                                                                                <div class="selectBox">
+                                                                                                    <select ng-model="noofrecordsSearchDetails" class="pageRp" ng-change="getguardrecordsforsearch()" ng-options="obj.value as obj.name for obj in recordCount.data">
+                                                                                                    </select>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="pagination">
+                                                                                                <table width="100%">
+                                                                                                    <tr>
+                                                                                                        <td>
+                                                                                                            <div style="float: right" class="gridPaging">
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </div>
+                                                                                        </div>
+																		</div>
+																						<br/>
+																						<div id="divsearchguardgrid" style="display:none;">
+                                                                                                <div class="box contentBox">
+                                                                                                    <div class="boxInner">
+                                                                                                        <div class="boxContent">
+                                                                                                            <div id="divParent">
+                                                                                                             <div class="tableList" style="background-color: White;">
+                                                                                                                    <table width="100%" cellpadding="0" cellspacing="0" class="requireZebraCrossingGrid"
+                                                                                                                           id="tblweeklyschedule" style="overflow: auto;">
+                                                                                                                        <thead>
+                                                                                                                            <tr class="trgrColumn">
+                                                                                                                                <th style="vertical-align: middle; text-align: center; padding-left: 10px; padding-right: 2px; height: 33px; background-color: #C5D7FD; border-right: 1px solid #ccc">
+                                                                                                                                    Start Date
+                                                                                                                                </th>
+                                                                                                                                <th style="vertical-align: middle; text-align: center; padding-left: 10px; padding-right: 2px; height: 33px; background-color: #C5D7FD; border-right: 1px solid #ccc">
+                                                                                                                                    End Date
+                                                                                                                                </th>
+                                                                                                                                <th style="vertical-align: middle; text-align: center; padding-left: 10px; padding-right: 2px; height: 33px; background-color: #C5D7FD; border-right: 1px solid #ccc">
+                                                                                                                                    Building Name
+                                                                                                                                </th>
+                                                                                                                            </tr>
+                                                                                                                        </thead>
+                                                                                                                        <tbody>
+                                                                                                                            <tr ng-repeat="item in searchScheduleGrid">
+                                                                                                                                <td align="center" style="vertical-align: middle; text-align: center; padding-left: 10px; padding-right: 2px; height: 33px; border-right: 1px solid #ccc">
+                                                                                                                                    {{item.startdate}}
+                                                                                                                                </td>
+                                                                                                                                <td align="center" style="vertical-align: middle; text-align: center; padding-left: 10px; padding-right: 2px; height: 33px; border-right: 1px solid #ccc">
+                                                                                                                                    {{item.enddate}}
+                                                                                                                                </td>
+                                                                                                                                <td align="center" style="vertical-align: middle; text-align: center; padding-left: 10px; padding-right: 2px; height: 33px; border-right: 1px solid #ccc">
+                                                                                                                                    {{item.buildingname}}
+                                                                                                                                </td>
+                                                                                                                            </tr>
+                                                                                                                        </tbody>
+                                                                                                                    </table>
+                                                                                                                </div>
+                                                                                                                
+                                                                                                             </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                       		 </div>
+                                                                                        
+                                                                        
+                                                                    </div>
+                                                                   <!--End of search div-->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                     
+    					<button style="display: none" id="myElement1" name="save" ng-click="getdataforgrid()"></button>
+    					<button style="display: none" id="myElement2" name="update" ng-click="getguardrecordsfordelete()"></button>
+    					<button style="display: none" id="myElement3" name="search" ng-click="getguardrecordsforsearch()"></button>
+                    </div>

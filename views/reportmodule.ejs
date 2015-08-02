@@ -1,0 +1,830 @@
+
+<div id="container" ng-controller="reportmodule">
+	<input type="hidden" ng-model="hdnreportnumber" id="hdnreportnumber" />
+	<input type="hidden" ng-model="hdnbuildingid" id="hdnbuildingid" /> <input
+		type="hidden" ng-model="hdnclientid" id="hdnclientid" />
+	<div class="containerBox">
+		<div class="containerBoxR">
+			<div class="containerInner">
+				<div>
+					<table class="BreadCrumAndMenu">
+						<tr>
+							<td class="BreadCrumColumn">
+								<!-- breadcrum --> Home <span style='padding-left: 2px'><a
+									href="#"><img src="images/icon-breadcrumb.png" /></a></span> Report
+								Module
+							</td>
+							<td class="SubMenuColumn" id="divSubMenu"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="pageDetails">
+		<!-- page html -->
+		<div class="containerBox">
+			<div class="containerBoxR">
+				<div class="containerInner">
+					<div id="pageTitle">
+						<h2>Report Module</h2>
+					</div>
+					<br />
+					<table width="100%">
+						<tr>
+							<td style="width: 12%">
+								<div class="receptioncolumn">
+									<div class="receptioncolumnHeader">
+										<h2>Report Menus</h2>
+										<div class="receptioncolumnContent">
+											<div id="content" class="singleColumn">
+												<table width="100%">
+													<tr>
+														<td align="center" style="vertical-align: middle;"
+															id="tdsubmitreport"><img ng-click="submitreport()"
+															title="Submit Report"
+															style="cursor: pointer; height: 60px; width: 50px;"
+															src="img/addreport.png" alt="">
+															<div>Submit Report</div></td>
+													</tr>
+													<tr>
+														<td><br />
+															<div style="border-bottom: thin solid #67a0e5;"></div> <br />
+														</td>
+													</tr>
+													<tr>
+														<td align="center" style="vertical-align: middle;"
+															id="tdlistreport"><img ng-click="listreport()"
+															title="List Report"
+															style="cursor: pointer; height: 60px; width: 50px;"
+															src="img/reports.png" alt="">
+															<div>List Report</div></td>
+													</tr>
+													<tr>
+														<td><br />
+															<div style="border-bottom: thin solid #67a0e5;"></div> <br />
+														</td>
+													</tr>
+													<tr>
+														<td align="center" style="vertical-align: middle;"
+															id="tdsearchreport"><img ng-click="searchreport()"
+															title="Search Report"
+															style="cursor: pointer; height: 60px; width: 50px;"
+															src="img/reportsearch.png" alt="">
+															<div>Search report</div></td>
+													</tr>
+												</table>
+												<!-- <div ng-include src="template.url"></div> -->
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+							<td style="width: 88%">
+								<div class="receptioncolumn">
+									<div class="receptioncolumnHeader">
+										<h2>Information</h2>
+										<div class="receptioncolumnContent">
+											<div id="content" class="singleColumn">
+
+												<div id="divsubmitreport" style="display: none">
+													<table width="100%">
+														<tr>
+															<td>
+																<fieldset
+																	style="margin-top: 1%; margin-top: 1%; height: 390px">
+																	<legend>
+																		<b>Report Incident</b>
+																	</legend>
+
+																	<table width="100%">
+																		<tr>
+																			<td><br /> <br /> <br />
+																				<div class="cell firstCell">
+																					<h3>Incident Type</h3>
+																					<div class="cellBody">
+																						<input type="text" ng-model="incidenttype"
+																							id="txtincidenttype" />
+																					</div>
+																					<br />
+																					<h3>Action Taken</h3>
+																					<div class="cellBody">
+																						<input type="text" ng-model="incidentaction"
+																							id="txtincidentaction" />
+																					</div>
+																					<br />
+																					<h3>Officer Name</h3>
+																					<div class="cellBody">
+																						<input type="text" ng-model="incidentofficername"
+																							id="txtincidentofficername" />
+																					</div>
+																					<br />
+
+
+																				</div>
+																				<div class="clearAll"></div></td>
+																			<td><br /> <br /> <br />
+																				<div class="cell firstCell">
+																					<h3>Officer Badge</h3>
+																					<div class="cellBody">
+																						<input type="text" ng-model="incidentofficerbadge"
+																							id="txtincidentofficerbadge" />
+																					</div>
+																					<br />
+																					<h3>Police Report Number</h3>
+																					<div class="cellBody">
+																						<input type="text"
+																							ng-model="incidentpolicereportno"
+																							id="txtincidentpolicereportno" />
+																					</div>
+																					<br />
+																					<h3>Building Number</h3>
+																					<div class="cellBody">
+																						<input type="text" ng-model="incidentbuilding"
+																							id="txtincidentbuilding" />
+																					</div>
+																				</div>
+
+																				<div class="clearAll"></div></td>
+																		</tr>
+																		<tr>
+																			<td colspan="2">
+																				<div class="cell firstCell">
+																					<h3>Summary</h3>
+																					<div class="cellBody">
+																						<textarea type="text" cols="45" rows="5"
+																							ng-model="incidentsummary"
+																							id="txtincidentsummary"
+																							style="width: 80%; height: 60px"></textarea>
+																					</div>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<br />
+																	<div style="float: right; margin-right: 3%">
+																		<button ng-click="saveIncident()" id="btnsaveIncident"
+																			class="btn btn-success">Submit</button>
+																		<button ng-click="clearIncident()"
+																			id="btncancelIncident" class="btn btn-danger">Cancel
+																		</button>
+																	</div>
+																</fieldset>
+															</td>
+															<td>
+																<fieldset
+																	style="margin-top: 1%; margin-top: 1%; height: 390px">
+																	<legend>
+																		<b>Parking Violation</b>
+																	</legend>
+
+																	<table width="100%">
+																		<tr>
+																			<td><br /> <br /> <br />
+																				<div class="cell firstCell">
+																					<h3>License Plate</h3>
+																					<div class="cellBody">
+																						<input type="text" ng-model="parkviolicenseplate"
+																							id="txtparkviolicenseplate" />
+																					</div>
+																					<br />
+																					<h3>Location</h3>
+																					<div class="cellBody">
+																						<input type="text" ng-model="parkviolocation"
+																							id="txtparkviolocation" />
+																					</div>
+																					<br />
+																					<h3>Stall</h3>
+																					<div class="cellBody">
+																						<input type="text" ng-model="parkviostall"
+																							id="txtparkviostall" />
+																					</div>
+																					<br />
+
+
+																				</div>
+																				<div class="clearAll"></div></td>
+																			<td><br /> <br /> <br />
+																				<div class="cell firstCell">
+																					<h3>Model</h3>
+																					<div class="cellBody">
+																						<input type="text" ng-model="parkviomodel"
+																							id="txtparkviomodel" />
+																					</div>
+																					<br />
+																					<h3>Color</h3>
+																					<div class="cellBody">
+																						<input type="text" ng-model="parkviocolor"
+																							id="txtparkviocolor" />
+																					</div>
+																					<br />
+																					<h3>Year</h3>
+																					<div class="cellBody">
+																						<input type="text" ng-model="parkvioyear"
+																							id="txtparkvioyear" />
+																					</div>
+																				</div>
+
+																				<div class="clearAll"></div></td>
+																		</tr>
+																		<tr>
+																			<td colspan="2">
+																				<div class="cell firstCell">
+																					<h3>Description</h3>
+																					<div class="cellBody">
+																						<textarea type="text" cols="45" rows="5"
+																							ng-model="parkviosummary" id="txtparkviosummary"
+																							style="width: 80%; height: 60px"></textarea>
+																					</div>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<br />
+																	<div style="float: right; margin-right: 3%">
+																		<button ng-click="saveParkingViolation()"
+																			id="btnsaveParkingViolation" class="btn btn-success">Submit
+																		</button>
+																		<button ng-click="clearParkingViolation()"
+																			id="btnclearParkingViolation" class="btn btn-danger">Cancel
+																		</button>
+																	</div>
+																</fieldset>
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<fieldset
+																	style="margin-top: 1%; margin-top: 1%; height: 390px">
+																	<legend>
+																		<b>Service Call</b>
+																	</legend>
+
+																	<table width="100%">
+																		<tr>
+																			<td><br /> <br /> <br />
+																				<div class="cell firstCell">
+																					<h3>Service Type</h3>
+																					<div class="cellBody">
+																						<input type="text" ng-model="servicetype"
+																							id="txtservicetype" />
+																					</div>
+																					<br />
+																					<h3>Account number</h3>
+																					<div class="cellBody">
+																						<input type="text" ng-model="serviceaccount"
+																							id="txtserviceaccount" />
+																					</div>
+																				</div>
+																				<div class="clearAll"></div></td>
+																			<td><br /> <br /> <br />
+																				<div class="cell firstCell">
+																					<h3>Officer Initial</h3>
+																					<div class="cellBody">
+																						<input type="text"
+																							ng-model="serviceofficerinitial"
+																							id="txtserviceofficerinitial" />
+																					</div>
+																					<br />
+																					<h3>Delivery Time</h3>
+																					<div class="cellBody">
+																						<input type="text" ng-model="servicedeliverytime"
+																							id="txtservicedeliverytime" />
+																					</div>
+																				</div>
+
+																				<div class="clearAll"></div></td>
+																		</tr>
+																		<tr>
+																			<td colspan="2">
+																				<div class="cell firstCell">
+																					<br /> <br />
+																					<h3>Summary</h3>
+																					<div class="cellBody">
+																						<textarea type="text" cols="45" rows="5"
+																							ng-model="servicesummary" id="txtservicesummary"
+																							style="width: 80%; height: 60px"></textarea>
+																					</div>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<br />
+																	<div style="float: right; margin-right: 3%">
+																		<button ng-click="saveService()" id="btnsaveService"
+																			class="btn btn-success">Submit</button>
+																		<button ng-click="clearService()" id="btnclearService"
+																			class="btn btn-danger">Cancel</button>
+																	</div>
+																</fieldset>
+															</td>
+															<td>
+																<fieldset
+																	style="margin-top: 1%; margin-top: 1%; height: 390px">
+																	<legend>
+																		<b>Maintenance Call</b>
+																	</legend>
+
+																	<table width="100%">
+																		<tr>
+																			<td><br /> <br /> <br />
+																				<div class="cell firstCell">
+																					<h3>Type</h3>
+																					<div class="cellBody">
+																						<input type="text" ng-model="maintenancetype"
+																							id="txtmaintenancetype" />
+																					</div>
+																					<br />
+
+
+
+																				</div>
+																				<div class="clearAll"></div></td>
+																			<td><br /> <br /> <br />
+																				<div class="cell firstCell">
+																					<h3>Status</h3>
+																					<div class="cellBody">
+																						<input type="text" ng-model="maintenancestatus"
+																							id="txtmaintenancestatus" />
+																					</div>
+
+																				</div>
+
+																				<div class="clearAll"></div></td>
+																		</tr>
+																		<tr>
+																			<td colspan="2">
+																				<div class="cell firstCell">
+																					<h3>Description</h3>
+																					<div class="cellBody">
+																						<textarea type="text" cols="45" rows="5"
+																							ng-model="maintenancedescription"
+																							id="txtmaintenancedescription"
+																							style="width: 80%; height: 60px"></textarea>
+																					</div>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<br />
+																	<div style="float: right; margin-right: 3%">
+																		<button ng-click="saveMaintenance()"
+																			id="btnSaveMaintenance" class="btn btn-success">Submit
+																		</button>
+																		<button ng-click="clearMaintenance()"
+																			id="btnClearMaintenance" class="btn btn-danger">Cancel
+																		</button>
+																	</div>
+																</fieldset>
+															</td>
+														</tr>
+
+
+														<tr>
+															<td colspan="2">
+																<fieldset
+																	style="margin-top: 1%; margin-top: 1%; height: 290px">
+																	<legend>
+																		<b>Patrol Summary</b>
+																	</legend>
+
+																	<table width="100%">
+																		<tr>
+																			<td><br /> <br /> <br />
+																				<div class="cell firstCell">
+																					<h3>Building Id</h3>
+																					<div class="cellBody">
+																						<input type="text" ng-model="patrolbuildingid"
+																							id="txtpatrolbuildingid" />
+																					</div>
+																					<br />
+																				</div>
+																				<div class="clearAll"></div></td>
+																			<td><br /> <br /> <br />
+																				<div class="cell firstCell">
+																					<h3>Client ID</h3>
+																					<div class="cellBody">
+																						<input type="text" ng-model="patrolclientid"
+																							id="txtpatrolclientid" />
+																					</div>
+																					<br />
+
+																				</div>
+
+																				<div class="clearAll"></div></td>
+																		</tr>
+																		<tr>
+																			<td colspan="2">
+																				<div class="cell firstCell">
+																					<h3>Summary</h3>
+																					<div class="cellBody">
+																						<textarea type="text" cols="45" rows="5"
+																							ng-model="patrolsummary" id="txtpatrolsummary"
+																							style="width: 80%; height: 60px"></textarea>
+																					</div>
+																				</div>
+																			</td>
+																		</tr>
+																	</table>
+																	<br />
+																	<div style="float: right; margin-right: 3%">
+																		<button ng-click="savePatrol()" id="btnSavePatrol"
+																			class="btn btn-success">Submit</button>
+																		<button ng-click="clearPatrol()" id="btnClearPatrol"
+																			class="btn btn-danger">Cancel</button>
+																	</div>
+																</fieldset>
+															</td>
+
+														</tr>
+
+
+
+													</table>
+													<br />
+
+												</div>
+
+												<div id="divlistreport" style="display: none">
+													<div class="box contentBox">
+														<div class="boxInner">
+															<div class="boxContent">
+																<div id="divParent">
+																	<div class="pageControl">
+																		<div class="pageDisplay">
+																			<span class="pageDispalyLabel"> </span> <span
+																				class="pageDispalySelectLabel">Show</span>
+																			<div class="selectBox">
+																				<select ng-model="noofrecordsDetails" class="pageRp"
+																					ng-change="listreportfordisplaypage()"
+																					ng-options="obj.value as obj.name for obj in recordCount.data">
+																				</select>
+																			</div>
+																		</div>
+																		<div class="pagination">
+																			<table width="100%">
+																				<tr>
+																					<td>
+																						<div style="float: right" class="gridPaging">
+																						</div>
+																					</td>
+																				</tr>
+																			</table>
+																		</div>
+																	</div>
+																	<br/>
+																	<select ng-model="listoption" >
+																		<option value="CR">Client ID</option>
+																		<option value="BR">Building ID</option>
+																	</select>
+																	<input type="text" ng-model="lparam" />
+																	 <button ng-click="listreportfordisplaypage()">List</button>
+																	 <br/>
+																	<div class="tableList"
+																		style="background-color: White; max-height: 330px; overflow: auto;">
+																		<table width="100%" cellpadding="0" cellspacing="0"
+																			class="requireZebraCrossingGrid" id="tblGrid">
+																			<thead>
+																				<tr class="trgrColumn">
+																					<th style="padding-left: 1%">Report Number</th>
+																					<th>Client ID</th>
+																					<th>Building ID</th>
+																					<th>Guard ID</th>
+																					<th>Date</th>
+																					<th>View</th>
+																				</tr>
+																			</thead>
+																			<tbody>
+																				<tr ng-repeat="item in reportGrid">
+																					<td style="padding-left: 1%">
+																						{{item.reportnumber}}</td>
+																					<td>{{item.clientid}}</td>
+																					<td>{{item.buildingid}}</td>
+																					<td>{{item.guardid}}</td>
+																					<td>{{item.createdon}}</td>
+																					<td><span><a
+																							vdata="{{item.reportnumber}}"
+																							id="anchor-{{item.reportnumber}}"
+																							ng-click="showreportdata($event)"> <img
+																								title="details"
+																								style="height: 24px; width: 24px;"
+																								src="img/details.png" />
+																						</a></span></td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</div>
+
+																	<span class="corner tl"></span><span class="corner tr"></span><span
+																		class="corner bl"> </span><span class="corner br"></span>
+
+
+
+
+																	<div class="pageControl">
+																		<div class="pageDisplay">
+																			<span class="pageDispalyLabel"> </span> <span
+																				class="pageDispalySelectLabel">Show</span>
+																			<div class="selectBox">
+																				<select ng-model="noofrecordsDetails" class="pageRp"
+																					ng-change="listreportfordisplaypage()"
+																					ng-options="obj.value as obj.name for obj in recordCount.data">
+																				</select>
+																			</div>
+																		</div>
+																		<div class="pagination">
+																			<table width="100%">
+																				<tr>
+																					<td>
+																						<div style="float: right" class="gridPaging">
+																						</div>
+																					</td>
+																				</tr>
+																			</table>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div id="divsearchreport" style="display: none">
+													
+													<div class="box contentBox">
+														<div class="boxInner">
+															<div class="boxContent">
+																<div id="divParent">
+																	<div class="pageControl">
+																		<div class="pageDisplay">
+																			<span class="pageDispalyLabel"> </span> <span
+																				class="pageDispalySelectLabel">Show</span>
+																			<div class="selectBox">
+																				<select ng-model="noofrecordsDetails" class="pageRp"
+																					ng-change="searchreportfordisplaypage()"
+																					ng-options="obj.value as obj.name for obj in recordCount.data">
+																				</select>
+																			</div>
+																		</div>
+																		<div class="pagination">
+																			<table width="100%">
+																				<tr>
+																					<td>
+																						<div style="float: right" class="gridPaging">
+																						</div>
+																					</td>
+																				</tr>
+																			</table>
+																		</div>
+																	</div>
+																	
+																	<select ng-model="ddlSearchType">
+																		<option selected="selected" value="BID" >Building ID</option>
+																		<option value="CID">Client ID</option>
+																		<option value="GID">Guard ID</option>
+																		<option value="IRT">Incident Report- Type</option>
+																		<option value="IRPON">Incident Report- Police Officer Name</option>
+																		<option value="IRPOB">Incident Report- Police Officer Badge</option>
+																		<option value="IRPRN">Incident Report- Police Report Number</option>
+																		<option value="MT">Maintenance- Type</option>
+																		<option value="MD">Maintenance- Description</option>
+																		<option value="MS">Maintenance- Status</option>
+																		<option value="ST">Service- Type</option>
+																		<option value="SA">Service- Accountnumber</option>
+																		<option value="SOI">Service- Officer Initial</option>
+																		<option value="SOS">Service- Officer Summary</option>
+																		
+																		<option value="PVLP">Parking Violation- License Plate</option>
+																		<option value="PVL">Parking Violation- Location</option>
+																		<option value="PVS">Parking Violation- Stall</option>
+																		<option value="PVM">Parking Violation- Model</option>
+																		<option value="PVC">Parking Violation- Color</option>
+																		<option value="PVY">Parking Violation- year</option>
+																		<option value="PVD">Parking Violation- description</option>
+																		<option value="PS">Patrol- Summary</option>
+																		
+																	</select>
+																	<input type="text" ng-model="searchbox"></input> 
+																	<button ng-click="searchreportfordisplaypage()" class="btn btn-success">Search</button>
+																	<br/>
+																	<br/>
+																	<div class="tableList"
+																		style="background-color: White; max-height: 330px; overflow: auto;">
+																		<table width="100%" cellpadding="0" cellspacing="0"
+																			class="requireZebraCrossingGrid" id="tblGrid">
+																			<thead>
+																				<tr class="trgrColumn">
+																					<th style="padding-left: 1%">Report Number</th>
+																					<th>Client ID</th>
+																					<th>Building ID</th>
+																					<th>Guard ID</th>
+																					<th>Date</th>
+																					<th>View</th>
+																				</tr>
+																			</thead>
+																			<tbody>
+																				<tr ng-repeat="item in reportGrid">
+																					<td style="padding-left: 1%">
+																						{{item.reportnumber}}</td>
+																					<td>{{item.ClientId}}</td>
+																					<td>{{item.buildingid}}</td>
+																					<td>{{item.guardid}}</td>
+																					<td>{{item.createdon}}</td>
+																					<td><span><a
+																							vdata="{{item.reportnumber}}"
+																							id="anchor-{{item.reportnumber}}"
+																							ng-click="showreportdata($event)"> <img
+																								title="details"
+																								style="height: 24px; width: 24px;"
+																								src="img/details.png" />
+																						</a></span></td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</div>
+
+																	<span class="corner tl"></span><span class="corner tr"></span><span
+																		class="corner bl"> </span><span class="corner br"></span>
+
+
+
+
+																	<div class="pageControl">
+																		<div class="pageDisplay">
+																			<span class="pageDispalyLabel"> </span> <span
+																				class="pageDispalySelectLabel">Show</span>
+																			<div class="selectBox">
+																				<select ng-model="noofrecordsDetails" class="pageRp"
+																					ng-change="searchreportfordisplaypage()"
+																					ng-options="obj.value as obj.name for obj in recordCount.data">
+																				</select>
+																			</div>
+																		</div>
+																		<div class="pagination">
+																			<table width="100%">
+																				<tr>
+																					<td>
+																						<div style="float: right" class="gridPaging">
+																						</div>
+																					</td>
+																				</tr>
+																			</table>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+
+												</div>
+
+											</div>
+										</div>
+									</div>
+								</div>
+								<button style="display: none" id="myElement" name="save" ng-click="getPageData()"></button>
+								<button style="display: none" id="myElement1" name="save" ng-click="getSearchPageData()"></button>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="divHideongrid" style="display: none;">
+		<div class="box contentBox">
+			<div class="boxInner">
+				<div class="boxContent">
+					<div id="divParent">
+						<div class="tableList" style="background-color: White;">
+							<table width="100%" cellpadding="0" cellspacing="0"
+								class="requireZebraCrossingGrid" id="tblLatitude">
+								<button id="btnPrint" onclick="printData()">Print</button>
+								<tbody>
+									<tr ng-model = "trbuildinginfo" class="trgrColumn">
+										<td 
+											style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px; background-color: #C5D7FD; border-right: 1px solid #ccc">
+												PROPERTY NAME: <b>{{buildingdata[0].BuildingName}}</b>
+											
+											</td>
+
+										<td
+											style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px; background-color: #C5D7FD; border-right: 1px solid #ccc">DATE: <b>{{reportdata[0].createdon}}</b></td>
+
+										<td
+											style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px; background-color: #C5D7FD; border-right: 1px solid #ccc">SECURITY
+											OFFICER NAME : <b>{{guarddata[0].Firstname}} {{guarddata[0].Lastname}} </b><br/>
+											BADGE:<b>{{guarddata[0].SSNNumber}} </b> </td>
+									</tr>
+									<tr>
+										<td colspan="3">ACTIVITY CHECKLIST <br /> (IF ANY OF THE
+											FOLLOWING ITEMS HAS A TALLY, PLEASE REFER TO THE SUMMARY
+											BELOW FOR DETAILS)
+										</td>
+									</tr>
+									<tr>
+
+										<td colspan="3"
+											style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px; background-color: #C5D7FD; border-right: 1px solid #ccc"><b>Patrol</b></td>
+									</tr>
+									<tr ng-repeat="item in patrolData">
+										<td></td>
+										<td>{{item.createdon}}</td>
+									<tr>
+
+									</tr>
+									<tr>
+										<td colspan="3"
+											style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px; background-color: #C5D7FD; border-right: 1px solid #ccc"><b>Incident
+												report</b></td>
+									</tr>
+									<tr>
+										<td colspan="3"><br />
+											<div ng-repeat="item in incidentData">
+												Incident Type: {{item.incidenttype}}<br /> Officer Badge:
+												{{item.officerbadge}}<br /> Police Report Number:
+												{{item.policereportnumber}}<br /> Officer Name:
+												{{item.officername}}<br /> Action Taken:
+												{{item.actiontaken}}<br /> Building Number:
+												{{item.buildingnumber}}<br /> Summary: {{item.summary}}<br />
+												<br />
+												<hr />
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td colspan="3"
+											style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px; background-color: #C5D7FD; border-right: 1px solid #ccc"><b>Parking
+												Violation</b></td>
+									</tr>
+									<tr>
+										<td colspan="3"><br />
+											<div ng-repeat="item in parkingviolationData">
+												License plate: {{item.licenseplate}}<br /> Location:
+												{{item.location}}<br /> Stall Number: {{item.stall}}<br />
+												Model: {{item.model}}<br /> Color : {{item.color}}<br />
+												Year: {{item.year}}<br /> Description: {{item.description}}<br />
+												<br /><hr />
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td colspan="3"
+											style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px; background-color: #C5D7FD; border-right: 1px solid #ccc"><b>Maintenance
+												Call</b></td>
+									</tr>
+									<tr>
+										<td colspan="3">
+											<div ng-repeat="item in maintenanceData">
+												Type: {{item.type}}<br /> Status: {{item.status}}<br />
+												Description: {{item.description}}<br /> <br />
+											</div><br /><hr />
+										</td>
+									</tr>
+									<tr>
+										<td colspan="3"
+											style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px; background-color: #C5D7FD; border-right: 1px solid #ccc"><b>Service
+												Call</b></td>
+									</tr>
+									<tr>
+										<td colspan="3">
+											<div ng-repeat="item in serviceData">
+												Type: {{item.type}}<br /> Account Number:
+												{{item.accountnumber}}<br /> Officer Initial:
+												{{item.offierinitial}}<br /> Delivery Time:
+												{{item.deliverytime}}<br /> Summary: {{item.summary}}<br />
+												<br /><hr />
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td colspan="3"
+											style="vertical-align: middle; text-align: left; padding-left: 10px; padding-right: 2px; height: 33px; background-color: #C5D7FD; border-right: 1px solid #ccc"><b>Patrol</b></td>
+									</tr>
+									<tr>
+										<td colspan="3">
+											<div ng-repeat="item in patrolData">
+												Date time: {{item.createdon}}<br /> Disposition:
+												{{item.summary}}<br /><br /><hr />
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<script>
+								function showreportdata(event, reportnumber) {
+
+								}
+							</script>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<br /> <br /> <br />
+	</div>
+
+</div>
+

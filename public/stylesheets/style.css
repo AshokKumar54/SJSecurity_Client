@@ -1,0 +1,34 @@
+.error1 
+{
+width: 24px;
+height: 24px;
+background: url(../img/error.png) left center no-repeat;
+display: inline-block;
+text-indent: -9999px;		
+text-align:left; 
+position: relative;
+z-index: 1000;
+float: right;
+margin-right: 30px;
+margin-top: -40px;
+pointer: cursor;
+}
+
+.error 
+{
+width: 24px;
+height: 24px;
+background: url(../img/error.png) left center no-repeat;
+display: inline-block;
+text-indent: -9999px;		
+text-align:left;
+vertical-align:middle;
+z-index: 1000;
+margin-left: -23px !important; 
+pointer: cursor;
+}
+
+.errorInput
+{
+     background-color:#f89EA3;
+}

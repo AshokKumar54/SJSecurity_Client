@@ -1,0 +1,663 @@
+                    <div id="container" ng-controller="billingmodule">
+                        <div class="containerBox">
+                            <div class="containerBoxR">
+                                <div class="containerInner">
+                                    <div>
+                                        <table class="BreadCrumAndMenu">
+                                            <tr>
+                                                <td class="BreadCrumColumn">
+                                                    <!-- breadcrum -->
+                                                    Home <span style='padding-left: 2px'><a href="#"><img src="images/icon-breadcrumb.png" /></a></span>  Billing Module
+                                                </td>
+                                                <td class="SubMenuColumn" id="divSubMenu"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="pageDetails">
+                            <!-- page html -->
+                            <div class="containerBox">
+                                <div class="containerBoxR">
+                                    <div class="containerInner">
+                                        <div id="pageTitle">
+                                            <h2>Billing Module</h2>
+                                        </div>
+                                        <br />
+                                        <!-- <select ng-model="template" ng-options="t.name for t in templates"></select> -->
+                                        <table width="100%" id="buildingerrormessage" style="display: none;">
+                                        	<tr>
+                                        		<td align="center">
+													<div>
+														<b>This feature is only available for administrator or client.</b>
+													</div>
+													<br />
+												</td>
+											</tr>
+										</table>
+										<div id="adminDiv" style="display: none">
+                                        <table width="100%" id="tablebuildingmodule">
+                                            <tr>
+                                                <td style="width: 12%">
+                                                    <div class="receptioncolumn">
+                                                        <div class="receptioncolumnHeader">
+                                                            <h2>
+                                                                Billing Menus
+                                                            </h2>
+                                                            <div class="receptioncolumnContent">
+                                                                <div id="content" class="singleColumn">
+                                                                    <table width="100%">
+                                                                        <tr>
+                                                                            <td align="center" style="vertical-align: middle;" id="tdgetdetails">
+                                                                                <img ng-click="displaysubmitbill()" title="Submit Bill" style="cursor: pointer; height: 60px; width: 50px;" src="img/submitbill.jpg" alt="">
+                                                                                <div>Submit Bill</div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <br />
+                                                                                <div style="border-bottom: thin solid #67a0e5;">
+                                                                                </div>
+                                                                                <br />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td align="center" style="vertical-align: middle;" id="tdadd">
+                                                                                <img ng-click="displayallbill()" title="View All Bills" style="cursor: pointer; height: 60px; width: 50px;" src="img/viewallbills.jpg" alt="">
+                                                                                <div>Bill Details</div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <br />
+                                                                                <div style="border-bottom: thin solid #67a0e5;">
+                                                                                </div>
+                                                                                <br />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td align="center" style="vertical-align: middle;" id="tdedit">
+                                                                                <img ng-click="displaysingleclientbill()" title="Display single client's Bill Details" style="cursor: pointer; height: 60px; width: 50px;" src="img/viewsinglebill.jpg" alt="">
+                                                                                <div>Client Records</div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <br />
+                                                                                <div style="border-bottom: thin solid #67a0e5;">
+                                                                                </div>
+                                                                                <br />
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td align="center" style="vertical-align: middle;" id="tddelete">
+                                                                                <img ng-click="displayupdatebill()" title="Update Bill" style="cursor: pointer; height: 60px; width: 50px;" src="img/updatebill.jpg" alt="">
+                                                                                <div>Update Bill</div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                    <!-- <div ng-include src="template.url"></div> -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td style="width: 88%">
+                                                    <div class="receptioncolumn">
+                                                        <div class="receptioncolumnHeader">
+                                                            <h2>
+                                                                Information
+                                                            </h2>
+                                                            <div class="receptioncolumnContent">
+                                                                <div id="content" class="singleColumn">
+                                                                    <div id="divSubmitBillDetails" style="display: none">
+                                                                        <div class="box contentBox">
+                                                                            <div class="boxInner">
+                                                                                <div class="boxContent">
+                                                                                    <div id="divParent">
+                                                                                    	<table width="100%">
+				                                                                    		<tr>
+				                                                                    			<td>
+				                                                                    				<fieldset>
+				                                                                    					<legend><strong>Details for submitting a bill</strong></legend>
+				                                                                    					<br />
+				                                                                    					<table width="100%">
+				                                                                    						<tr>
+																								    			<td>
+																								    				Client Name
+																								    			</td>
+																				    							<td>
+																				    								<select ng-model="inputClientId" id="ddlClients" ng-options="item.ClientId as item.ClientName for item in billingclients" style="height: 30px; width: 168px">                                                                             
+                                                                                                            </select>
+																				    							</td>
+																								    		</tr>
+																								    		<tr>
+																								    			<td colspan="2">
+																								    				<br />
+																								    			</td>
+																								    		</tr>
+																								    		<tr>
+																								    			<td>
+																								    				Bill Id
+																								    			</td>
+																				    							<td>
+																				    								<input ng-model="inputBillId" onkeyup="removeErrorControl('txtbillbillid');" id="txtbillbillid" class="form-control" type="text" name="inputBillId">
+																				    							</td>
+																								    		</tr>
+																								    		<tr>
+																								    			<td colspan="2">
+																								    				<br />
+																								    			</td>
+																								    		</tr>
+																								    		<tr>
+																								    			<td>
+																								    				Number of months
+																								    			</td>
+																				    							<td>
+																				    								<input ng-model="inputNumOfMonths" onkeyup="removeErrorControl('txtbillmonths');" id="txtbillmonths" class="form-control" type="text" name="inputNumOfMonths">
+																				    							</td>
+																								    		</tr>
+																								    		<tr>
+																								    			<td colspan="2">
+																								    				<br />
+																								    			</td>
+																								    		</tr>
+																								    		<tr>
+																								    			<td>
+																								    				Amount Per Month
+																								    			</td>
+																				    							<td>
+																				    								<input ng-model="inputAmtPerMonth" onkeyup="removeErrorControl('txtbillamount');" id="txtbillamount" class="form-control" type="text" name="inputAmtPerMonth">
+																				    							</td>
+																								    		</tr>
+																								    		<tr>
+																								    			<td colspan="2">
+																								    				<br />
+																								    			</td>
+																								    		</tr>
+																								    		<tr>
+																								    			<td>
+																								    				Paid Amount
+																								    			</td>
+																				    							<td>
+																				    								<input ng-model="inputPaidAmt" onkeyup="removeErrorControl('txtamountpaid');" id="txtamountpaid" class="form-control" type="text" name="inputPaidAmt">
+																				    							</td>
+																								    		</tr>
+																								    		<tr>
+																								    			<td colspan="2">
+																								    				<br />
+																								    			</td>
+																								    		</tr>
+																								    		<tr>
+																								    			<td>
+																								    				&nbsp;
+																								    			</td>
+																								    			<td>
+																								    				<a href="javascript:void(0)" ng-click="submitBill()" id="btnSave" class="btnGreen btnCancel">
+										                                                                                <span class="btnR"><span class="btnC">Submit Bill</span></span>
+										                                                                            </a>
+																								    			</td>
+																								    		</tr>
+				                                                                    					</table>
+				                                                                    					<br />
+				                                                                    				</fieldset>
+				                                                                    			</td>
+				                                                                    		</tr>
+				                                                                    	</table>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div id="divViewAllBills" style="display: none">
+                                                                        <table width="100%">
+                                                                            <tr>
+                                                                                <td>
+                                                                                        	<div style="border: 1px solid #ccc">
+		                                                                                        <div class="pageControl">
+		                                                                                            <div class="pageDisplay">
+		                                                                                                <span class="pageDispalyLabel">
+		                                                                                                </span>
+		                                                                                                <span class="pageDispalySelectLabel">Show</span>
+		                                                                                                <div class="selectBox">
+		                                                                                                    <select ng-model="noofrecordsDetails" class="pageRp" ng-change="getbillingrecordsfordisplay()" ng-options="obj.value as obj.name for obj in recordCount.data">
+		                                                                                                    </select>
+		                                                                                                </div>
+		                                                                                            </div>
+		                                                                                            <div class="pagination">
+		                                                                                                <table width="100%">
+		                                                                                                    <tr>
+		                                                                                                        <td>
+		                                                                                                            <div style="float: right" class="gridPaging">
+		                                                                                                            </div>
+		                                                                                                        </td>
+		                                                                                                    </tr>
+		                                                                                                </table>
+		                                                                                            </div>
+		                                                                                        </div>
+																								<div class="box contentBox">
+						                                                                            <div class="boxInner">
+						                                                                                <div class="boxContent">
+						                                                                                    <div id="divParent">
+						                                                                                    	<div class="tableList" style="background-color: White; max-height: 330px; overflow: auto;">
+							                                                                                        <table width="100%" cellpadding="0" cellspacing="0" class="requireZebraCrossingGrid"
+							                                                                                                   id="tblGrid">
+							                                                                                                <thead>
+							                                                                                                    <tr class="trgrColumn">
+							                                                                                                        <th style="padding-left: 1%">
+							                                                                                                            Bill Id
+							                                                                                                        </th>
+							                                                                                                        <th>
+							                                                                                                            Client Id
+							                                                                                                        </th>
+							                                                                                                        <th>
+							                                                                                                            Client Name
+							                                                                                                        </th>
+							                                                                                                        <th>
+							                                                                                                            No. of Months
+							                                                                                                        </th>
+							                                                                                                        <th>
+							                                                                                                            Amount Per Month
+							                                                                                                        </th>
+							                                                                                                        <th>
+							                                                                                                            Total Amount
+							                                                                                                        </th>
+							                                                                                                        <th>
+							                                                                                                            Paid Amount
+							                                                                                                        </th>
+							                                                                                                    </tr>
+							                                                                                                </thead>
+							                                                                                                <tbody>
+							                                                                                                    <tr ng-repeat="item in billingGrid">
+							                                                                                                        <td>
+							                                                                                                            {{item.billingid}}
+							                                                                                                        </td>
+							                                                                                                        <td>
+							                                                                                                            {{item.clientid}}
+							                                                                                                        </td>
+							                                                                                                        <td>
+							                                                                                                            {{item.clientfirstname}}&nbsp{{item.clientlastname}}
+							                                                                                                        </td>
+							                                                                                                        <td>
+							                                                                                                            {{item.noofmonths}}
+							                                                                                                        </td>
+							                                                                                                        <td>
+							                                                                                                            {{item.amtpermonth}}
+							                                                                                                        </td>
+							                                                                                                        <td>
+							                                                                                                            {{item.totalamt}}
+							                                                                                                        </td>
+							                                                                                                        <td>
+							                                                                                                            {{item.paidamt}}
+							                                                                                                        </td>
+							                                                                                                    </tr>
+							                                                                                                </tbody>
+							                                                                                            </table>
+							                                                                                        </div>
+						                                                                                    </div>
+						                                                                                </div>
+						                                                                            </div>
+						                                                                        </div>
+	                                                                                   			<div class="pageControl">
+	                                                                                            <div class="pageDisplay">
+	                                                                                                <span class="pageDispalyLabel">
+	                                                                                                </span>
+	                                                                                                <span class="pageDispalySelectLabel">Show</span>
+	                                                                                                <div class="selectBox">
+	                                                                                                    <select ng-model="noofrecordsDetails" class="pageRp" ng-change="getbillingrecordsfordisplay()" ng-options="obj.value as obj.name for obj in recordCount.data">
+	                                                                                                    </select>
+	                                                                                                </div>
+	                                                                                            </div>
+	                                                                                            <div class="pagination">
+	                                                                                                <table width="100%">
+	                                                                                                    <tr>
+	                                                                                                        <td>
+	                                                                                                            <div style="float: right" class="gridPaging">
+	                                                                                                            </div>
+	                                                                                                        </td>
+	                                                                                                    </tr>
+	                                                                                                </table>
+	                                                                                            </div>
+	                                                                                        </div>
+                                                                                    		</div>
+                                                                                </td>
+                                                                                
+                                                                            </tr>
+                                                                        </table>
+                                                                        
+                                                                    </div>
+                                                                    <div id="divViewClientBill" style="display: none">
+                                                                    	<table width="100%">
+                                                                    		<tr>
+                                                                    			<td>
+                                                                    				<fieldset>
+                                                                    					<legend><strong>Select Client to display its Bills</strong></legend>
+                                                                    					<br />
+                                                                    					<table width="100%">
+                                                                    						<tr>
+																				    			<td>
+																				    				Client Name
+																				    			</td>
+																				    			<td>
+																				    				<select ng-model="inputClientId1" id="ddlClients" ng-options="item.ClientId as item.ClientName for item in billingclients" style="height: 30px; width: 168px">                                                                             
+                                                                                                            </select>
+																				    			</td>
+																				    		</tr>
+																				    		<tr>
+																				    			<td colspan="2">
+																				    				<br />
+																				    			</td>
+																				    		</tr>
+																				    		<tr>
+																				    			<td>
+																				    				&nbsp;
+																				    			</td>
+																				    			<td>
+																				    				<a href="javascript:void(0)" ng-click="submitClientId()" id="btnSave" class="btnGreen btnCancel">
+						                                                                                <span class="btnR"><span class="btnC">Get Client Bills</span></span>
+						                                                                            </a>
+																				    			</td>
+																				    		</tr>
+                                                                    					</table>
+                                                                    					<br />
+                                                                    					<div class="box contentBox" id="clientbillinggrid" style="display: none;">
+						                                                                            <div class="boxInner">
+						                                                                                <div class="boxContent">
+						                                                                                    <div id="divParent">
+						                                                                                    	<div class="tableList" style="background-color: White; max-height: 330px; overflow: auto;">
+							                                                                                        <table width="100%" cellpadding="0" cellspacing="0" class="requireZebraCrossingGrid"
+							                                                                                                   id="tblGrid">
+							                                                                                                <thead>
+							                                                                                                    <tr class="trgrColumn">
+							                                                                                                        <th style="padding-left: 1%">
+							                                                                                                            Bill Id
+							                                                                                                        </th>
+							                                                                                                        <th>
+							                                                                                                            Client Id
+							                                                                                                        </th>
+							                                                                                                        <th>
+							                                                                                                            Client Name
+							                                                                                                        </th>
+							                                                                                                        <th>
+							                                                                                                            No. of Months
+							                                                                                                        </th>
+							                                                                                                        <th>
+							                                                                                                            Amount Per Month
+							                                                                                                        </th>
+							                                                                                                        <th>
+							                                                                                                            Total Amount
+							                                                                                                        </th>
+							                                                                                                        <th>
+							                                                                                                            Paid Amount
+							                                                                                                        </th>
+							                                                                                                    </tr>
+							                                                                                                </thead>
+							                                                                                                <tbody id="tbodyclientgrid">
+							                                                                                                    <tr ng-repeat="item in billingClientGrid">
+							                                                                                                        <td>
+							                                                                                                            {{item.billingid}}
+							                                                                                                        </td>
+							                                                                                                        <td>
+							                                                                                                            {{item.clientid}}
+							                                                                                                        </td>
+							                                                                                                        <td>
+							                                                                                                            {{item.clientfirstname}}&nbsp{{item.clientlastname}}
+							                                                                                                        </td>
+							                                                                                                        <td>
+							                                                                                                            {{item.noofmonths}}
+							                                                                                                        </td>
+							                                                                                                        <td>
+							                                                                                                            {{item.amtpermonth}}
+							                                                                                                        </td>
+							                                                                                                        <td>
+							                                                                                                            {{item.totalamt}}
+							                                                                                                        </td>
+							                                                                                                        <td>
+							                                                                                                            {{item.paidamt}}
+							                                                                                                        </td>
+							                                                                                                    </tr>
+							                                                                                                </tbody>
+							                                                                                            </table>
+							                                                                                        </div>
+						                                                                                    </div>
+						                                                                                </div>
+						                                                                            </div>
+						                                                                        </div>
+                                                                    				</fieldset>
+                                                                    			</td>
+                                                                    		</tr>
+                                                                    	</table>
+                                                                    </div>
+                                                                    <div id="divUpdateBill" style="display: none">
+                                                                    	<table width="100%">
+                                                                    		<tr>
+                                                                    			<td>
+                                                                    				<fieldset>
+                                                                    					<legend><strong>Update</strong></legend>
+                                                                    					<table width="100%">
+                                                                    						<tr>
+                                                                    							<td>
+                                                                    								Bill Id
+                                                                    							</td>
+																				    			<td>
+																				    				<input ng-model="inputBillId2" onkeyup="removeErrorControl('txtbillid');" id="txtbillid" class="form-control" type="text" name="inputBillId2">
+																				    			</td>
+                                                                    						</tr>
+                                                                    						<tr>
+                                                                    							<td colspan="2">
+                                                                    								<br />
+                                                                    							</td>
+                                                                    						</tr>
+                                                                    						<tr>
+																				    			<td>
+																				    				Updated Amount:
+																				    			</td>
+																				    			<td>
+																				    				<input ng-model="inputAmt2" onkeyup="removeErrorControl('txtupdateamount');" id="txtupdateamount" class="form-control" type="text" name="inputAmt2">
+																				    			</td>
+																				    		</tr>
+                                                                    						<tr>
+                                                                    							<td colspan="2">
+                                                                    								<br />
+                                                                    							</td>
+                                                                    						</tr>
+                                                                    						<tr>
+                                                                    							<td>
+                                                                    								&nbsp;
+                                                                    							</td>
+                                                                    							<td>
+                                                                    								<a href="javascript:void(0)" ng-click="updateBill()" id="btnSave" class="btnGreen btnCancel">
+						                                                                                <span class="btnR"><span class="btnC">Update Bill</span></span>
+						                                                                            </a>
+                                                                    							</td>
+                                                                    						</tr>
+                                                                    					</table>
+                                                                    				</fieldset>
+                                                                    			</td>
+                                                                    		</tr>
+                                                                    	</table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    	</div>
+                                    	
+                                    
+                                		<div id="clientDiv" style="display: none">
+										<table width="100%" id="tablebuildingmodule">
+                                            <tr>
+                                                <td style="width: 12%">
+                                                    <div class="receptioncolumn">
+                                                        <div class="receptioncolumnHeader">
+                                                            <h2>
+                                                                Billing Menus
+                                                            </h2>
+                                                            <div class="receptioncolumnContent">
+                                                                <div id="content" class="singleColumn">
+                                                                    <table width="100%">
+                                                                        <tr>
+                                                                            <td align="center" style="vertical-align: middle;" id="tdadd1">
+                                                                                <img ng-click="displayclientbill()" title="View All Bills" style="cursor: pointer; height: 60px; width: 50px;" src="img/viewallbills.jpg" alt="">
+                                                                                <div>Bill Details</div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <br />
+                                                                                <div style="border-bottom: thin solid #67a0e5;">
+                                                                                </div>
+                                                                                <br />
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                    <!-- <div ng-include src="template.url"></div> -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td style="width: 88%">
+                                                    <div class="receptioncolumn">
+                                                        <div class="receptioncolumnHeader">
+                                                            <h2>
+                                                                Information
+                                                            </h2>
+                                                            <div class="receptioncolumnContent">
+                                                                <div id="content" class="singleColumn">
+                                                                    <div id="clientdivViewAllBills" style="display: none">
+                                                                        <table width="100%">
+                                                                            <tr>
+                                                                                <td>
+                                                                                        	<div style="border: 1px solid #ccc">
+		                                                                                        <div class="pageControl">
+		                                                                                            <div class="pageDisplay">
+		                                                                                                <span class="pageDispalyLabel">
+		                                                                                                </span>
+		                                                                                                <span class="pageDispalySelectLabel">Show</span>
+		                                                                                                <div class="selectBox">
+		                                                                                                    <select ng-model="noofrecordsDetails" class="pageRp" ng-change="getclientbillingrecordsfordisplay()" ng-options="obj.value as obj.name for obj in recordCount.data">
+		                                                                                                    </select>
+		                                                                                                </div>
+		                                                                                            </div>
+		                                                                                            <div class="pagination">
+		                                                                                                <table width="100%">
+		                                                                                                    <tr>
+		                                                                                                        <td>
+		                                                                                                            <div style="float: right" class="gridPaging">
+		                                                                                                            </div>
+		                                                                                                        </td>
+		                                                                                                    </tr>
+		                                                                                                </table>
+		                                                                                            </div>
+		                                                                                        </div>
+																								<div class="box contentBox">
+						                                                                            <div class="boxInner">
+						                                                                                <div class="boxContent">
+						                                                                                    <div id="divParent">
+						                                                                                    	<div class="tableList" style="background-color: White; max-height: 330px; overflow: auto;">
+							                                                                                        <table width="100%" cellpadding="0" cellspacing="0" class="requireZebraCrossingGrid"
+							                                                                                                   id="tblGrid">
+							                                                                                                <thead>
+							                                                                                                    <tr class="trgrColumn">
+							                                                                                                        <th style="padding-left: 1%">
+							                                                                                                            Bill Id
+							                                                                                                        </th>
+							                                                                                                        <th>
+							                                                                                                            Client Id
+							                                                                                                        </th>
+							                                                                                                        <th>
+							                                                                                                            Client Name
+							                                                                                                        </th>
+							                                                                                                        <th>
+							                                                                                                            No. of Months
+							                                                                                                        </th>
+							                                                                                                        <th>
+							                                                                                                            Amount Per Month
+							                                                                                                        </th>
+							                                                                                                        <th>
+							                                                                                                            Total Amount
+							                                                                                                        </th>
+							                                                                                                        <th>
+							                                                                                                            Paid Amount
+							                                                                                                        </th>
+							                                                                                                    </tr>
+							                                                                                                </thead>
+							                                                                                                <tbody>
+							                                                                                                    <tr ng-repeat="item in billingGrid">
+							                                                                                                        <td>
+							                                                                                                            {{item.billingid}}
+							                                                                                                        </td>
+							                                                                                                        <td>
+							                                                                                                            {{item.clientid}}
+							                                                                                                        </td>
+							                                                                                                        <td>
+							                                                                                                            {{item.clientfirstname}}&nbsp{{item.clientlastname}}
+							                                                                                                        </td>
+							                                                                                                        <td>
+							                                                                                                            {{item.noofmonths}}
+							                                                                                                        </td>
+							                                                                                                        <td>
+							                                                                                                            {{item.amtpermonth}}
+							                                                                                                        </td>
+							                                                                                                        <td>
+							                                                                                                            {{item.totalamt}}
+							                                                                                                        </td>
+							                                                                                                        <td>
+							                                                                                                            {{item.paidamt}}
+							                                                                                                        </td>
+							                                                                                                    </tr>
+							                                                                                                </tbody>
+							                                                                                            </table>
+							                                                                                        </div>
+						                                                                                    </div>
+						                                                                                </div>
+						                                                                            </div>
+						                                                                        </div>
+	                                                                                   			<div class="pageControl">
+	                                                                                            <div class="pageDisplay">
+	                                                                                                <span class="pageDispalyLabel">
+	                                                                                                </span>
+	                                                                                                <span class="pageDispalySelectLabel">Show</span>
+	                                                                                                <div class="selectBox">
+	                                                                                                    <select ng-model="noofrecordsDetails" class="pageRp" ng-change="getclientbillingrecordsfordisplay()" ng-options="obj.value as obj.name for obj in recordCount.data">
+	                                                                                                    </select>
+	                                                                                                </div>
+	                                                                                            </div>
+	                                                                                            <div class="pagination">
+	                                                                                                <table width="100%">
+	                                                                                                    <tr>
+	                                                                                                        <td>
+	                                                                                                            <div style="float: right" class="gridPaging">
+	                                                                                                            </div>
+	                                                                                                        </td>
+	                                                                                                    </tr>
+	                                                                                                </table>
+	                                                                                            </div>
+	                                                                                        </div>
+                                                                                    		</div>
+                                                                                </td>
+                                                                                
+                                                                            </tr>
+                                                                        </table>
+                                                                        
+                                                                    </div>
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>                                    	
+                                    	</div>
+                                    </div>	
+                                </div>
+                            </div>
+                        </div>                        
+    					<button style="display: none" id="myElement1" name="save" ng-click="getbillingrecordsfordisplay()"></button>
+                    </div>
